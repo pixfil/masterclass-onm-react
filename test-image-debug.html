@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Images Supabase</title>
+</head>
+<body>
+    <h1>Test des URLs d'images</h1>
+    
+    <h2>Image 1 (ancienne):</h2>
+    <img src="https://vxqxkezrgadseavfzjwp.supabase.co/storage/v1/object/public/property-images/property_6dd27ad7-d2c6-468a-9ab1-7048a74fa855_image_1.jpg" 
+         style="width: 200px; height: 150px; object-fit: cover; border: 1px solid red;"
+         onload="console.log('✅ Image 1 OK')"
+         onerror="console.log('❌ Image 1 ERREUR')">
+    
+    <h2>Image nouvellement uploadée:</h2>
+    <img src="https://vxqxkezrgadseavfzjwp.supabase.co/storage/v1/object/public/property-images/6dd27ad7-d2c6-468a-9ab1-7048a74fa855/1753712731770_screenshot.png" 
+         style="width: 200px; height: 150px; object-fit: cover; border: 1px solid blue;"
+         onload="console.log('✅ Image uploadée OK')"
+         onerror="console.log('❌ Image uploadée ERREUR')">
+         
+    <script>
+        console.log('Test des images Supabase...')
+    </script>
+</body>
+</html>

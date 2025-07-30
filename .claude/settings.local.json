@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:initiative.immo)",
+      "Bash(find:*)",
+      "Bash(rm:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run build:*)",
+      "Bash(node:*)",
+      "Bash(del add-wordpress-id-field.sql)",
+      "Bash(taskkill:*)"
+    ],
+    "deny": []
+  }
+}

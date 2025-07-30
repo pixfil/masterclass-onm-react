@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles pour Mapbox */
+.mapbox-popup .mapboxgl-popup-content {
+  @apply rounded-lg p-0 shadow-xl;
+}
+
+.mapbox-popup .mapboxgl-popup-close-button {
+  @apply text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200;
+}
+
+/* Style pour le layout mi-écran */
+.flex-1\/2 {
+  flex: 0 0 50%;
+}
+
+@media (max-width: 1024px) {
+  .flex-1\/2 {
+    flex: 1 1 100%;
+  }
+}
+
+/* Fix pour les images noires dans l'admin */
+.admin img,
+[class*="admin"] img,
+[data-testid*="admin"] img,
+.admin-image-gallery img {
+  filter: none !important;
+  opacity: 1 !important;
+  brightness: 1 !important;
+  contrast: 1 !important;
+  background-color: transparent !important;
+  transform: none !important;
+}
+
+/* Spécifique pour les images de propriétés */
+img[src*="property-images"],
+img[src*="supabase"] {
+  filter: none !important;
+  opacity: 1 !important;
+  brightness: 1 !important;
+  contrast: 1 !important;
+}
+
+/* CSS très spécifique pour forcer l'affichage des images */
+.admin-image-gallery .aspect-video img {
+  filter: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  background: transparent !important;
+}

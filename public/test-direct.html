@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Direct Images</title>
+</head>
+<body style="background: white; padding: 20px;">
+    <h1>Test Direct HTML - Images Supabase</h1>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 200px); gap: 10px;">
+        <div style="border: 2px solid red; background: yellow;">
+            <h3>Test 1 - Ancienne</h3>
+            <img src="https://vxqxkezrgadseavfzjwp.supabase.co/storage/v1/object/public/property-images/property_6dd27ad7-d2c6-468a-9ab1-7048a74fa855_image_1.jpg" 
+                 style="width: 100%; height: 150px; object-fit: cover; background: lime;"
+                 onload="console.log('✅ IMAGE 1 OK')"
+                 onerror="console.log('❌ IMAGE 1 ERROR')">
+        </div>
+        
+        <div style="border: 2px solid blue; background: orange;">
+            <h3>Test 2 - Nouvelle</h3>
+            <img src="https://vxqxkezrgadseavfzjwp.supabase.co/storage/v1/object/public/property-images/6dd27ad7-d2c6-468a-9ab1-7048a74fa855/1753712725993_philippe_05.jpg" 
+                 style="width: 100%; height: 150px; object-fit: cover; background: pink;"
+                 onload="console.log('✅ IMAGE 2 OK')"
+                 onerror="console.log('❌ IMAGE 2 ERROR')">
+        </div>
+        
+        <div style="border: 2px solid green; background: cyan;">
+            <h3>Test 3 - Background</h3>
+            <div style="width: 100%; height: 150px; 
+                        background-image: url('https://vxqxkezrgadseavfzjwp.supabase.co/storage/v1/object/public/property-images/6dd27ad7-d2c6-468a-9ab1-7048a74fa855/1753712731770_screenshot.png');
+                        background-size: cover; 
+                        background-position: center;
+                        background-color: purple;">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
