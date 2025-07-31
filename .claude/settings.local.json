@@ -9,7 +9,8 @@
       "Bash(npm run build:*)",
       "Bash(node:*)",
       "Bash(del add-wordpress-id-field.sql)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "WebFetch(domain:masterclass-onm.com)"
     ],
     "deny": []
   }

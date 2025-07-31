@@ -12,11 +12,16 @@ import {
   ArrowPathIcon,
   FunnelIcon,
   ArrowDownTrayIcon,
-  MagnifyingGlassIcon
+  MagnifyingGlassIcon,
+  CogIcon,
+  DocumentArrowDownIcon
 } from '@heroicons/react/24/outline'
 import { OrdersAdminService, OrderSearchParams, OrderStats } from '@/lib/supabase/orders-admin-temp'
-import type { Order } from '@/lib/supabase/formations-types'
+import type { Order, OrderStatus, PaymentStatus } from '@/lib/supabase/formations-types'
 import { toast } from 'react-hot-toast'
+import { OrderQuickActionsModal } from '@/components/admin/OrderQuickActionsModal'
+import { FormationsService } from '@/lib/supabase/formations'
+import { InvoiceDownloadButton } from '@/components/admin/InvoiceDownloadButton'
 
 const OrdersAdminPage = () => {
   const [orders, setOrders] = useState<Order[]>([])
@@ -30,10 +35,15 @@ const OrdersAdminPage = () => {
   })
   const [pagination, setPagination] = useState({ page: 1, limit: 20, total: 0, total_pages: 0 })
   const [showFilters, setShowFilters] = useState(false)
+  const [selectedOrder, setSelectedOrder] = useState<Order | null>(null)
+  const [showQuickActions, setShowQuickActions] = useState(false)
+  const [allFormations, setAllFormations] = useState<any[]>([])
+  const [selectedFormation, setSelectedFormation] = useState<string>('')
 
   useEffect(() => {
     loadOrders()
     loadStats()
+    loadFormations()
   }, [searchParams])
 
   const loadOrders = async () => {
@@ -62,6 +72,15 @@ const OrdersAdminPage = () => {
       }
     } catch (error) {
       console.error('Erreur stats:', error)
+    }
+  }
+
+  const loadFormations = async () => {
+    try {
+      const formations = await FormationsService.getFormations()
+      setAllFormations(formations)
+    } catch (error) {
+      console.error('Erreur chargement formations:', error)
     }
   }
 
@@ -124,6 +143,7 @@ const OrdersAdminPage = () => {
     }
   }
 
+
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('fr-FR', {
       style: 'currency',
@@ -132,38 +152,53 @@ const OrdersAdminPage = () => {
   }
 
   const getStatusBadge = (status: string) => {
-    const colors = {
-      pending: 'bg-yellow-100 text-yellow-800',
-      confirmed: 'bg-blue-100 text-blue-800',
-      processing: 'bg-purple-100 text-purple-800',
-      completed: 'bg-green-100 text-green-800',
-      cancelled: 'bg-red-100 text-red-800',
-      refunded: 'bg-gray-100 text-gray-800'
+    const statusConfig = {
+      pending: { color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400', label: 'En attente' },
+      confirmed: { color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400', label: 'Confirmée' },
+      processing: { color: 'bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400', label: 'En cours' },
+      completed: { color: 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400', label: 'Terminée' },
+      cancelled: { color: 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400', label: 'Annulée' },
+      refunded: { color: 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400', label: 'Remboursée' }
     }
     
+    const config = statusConfig[status as keyof typeof statusConfig] || statusConfig.pending
+    
     return (
-      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-        colors[status as keyof typeof colors] || colors.pending
-      }`}>
-        {status}
+      <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium ${config.color}`}>
+        <span className={`w-2 h-2 rounded-full mr-2 ${
+          status === 'completed' ? 'bg-green-500' :
+          status === 'confirmed' ? 'bg-blue-500' :
+          status === 'processing' ? 'bg-purple-500' :
+          status === 'cancelled' ? 'bg-red-500' :
+          status === 'refunded' ? 'bg-gray-500' :
+          'bg-yellow-500'
+        }`}></span>
+        {config.label}
       </span>
     )
   }
 
   const getPaymentStatusBadge = (status: string) => {
-    const colors = {
-      pending: 'bg-yellow-100 text-yellow-800',
-      paid: 'bg-green-100 text-green-800',
-      failed: 'bg-red-100 text-red-800',
-      refunded: 'bg-gray-100 text-gray-800',
-      partial: 'bg-orange-100 text-orange-800'
+    const statusConfig = {
+      pending: { color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400', label: 'En attente' },
+      paid: { color: 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400', label: 'Payé' },
+      failed: { color: 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400', label: 'Échoué' },
+      refunded: { color: 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400', label: 'Remboursé' },
+      partial: { color: 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400', label: 'Partiel' }
     }
     
+    const config = statusConfig[status as keyof typeof statusConfig] || statusConfig.pending
+    
     return (
-      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-        colors[status as keyof typeof colors] || colors.pending
-      }`}>
-        {status}
+      <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium ${config.color}`}>
+        <span className={`w-2 h-2 rounded-full mr-2 ${
+          status === 'paid' ? 'bg-green-500' :
+          status === 'failed' ? 'bg-red-500' :
+          status === 'refunded' ? 'bg-gray-500' :
+          status === 'partial' ? 'bg-orange-500' :
+          'bg-yellow-500'
+        }`}></span>
+        {config.label}
       </span>
     )
   }
@@ -203,7 +238,7 @@ const OrdersAdminPage = () => {
       <ProtectedRoute>
         <AdminLayout currentPage="orders">
           <div className="nc-OrdersAdminPage">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="space-y-6">
               {/* Header */}
               <div className="sm:flex sm:items-center sm:justify-between mb-8">
                 <div>
@@ -344,11 +379,33 @@ const OrdersAdminPage = () => {
                 </div>
               </div>
 
-              {/* Filtres */}
+
+              {/* Filtre par formation */}
               {showFilters && (
                 <div className="bg-white dark:bg-gray-800 shadow rounded-lg mb-6">
-                  <div className="p-6">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <div className="p-4">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                          Formation
+                        </label>
+                        <select
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          value={selectedFormation}
+                          onChange={(e) => {
+                            setSelectedFormation(e.target.value)
+                            handleFilterChange({ formation_id: e.target.value || undefined })
+                          }}
+                        >
+                          <option value="">Toutes les formations</option>
+                          {allFormations.map(formation => (
+                            <option key={formation.id} value={formation.id}>
+                              {formation.title}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      
                       <div>
                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                           Statut commande
@@ -408,31 +465,6 @@ const OrdersAdminPage = () => {
                 </div>
               )}
 
-              {/* Légende des couleurs */}
-              <div className="bg-white dark:bg-gray-800 shadow rounded-lg mb-6">
-                <div className="p-4">
-                  <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-3">Légende formations</h3>
-                  <div className="flex flex-wrap gap-3">
-                    {/* Générer la légende basée sur les formations uniques */}
-                    {Array.from(new Set(
-                      orders.flatMap(order => 
-                        order.items?.map(item => item.session?.formation?.title) || []
-                      ).filter(Boolean)
-                    )).map(formationTitle => (
-                      <div key={formationTitle} className="flex items-center space-x-2">
-                        {getFormationColorBadge(formationTitle)}
-                        <span className="text-xs text-gray-700 dark:text-gray-300">
-                          {formationTitle}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                    Les pastilles de couleur permettent d'identifier rapidement les commandes pour la même formation
-                  </p>
-                </div>
-              </div>
-
               {/* Liste des commandes */}
               <div className="bg-white dark:bg-gray-800 shadow rounded-lg">
                 <div className="px-4 py-5 sm:p-6">
@@ -479,6 +511,9 @@ const OrdersAdminPage = () => {
                             </th>
                             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                               Paiement
+                            </th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                              Facture
                             </th>
                             <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                               Actions
@@ -542,35 +577,36 @@ const OrdersAdminPage = () => {
                                 </div>
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap">
-                                <select
-                                  value={order.status}
-                                  onChange={(e) => handleStatusUpdate(order.id, e.target.value)}
-                                  className="text-xs border border-gray-300 rounded px-2 py-1 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                                >
-                                  <option value="pending">En attente</option>
-                                  <option value="confirmed">Confirmé</option>
-                                  <option value="processing">En traitement</option>
-                                  <option value="completed">Terminé</option>
-                                  <option value="cancelled">Annulé</option>
-                                </select>
+                                {getStatusBadge(order.status)}
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap">
-                                <select
-                                  value={order.payment_status}
-                                  onChange={(e) => handlePaymentStatusUpdate(order.id, e.target.value)}
-                                  className="text-xs border border-gray-300 rounded px-2 py-1 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-                                >
-                                  <option value="pending">En attente</option>
-                                  <option value="paid">Payé</option>
-                                  <option value="failed">Échoué</option>
-                                  <option value="refunded">Remboursé</option>
-                                </select>
+                                {getPaymentStatusBadge(order.payment_status)}
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap">
+                                {order.payment_status === 'paid' && order.status !== 'cancelled' ? (
+                                  <InvoiceDownloadButton order={order} />
+                                ) : (
+                                  <span className="text-sm text-gray-400 dark:text-gray-500">
+                                    Non disponible
+                                  </span>
+                                )}
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div className="flex items-center space-x-2">
+                                  <button
+                                    onClick={() => {
+                                      setSelectedOrder(order)
+                                      setShowQuickActions(true)
+                                    }}
+                                    className="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300 p-1 rounded hover:bg-primary-50 dark:hover:bg-primary-900/20"
+                                    title="Actions rapides"
+                                  >
+                                    <CogIcon className="h-5 w-5" />
+                                  </button>
                                   <Link
                                     href={`/admin/orders/${order.id}`}
-                                    className="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300"
+                                    className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300 p-1 rounded hover:bg-gray-50 dark:hover:bg-gray-900/20"
+                                    title="Voir les détails"
                                   >
                                     <EyeIcon className="h-5 w-5" />
                                   </Link>
@@ -612,6 +648,18 @@ const OrdersAdminPage = () => {
               </div>
             </div>
           </div>
+          
+          {/* Modal des actions rapides */}
+          <OrderQuickActionsModal
+            order={selectedOrder}
+            isOpen={showQuickActions}
+            onClose={() => {
+              setShowQuickActions(false)
+              setSelectedOrder(null)
+            }}
+            onStatusChange={handleStatusUpdate}
+            onPaymentStatusChange={handlePaymentStatusUpdate}
+          />
         </AdminLayout>
       </ProtectedRoute>
     </AuthProvider>

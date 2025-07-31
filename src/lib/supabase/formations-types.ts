@@ -21,6 +21,8 @@ export interface Address {
   postal_code: string
   country: string
   additional_info?: string
+  latitude?: number
+  longitude?: number
 }
 
 export interface UserProfile {
@@ -107,13 +109,19 @@ export interface Formation {
   capacity: number
   level?: ExperienceLevel
   module_number?: number
+  start_date?: string // Nouvelle propriété
+  end_date?: string // Nouvelle propriété
   prerequisites: string[]
   learning_objectives: string[]
   program_details: string[]
   instructor_id?: string
-  instructor?: Instructor
+  instructor?: Instructor | string // Peut être un objet ou string
   featured_image?: string
   gallery_images: string[]
+  hero_image?: string // Image principale pour la page de détail
+  thumbnail_image?: string // Image miniature pour les listes
+  video_preview_url?: string // URL de la vidéo de présentation
+  brochure_url?: string // URL de la brochure PDF
   seo_title?: string
   seo_description?: string
   seo_keywords: string[]
@@ -123,6 +131,15 @@ export interface Formation {
   average_rating: number
   created_at: string
   updated_at: string
+  // Propriétés additionnelles pour la compatibilité
+  duration?: number // en heures
+  max_participants?: number
+  early_bird_price?: number
+  early_bird_deadline?: string
+  is_published?: boolean
+  image_url?: string
+  sessions?: FormationSession[]
+  program?: any // Programme détaillé avec objectifs, curriculum, etc.
 }
 
 // =============================================================================
@@ -434,6 +451,10 @@ export interface FormationFormData {
   instructor_id?: string
   featured_image?: string
   gallery_images: string[]
+  hero_image?: string
+  thumbnail_image?: string
+  video_preview_url?: string
+  brochure_url?: string
   seo_title?: string
   seo_description?: string
   seo_keywords: string[]

@@ -1,14 +1,14 @@
-import Header from '@/components/Header/Header'
+import ModernHeader from '@/components/Header/ModernHeader'
 import { Metadata } from 'next'
 import { ApplicationLayout } from '../application-layout'
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Masterclass ONM',
   description:
-    'Chisfis is a modern and elegant template for Next.js, Tailwind CSS, and TypeScript. It is designed to be simple and easy to use, with a focus on performance and accessibility.',
-  keywords: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Chisfis', 'Travel', 'E-commerce', 'Booking', 'Cars'],
+    'Formations d\'excellence en orthodontie neuro-musculaire avec les meilleurs experts. Développez votre expertise en ONM avec nos formations présentielles.',
+  keywords: ['Masterclass ONM', 'orthodontie neuro-musculaire', 'formation orthodontiste', 'CEPROF', 'ONM'],
 }
 
 export default function Layout({ children, params }: { children: React.ReactNode; params: any }) {
-  return <ApplicationLayout header={<Header hasBorderBottom={true} />}>{children}</ApplicationLayout>
+  return <ApplicationLayout header={<ModernHeader />}>{children}</ApplicationLayout>
 }

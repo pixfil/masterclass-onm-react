@@ -7,6 +7,7 @@ import { AdminLayout } from '@/components/admin/AdminLayout'
 import { AuthProvider } from '@/contexts/AuthContext'
 import { PlusIcon, PencilIcon, TrashIcon, EyeIcon } from '@heroicons/react/24/outline'
 import { FormationsService } from '@/lib/supabase/formations'
+import { supabase } from '@/lib/supabaseClient'
 import type { Formation } from '@/lib/supabase/formations-types'
 import { toast } from 'react-hot-toast'
 
@@ -23,10 +24,25 @@ const FormationsAdminPage = () => {
   const loadFormations = async () => {
     setLoading(true)
     try {
-      const result = await FormationsService.getFormations({ limit: 100 })
-      if (result.success && result.data) {
-        setFormations(result.data)
-      }
+      // Pour l'admin, récupérer toutes les formations avec leurs sessions
+      const { data, error } = await supabase
+        .from('formations')
+        .select(`
+          *,
+          instructor:instructors(*),
+          sessions:formation_sessions(
+            id,
+            city,
+            venue_name,
+            venue_address,
+            start_date,
+            status
+          )
+        `)
+        .order('created_at', { ascending: false })
+      
+      if (error) throw error
+      setFormations(data || [])
     } catch (error) {
       console.error('Erreur chargement formations:', error)
       toast.error('Erreur lors du chargement')
@@ -105,7 +121,7 @@ const FormationsAdminPage = () => {
       <ProtectedRoute>
         <AdminLayout currentPage="formations">
           <div className="nc-AdminFormationsPage">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="space-y-6">
         {/* Header */}
         <div className="sm:flex sm:items-center sm:justify-between mb-8">
           <div>
@@ -118,7 +134,7 @@ const FormationsAdminPage = () => {
           <div className="mt-4 sm:mt-0">
             <Link
               href="/admin/formations/new"
-              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <PlusIcon className="-ml-1 mr-2 h-5 w-5" />
               Nouvelle formation
@@ -139,7 +155,7 @@ const FormationsAdminPage = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Titre de la formation..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 />
               </div>
               
@@ -150,7 +166,7 @@ const FormationsAdminPage = () => {
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 >
                   <option value="all">Tous les statuts</option>
                   <option value="active">Actif</option>
@@ -177,7 +193,7 @@ const FormationsAdminPage = () => {
           <div className="px-4 py-5 sm:p-6">
             {loading ? (
               <div className="text-center py-12">
-                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
                 <p className="mt-2 text-sm text-gray-500">Chargement...</p>
               </div>
             ) : filteredFormations.length === 0 ? (
@@ -200,6 +216,9 @@ const FormationsAdminPage = () => {
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                         Sessions
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                        Lieu
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                         Statut
@@ -238,6 +257,29 @@ const FormationsAdminPage = () => {
                             {formation.total_sessions || 0} session{(formation.total_sessions || 0) > 1 ? 's' : ''}
                           </div>
                         </td>
+                        <td className="px-6 py-4">
+                          <div className="text-sm text-gray-900 dark:text-white">
+                            {formation.sessions && formation.sessions.length > 0 ? (
+                              <div className="space-y-1">
+                                {formation.sessions.slice(0, 2).map((session: any, index: number) => (
+                                  <div key={session.id} className="text-xs">
+                                    <span className="font-medium">{session.city}</span>
+                                    {session.venue_name && (
+                                      <span className="text-gray-500"> • {session.venue_name}</span>
+                                    )}
+                                  </div>
+                                ))}
+                                {formation.sessions.length > 2 && (
+                                  <div className="text-xs text-gray-500">
+                                    +{formation.sessions.length - 2} autre{formation.sessions.length > 3 ? 's' : ''}
+                                  </div>
+                                )}
+                              </div>
+                            ) : (
+                              <span className="text-gray-400 text-xs">Aucune session</span>
+                            )}
+                          </div>
+                        </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           {getStatusBadge(formation.status)}
                         </td>
@@ -245,7 +287,7 @@ const FormationsAdminPage = () => {
                           <div className="flex items-center space-x-2">
                             <Link
                               href={`/formations/${formation.slug}`}
-                              className="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300"
+                              className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
                               target="_blank"
                             >
                               <EyeIcon className="h-5 w-5" />

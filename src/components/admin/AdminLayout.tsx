@@ -24,13 +24,15 @@ import {
   CreditCardIcon,
   AcademicCapIcon,
   ShoppingBagIcon,
-  UserCircleIcon
+  UserCircleIcon,
+  FaceSmileIcon,
+  PresentationChartLineIcon
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 interface AdminLayoutProps {
   children: React.ReactNode
-  currentPage: 'dashboard' | 'properties' | 'experts' | 'clients' | 'contacts' | 'newsletter' | 'accounts' | 'email-templates' | 'email-logs' | 'notifications' | 'analytics' | 'subscription' | 'settings' | 'formations' | 'orders'
+  currentPage: 'dashboard' | 'properties' | 'experts' | 'clients' | 'contacts' | 'newsletter' | 'accounts' | 'email-templates' | 'email-logs' | 'notifications' | 'analytics' | 'subscription' | 'settings' | 'formations' | 'orders' | 'satisfaction' | 'evaluations'
 }
 
 export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
@@ -51,12 +53,6 @@ export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
       href: '/admin/dashboard',
       icon: HomeIcon,
       current: currentPage === 'dashboard'
-    },
-    {
-      name: 'Propriétés',
-      href: '/admin/properties',
-      icon: BuildingOfficeIcon,
-      current: currentPage === 'properties'
     },
     {
       name: 'Experts CEPROF',
@@ -81,6 +77,18 @@ export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
       href: '/admin/orders',
       icon: ShoppingBagIcon,
       current: currentPage === 'orders'
+    },
+    {
+      name: 'Satisfaction',
+      href: '/admin/satisfaction',
+      icon: FaceSmileIcon,
+      current: currentPage === 'satisfaction'
+    },
+    {
+      name: 'Évaluations',
+      href: '/admin/evaluations',
+      icon: PresentationChartLineIcon,
+      current: currentPage === 'evaluations'
     },
     {
       name: 'Messages',
@@ -118,21 +126,12 @@ export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center">
                 <Link href="/" className="flex items-center">
-                  {/* Logo pour le mode normal (dark logo) */}
-                  <img
-                    src="/logo-initiative-dark.png"
-                    alt="Initiative Immobilier"
-                    className="h-8 w-auto block dark:hidden"
-                  />
-                  {/* Logo pour le mode dark (light logo) */}
-                  <img
-                    src="/logo-initiative-light.png"
-                    alt="Initiative Immobilier"
-                    className="h-8 w-auto hidden dark:block"
-                  />
+                  <div className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">
+                    MASTERCLASS ONM
+                  </div>
                 </Link>
               </div>
-              <div className="bg-primary-600 text-white px-3 py-1 rounded-md text-sm font-medium">
+              <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 text-white px-3 py-1 rounded-lg text-sm font-medium">
                 Administration
               </div>
             </div>
@@ -171,17 +170,17 @@ export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`group flex items-center px-2 py-2 text-sm font-medium rounded-md ${
+                    className={`group flex items-center px-3 py-2.5 text-sm font-medium rounded-xl transition-all duration-200 ${
                       item.current
-                        ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/20 dark:text-primary-400'
-                        : 'text-neutral-700 hover:bg-neutral-50 dark:text-neutral-300 dark:hover:bg-neutral-700'
+                        ? 'bg-gradient-to-r from-indigo-50 to-cyan-50 text-indigo-700 border border-indigo-200 dark:from-indigo-900/20 dark:to-cyan-900/20 dark:text-indigo-400 dark:border-indigo-800'
+                        : 'text-neutral-700 hover:bg-gradient-to-r hover:from-indigo-50/50 hover:to-cyan-50/50 hover:text-indigo-600 dark:text-neutral-300 dark:hover:bg-neutral-700/50'
                     }`}
                   >
                     <Icon
-                      className={`mr-3 h-5 w-5 ${
+                      className={`mr-3 h-5 w-5 transition-colors ${
                         item.current
-                          ? 'text-primary-500'
-                          : 'text-neutral-400'
+                          ? 'text-indigo-600'
+                          : 'text-neutral-400 group-hover:text-indigo-500'
                       }`}
                     />
                     {item.name}

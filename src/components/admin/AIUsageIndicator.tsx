@@ -72,26 +72,26 @@ export const AIUsageIndicator = () => {
   const isUnlimited = usage.total === -1
   const percentageUsed = isUnlimited ? 0 : (usage.used / usage.total) * 100
 
-  // Couleurs selon le pourcentage d'utilisation
+  // Couleurs selon le pourcentage d'utilisation avec thème ONM
   const getStatusColor = () => {
-    if (isUnlimited) return 'text-purple-600 dark:text-purple-400'
+    if (isUnlimited) return 'text-blue-600 dark:text-blue-400'
     if (percentageUsed >= 90) return 'text-red-600 dark:text-red-400'
     if (percentageUsed >= 70) return 'text-orange-600 dark:text-orange-400'
-    return 'text-green-600 dark:text-green-400'
+    return 'text-cyan-600 dark:text-cyan-400'
   }
 
   const getBgColor = () => {
-    if (isUnlimited) return 'bg-purple-50 dark:bg-purple-900/20'
+    if (isUnlimited) return 'bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20'
     if (percentageUsed >= 90) return 'bg-red-50 dark:bg-red-900/20'
     if (percentageUsed >= 70) return 'bg-orange-50 dark:bg-orange-900/20'
-    return 'bg-green-50 dark:bg-green-900/20'
+    return 'bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20'
   }
 
   const getProgressColor = () => {
-    if (isUnlimited) return 'bg-purple-500'
+    if (isUnlimited) return 'bg-gradient-to-r from-blue-500 to-cyan-500'
     if (percentageUsed >= 90) return 'bg-red-500'
     if (percentageUsed >= 70) return 'bg-orange-500'
-    return 'bg-green-500'
+    return 'bg-gradient-to-r from-cyan-500 to-blue-500'
   }
 
   if (loadingUsage) {

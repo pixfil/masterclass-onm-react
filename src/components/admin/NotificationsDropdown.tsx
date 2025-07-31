@@ -99,7 +99,7 @@ export const NotificationsDropdown = () => {
             {unreadCount > 0 && (
               <button
                 onClick={markAllAsRead}
-                className="text-xs text-primary-600 hover:text-primary-700 dark:text-primary-400"
+                className="text-xs text-blue-600 hover:text-blue-700 dark:text-blue-400"
               >
                 Tout marquer comme lu
               </button>
@@ -163,7 +163,7 @@ export const NotificationsDropdown = () => {
           <div className="py-2">
             <Link
               href="/admin/notifications"
-              className="block px-4 py-2 text-sm text-center text-primary-600 hover:text-primary-700 dark:text-primary-400"
+              className="block px-4 py-2 text-sm text-center text-blue-600 hover:text-blue-700 dark:text-blue-400"
             >
               Voir toutes les notifications
             </Link>

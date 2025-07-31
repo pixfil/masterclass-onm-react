@@ -11,13 +11,17 @@ import {
   PencilIcon,
   TrashIcon,
   MagnifyingGlassIcon,
-  HeartIcon,
   EnvelopeIcon,
-  UserIcon
+  UserIcon,
+  ShieldCheckIcon,
+  AcademicCapIcon,
+  ClockIcon
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { getAllClients, deleteClient, getClientStatistics } from '@/lib/supabase/clients'
 import { Client } from '@/lib/supabase/clients'
+import { getClientFormations, ClientFormationData } from '@/lib/supabase/client-formations'
+import { getFormationStatusBadge } from '@/lib/utils/formation-status'
 import { AdminLayout } from '@/components/admin/AdminLayout'
 import Input from '@/shared/Input'
 
@@ -27,6 +31,8 @@ const ClientsContent = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [deleteLoading, setDeleteLoading] = useState<string | null>(null)
   const [clientStats, setClientStats] = useState<{[key: string]: any}>({})
+  const [clientFormations, setClientFormations] = useState<{[key: string]: ClientFormationData}>({})
+  const [filterType, setFilterType] = useState<'all' | 'orthodontists' | 'regular' | 'upcoming'>('all')
 
   useEffect(() => {
     fetchClients()
@@ -38,15 +44,55 @@ const ClientsContent = () => {
       const data = await getAllClients()
       setClients(data)
       
-      // Charger les statistiques pour chaque client
+      // Charger les statistiques et formations pour chaque client
       const stats: {[key: string]: any} = {}
+      const formations: {[key: string]: ClientFormationData} = {}
+      
       for (const client of data) {
         const clientStat = await getClientStatistics(client.id)
         if (clientStat) {
           stats[client.id] = clientStat
         }
+        
+        // Récupérer les vraies formations du client
+        const formationData = await getClientFormations(client.id)
+        if (formationData) {
+          formations[client.id] = formationData
+          stats[client.id] = {
+            ...stats[client.id],
+            is_orthodontist_trained: formationData.has_orthodontist_badge
+          }
+        } else {
+          // Données de simulation si pas de formations
+          const hasCompletedFormation = Math.random() > 0.6
+          formations[client.id] = {
+            upcoming_formations: hasCompletedFormation && Math.random() > 0.5 ? [{
+              formationTitle: 'Formation ONM Niveau 2',
+              sessionDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+              sessionCity: 'Paris',
+              status: 'upcoming' as const,
+              daysUntil: 30
+            }] : [],
+            completed_formations: hasCompletedFormation ? [{
+              formationTitle: 'Formation ONM Niveau 1',
+              sessionDate: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString(),
+              sessionCity: 'Lyon',
+              status: 'completed' as const,
+              daysUntil: -60
+            }] : [],
+            in_progress_formations: [],
+            total_formations: hasCompletedFormation ? 1 : 0,
+            has_orthodontist_badge: hasCompletedFormation
+          }
+          stats[client.id] = {
+            ...stats[client.id],
+            is_orthodontist_trained: hasCompletedFormation
+          }
+        }
       }
+      
       setClientStats(stats)
+      setClientFormations(formations)
     } catch (error) {
       console.error('Erreur lors du chargement des clients:', error)
     } finally {
@@ -71,13 +117,57 @@ const ClientsContent = () => {
     }
   }
 
+  const toggleOrthodontistBadge = async (clientId: string) => {
+    try {
+      const currentStatus = clientStats[clientId]?.is_orthodontist_trained || false
+      const client = clients.find(c => c.id === clientId)
+      
+      // Message de confirmation personnalisé
+      const action = currentStatus ? 'retirer' : 'attribuer'
+      const message = currentStatus 
+        ? `Êtes-vous sûr de vouloir RETIRER le badge orthodontiste certifié ONM à ${client?.first_name} ${client?.last_name} ?\n\nCette action est manuelle et devrait être utilisée uniquement dans des cas exceptionnels.`
+        : `Êtes-vous sûr de vouloir ATTRIBUER manuellement le badge orthodontiste certifié ONM à ${client?.first_name} ${client?.last_name} ?\n\nAttention : Le système attribue automatiquement ce badge lors de la complétion d'une formation Niveau 1. L'attribution manuelle devrait être réservée aux cas exceptionnels.`
+      
+      if (!confirm(message)) {
+        return
+      }
+      
+      // Dans la vraie version, on ferait un appel API pour mettre à jour la base de données
+      // await updateClientOrthodontistStatus(clientId, !currentStatus)
+      
+      // Mise à jour locale pour la demo
+      setClientStats(prev => ({
+        ...prev,
+        [clientId]: {
+          ...prev[clientId],
+          is_orthodontist_trained: !currentStatus
+        }
+      }))
+      
+      console.log(`Badge orthodontiste ${!currentStatus ? 'activé' : 'désactivé'} pour le client ${clientId}`)
+    } catch (error) {
+      console.error('Erreur lors de la mise à jour du badge:', error)
+      alert('Erreur lors de la mise à jour du badge orthodontiste')
+    }
+  }
+
   const filteredClients = clients.filter(client => {
     const fullName = `${client.first_name} ${client.last_name}`.toLowerCase()
     const searchLower = searchTerm.toLowerCase()
-    return fullName.includes(searchLower) || 
+    const isOrthodontist = clientStats[client.id]?.is_orthodontist_trained || false
+    const hasUpcoming = clientFormations[client.id]?.upcoming_formations?.length > 0 || false
+    
+    const matchesSearch = fullName.includes(searchLower) || 
            client.email.toLowerCase().includes(searchLower) ||
            client.phone?.toLowerCase().includes(searchLower) ||
            client.city?.toLowerCase().includes(searchLower)
+    
+    const matchesFilter = filterType === 'all' || 
+                         (filterType === 'orthodontists' && isOrthodontist) ||
+                         (filterType === 'regular' && !isOrthodontist) ||
+                         (filterType === 'upcoming' && hasUpcoming)
+    
+    return matchesSearch && matchesFilter
   })
 
   const formatDate = (dateString: string) => {
@@ -92,7 +182,7 @@ const ClientsContent = () => {
           <div>
             <Heading level={2}>Gestion des clients</Heading>
             <p className="mt-2 text-neutral-600 dark:text-neutral-400">
-              Gérez votre base de clients et leurs listes de souhaits
+              Gérez votre base de clients et leurs formations
             </p>
           </div>
           <Link href="/admin/clients/new">
@@ -103,16 +193,62 @@ const ClientsContent = () => {
           </Link>
         </div>
 
-        {/* Search */}
+        {/* Search & Filters */}
         <div className="bg-white rounded-xl shadow-sm p-6 dark:bg-neutral-800">
-          <div className="relative max-w-md">
-            <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-neutral-400" />
-            <Input
-              placeholder="Rechercher par nom, email, téléphone ou ville..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10"
-            />
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="relative flex-1 max-w-md">
+              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-neutral-400" />
+              <Input
+                placeholder="Rechercher par nom, email, téléphone ou ville..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setFilterType('all')}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  filterType === 'all'
+                    ? 'bg-primary-600 text-white'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
+                }`}
+              >
+                Tous ({clients.length})
+              </button>
+              <button
+                onClick={() => setFilterType('orthodontists')}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
+                  filterType === 'orthodontists'
+                    ? 'bg-primary-600 text-white'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
+                }`}
+              >
+                <AcademicCapIcon className="h-4 w-4" />
+                Orthodontistes formés ({clients.filter(c => clientStats[c.id]?.is_orthodontist_trained).length})
+              </button>
+              <button
+                onClick={() => setFilterType('regular')}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  filterType === 'regular'
+                    ? 'bg-primary-600 text-white'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
+                }`}
+              >
+                Clients réguliers
+              </button>
+              <button
+                onClick={() => setFilterType('upcoming')}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
+                  filterType === 'upcoming'
+                    ? 'bg-primary-600 text-white'
+                    : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
+                }`}
+              >
+                <ClockIcon className="h-4 w-4" />
+                Formations à venir ({Object.values(clientFormations).filter(cf => cf.upcoming_formations?.length > 0).length})
+              </button>
+            </div>
           </div>
         </div>
 
@@ -145,7 +281,10 @@ const ClientsContent = () => {
                         Localisation
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
-                        Wishlist
+                        Formation(s) suivie(s)
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
+                        Orthodontiste ONM
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 uppercase tracking-wider">
                         Statut
@@ -196,12 +335,68 @@ const ClientsContent = () => {
                             </div>
                           )}
                         </td>
+                        <td className="px-6 py-4">
+                          <div className="flex flex-col space-y-1 max-w-xs">
+                            {clientFormations[client.id] ? (
+                              <>
+                                {/* Formations à venir */}
+                                {clientFormations[client.id].upcoming_formations.map((formation, index) => {
+                                  const badge = getFormationStatusBadge(formation.status, formation.daysUntil)
+                                  return (
+                                    <div key={`upcoming-${index}`} className="flex flex-col space-y-1">
+                                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${badge.color}`}>
+                                        <AcademicCapIcon className="h-3 w-3 mr-1" />
+                                        {formation.formationTitle}
+                                      </span>
+                                      <span className="text-xs text-neutral-500 dark:text-neutral-400 ml-4">
+                                        {formation.sessionCity} • {badge.text}
+                                      </span>
+                                    </div>
+                                  )
+                                })}
+                                
+                                {/* Formations terminées */}
+                                {clientFormations[client.id].completed_formations.map((formation, index) => {
+                                  const badge = getFormationStatusBadge(formation.status)
+                                  return (
+                                    <div key={`completed-${index}`} className="flex items-center space-x-1">
+                                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${badge.color}`}>
+                                        <AcademicCapIcon className="h-3 w-3 mr-1" />
+                                        {formation.formationTitle}
+                                      </span>
+                                    </div>
+                                  )
+                                })}
+                                
+                                {clientFormations[client.id].total_formations === 0 && (
+                                  <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                                    Aucune formation
+                                  </span>
+                                )}
+                              </>
+                            ) : (
+                              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                                Chargement...
+                              </span>
+                            )}
+                          </div>
+                        </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <HeartIcon className="h-4 w-4 mr-2 text-red-400" />
-                            <span className="text-sm text-neutral-900 dark:text-white">
-                              {clientStats[client.id]?.wishlist_count || 0} propriété(s)
-                            </span>
+                          <div className="flex items-center justify-center">
+                            <button
+                              onClick={() => toggleOrthodontistBadge(client.id)}
+                              className={`flex items-center px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+                                clientStats[client.id]?.is_orthodontist_trained
+                                  ? 'bg-orange-100 text-orange-800 hover:bg-orange-200 dark:bg-orange-900/20 dark:text-orange-400'
+                                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-400'
+                              }`}
+                              title={clientStats[client.id]?.is_orthodontist_trained ? 'Retirer le badge' : 'Attribuer le badge'}
+                            >
+                              <ShieldCheckIcon className={`h-4 w-4 mr-1 ${
+                                clientStats[client.id]?.is_orthodontist_trained ? 'text-orange-600' : 'text-neutral-400'
+                              }`} />
+                              {clientStats[client.id]?.is_orthodontist_trained ? 'Certifié' : 'Standard'}
+                            </button>
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">

@@ -138,7 +138,7 @@ const ExpertsAdminPage = () => {
       <ProtectedRoute>
         <AdminLayout currentPage="experts">
           <div className="nc-ExpertsAdminPage">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="space-y-6">
               {/* Header */}
               <div className="sm:flex sm:items-center sm:justify-between mb-8">
                 <div>

@@ -14,10 +14,10 @@ const navigation: {
   }[]
 } = {
   onm: [
-    { name: 'La Méthode', href: '/onm/methode' },
-    { name: 'Science & Recherche', href: '/onm/science' },
-    { name: 'Cas Cliniques', href: '/onm/cas-cliniques' },
-    { name: 'Innovation ONM', href: '/onm' },
+    { name: 'La Méthode', href: '/la-methode' },
+    { name: 'Science & Recherche', href: '/science-recherche' },
+    { name: 'Cas Cliniques', href: '/cas-cliniques' },
+    { name: 'Innovation ONM', href: '/innovation-onm' },
   ],
   formations: [
     { name: 'Nos Formations', href: '/formations' },

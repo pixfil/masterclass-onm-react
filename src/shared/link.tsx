@@ -10,10 +10,13 @@ export const Link = forwardRef(function Link(
 ) {
   const closeHeadless = Headless.useClose()
 
+  // Filter out custom props that shouldn't be passed to DOM elements
+  const { sizeClass, loading, ...filteredProps } = props as any
+
   return (
     <Headless.DataInteractive>
       <NextLink
-        {...props}
+        {...filteredProps}
         ref={ref}
         onClick={(e) => {
           if (props.onClick) {

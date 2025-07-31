@@ -31,8 +31,9 @@ export class FormationsService {
         .from('formations')
         .select(`
           *,
-          instructor:instructors(*)
-        `)
+          instructor:instructors(*),
+          sessions:formation_sessions(*)
+        `, { count: 'exact' })
         .eq('status', 'active')
 
       // Recherche textuelle
@@ -146,7 +147,8 @@ export class FormationsService {
         .select(`
           *,
           instructor:instructors(*),
-          sessions:formation_sessions(*)
+          sessions:formation_sessions(*),
+          program
         `)
         .eq('id', id)
         .single()
@@ -208,9 +210,114 @@ export class FormationsService {
    */
   static async createFormation(formationData: FormationFormData): Promise<APIResponse<Formation>> {
     try {
+      // Mapper les champs du formulaire vers les champs de la base de données
+      const dataToInsert: any = {
+        title: formationData.title,
+        slug: formationData.slug,
+        description: formationData.description,
+        short_description: formationData.short_description,
+        price: formationData.price,
+        duration_days: formationData.duration_days,
+        start_date: formationData.start_date,
+        end_date: formationData.end_date,
+        // Mapper les niveaux anglais vers français pour la base de données
+        level: formationData.difficulty_level === 'beginner' ? 'debutant' :
+               formationData.difficulty_level === 'intermediate' ? 'intermediaire' :
+               formationData.difficulty_level === 'advanced' ? 'avance' :
+               formationData.difficulty_level === 'expert' ? 'expert' :
+               formationData.difficulty_level,
+        instructor_id: formationData.instructor_id,
+        featured_image: formationData.featured_image,
+        gallery_images: formationData.gallery_images,
+        // Mapper le status 'published' vers 'active' pour la base de données
+        status: formationData.status === 'published' ? 'active' : 
+                formationData.status === 'archived' ? 'inactive' :
+                formationData.status,
+        capacity: formationData.max_participants,
+        max_participants: formationData.max_participants,
+        // Prerequisites peut être un string ou un array
+        prerequisites: typeof formationData.prerequisites === 'string' 
+          ? formationData.prerequisites.split('\n').filter(p => p.trim()) 
+          : (formationData.prerequisites || []),
+        program: formationData.program,
+        // Mapper les autres champs
+        video_url: formationData.video_url,
+        custom_instructor_name: formationData.custom_instructor_name,
+        custom_instructor_bio: formationData.custom_instructor_bio,
+        duration_hours: formationData.duration_hours,
+        language: formationData.language,
+        format: formationData.format,
+        city: formationData.city,
+        venue: formationData.venue,
+        platform_tools: formationData.platform_tools,
+        early_bird_price: formationData.early_bird_price,
+        early_bird_deadline: formationData.early_bird_deadline,
+        group_discount_enabled: formationData.group_discount_enabled,
+        group_discount_min: formationData.group_discount_min,
+        group_discount_percent: formationData.group_discount_percent,
+        seo_title: formationData.seo_title,
+        meta_description: formationData.meta_description,
+        seo_keywords: formationData.keywords,
+        tags: formationData.tags,
+        whats_included: formationData.whats_included,
+        learning_objectives: formationData.learning_objectives,
+        featured: formationData.featured,
+        requires_approval: formationData.requires_approval,
+        certificate_included: formationData.certificate_included,
+        cpd_points: formationData.cpd_points,
+        refund_policy: formationData.refund_policy,
+        // target_audience doit être un jsonb array, pas un string
+        target_audience: formationData.target_audience ? 
+          (typeof formationData.target_audience === 'string' ? 
+            formationData.target_audience.split('\n').filter(t => t.trim()) : 
+            formationData.target_audience) : 
+          [],
+        testimonials: formationData.testimonials,
+        faq: formationData.faq
+      }
+
+      // Retirer les valeurs undefined et corriger les arrays vides
+      Object.keys(dataToInsert).forEach(key => {
+        if (dataToInsert[key] === undefined) {
+          delete dataToInsert[key]
+        }
+        
+        // Supprimer les chaînes vides pour les champs date/timestamp
+        if ((key === 'early_bird_deadline' || key === 'start_date' || key === 'end_date') && 
+            dataToInsert[key] === '') {
+          delete dataToInsert[key]
+        }
+        
+        // Supprimer les chaînes vides pour les champs UUID
+        if ((key === 'instructor_id') && dataToInsert[key] === '') {
+          delete dataToInsert[key]
+        }
+        
+        // Supprimer les chaînes vides pour les champs texte optionnels
+        if (['featured_image', 'video_url', 'custom_instructor_name', 'custom_instructor_bio', 
+             'city', 'venue', 'platform_tools', 'seo_title', 'meta_description', 
+             'refund_policy', 'testimonials', 'faq'].includes(key) && dataToInsert[key] === '') {
+          delete dataToInsert[key]
+        }
+        
+        // Corriger les arrays vides ou null
+        if (Array.isArray(dataToInsert[key]) && dataToInsert[key].length === 0) {
+          dataToInsert[key] = []
+        }
+        
+        // S'assurer que les champs array ne sont jamais null
+        if ((key === 'gallery_images' || key === 'seo_keywords' || key === 'tags' || 
+             key === 'whats_included' || key === 'learning_objectives' || key === 'prerequisites') && 
+            (dataToInsert[key] === null || dataToInsert[key] === undefined)) {
+          dataToInsert[key] = []
+        }
+      })
+
+      console.log('Données finales à insérer:', JSON.stringify(dataToInsert, null, 2))
+
       const { data, error } = await supabase
         .from('formations')
-        .insert([formationData])
+        .insert([dataToInsert])
         .select()
         .single()
 
@@ -221,12 +328,14 @@ export class FormationsService {
         success: true,
         message: 'Formation créée avec succès'
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erreur lors de la création de la formation:', error)
+      console.error('Message d\'erreur:', error?.message)
+      console.error('Détails:', error?.details)
       return {
         data: null as any,
         success: false,
-        message: 'Erreur lors de la création de la formation'
+        message: error?.message || 'Erreur lors de la création de la formation'
       }
     }
   }
@@ -236,10 +345,127 @@ export class FormationsService {
    */
   static async updateFormation(id: string, formationData: Partial<FormationFormData>): Promise<APIResponse<Formation>> {
     try {
+      // Mapper les champs du formulaire vers les champs de la base de données
+      const dataToUpdate: any = {
+        title: formationData.title,
+        slug: formationData.slug,
+        description: formationData.description,
+        short_description: formationData.short_description,
+        price: formationData.price,
+        duration_days: formationData.duration_days,
+        start_date: formationData.start_date,
+        end_date: formationData.end_date,
+        // Mapper les niveaux anglais vers français pour la base de données
+        level: formationData.difficulty_level === 'beginner' ? 'debutant' :
+               formationData.difficulty_level === 'intermediate' ? 'intermediaire' :
+               formationData.difficulty_level === 'advanced' ? 'avance' :
+               formationData.difficulty_level === 'expert' ? 'expert' :
+               formationData.difficulty_level,
+        instructor_id: formationData.instructor_id,
+        featured_image: formationData.featured_image,
+        gallery_images: formationData.gallery_images,
+        // Mapper le status 'published' vers 'active' pour la base de données
+        status: formationData.status === 'published' ? 'active' : 
+                formationData.status === 'archived' ? 'inactive' :
+                formationData.status,
+        capacity: formationData.max_participants,
+        max_participants: formationData.max_participants,
+        // Prerequisites peut être un string ou un array
+        prerequisites: typeof formationData.prerequisites === 'string' 
+          ? formationData.prerequisites.split('\n').filter(p => p.trim()) 
+          : (formationData.prerequisites || []),
+        program: formationData.program,
+        // Mapper les autres champs
+        video_url: formationData.video_url,
+        custom_instructor_name: formationData.custom_instructor_name,
+        custom_instructor_bio: formationData.custom_instructor_bio,
+        duration_hours: formationData.duration_hours,
+        language: formationData.language,
+        format: formationData.format,
+        city: formationData.city,
+        venue: formationData.venue,
+        platform_tools: formationData.platform_tools,
+        early_bird_price: formationData.early_bird_price,
+        early_bird_deadline: formationData.early_bird_deadline,
+        group_discount_enabled: formationData.group_discount_enabled,
+        group_discount_min: formationData.group_discount_min,
+        group_discount_percent: formationData.group_discount_percent,
+        seo_title: formationData.seo_title,
+        meta_description: formationData.meta_description,
+        seo_keywords: formationData.keywords,
+        tags: formationData.tags,
+        whats_included: formationData.whats_included,
+        learning_objectives: formationData.learning_objectives,
+        featured: formationData.featured,
+        requires_approval: formationData.requires_approval,
+        certificate_included: formationData.certificate_included,
+        cpd_points: formationData.cpd_points,
+        refund_policy: formationData.refund_policy,
+        // target_audience doit être un jsonb array, pas un string
+        target_audience: formationData.target_audience ? 
+          (typeof formationData.target_audience === 'string' ? 
+            formationData.target_audience.split('\n').filter(t => t.trim()) : 
+            formationData.target_audience) : 
+          [],
+        testimonials: formationData.testimonials,
+        faq: formationData.faq
+      }
+
+      // Retirer les valeurs undefined et corriger les arrays vides
+      Object.keys(dataToUpdate).forEach(key => {
+        if (dataToUpdate[key] === undefined) {
+          delete dataToUpdate[key]
+        }
+        
+        // Supprimer les chaînes vides pour les champs date/timestamp
+        if ((key === 'early_bird_deadline' || key === 'start_date' || key === 'end_date') && 
+            dataToUpdate[key] === '') {
+          delete dataToUpdate[key]
+        }
+        
+        // Supprimer les chaînes vides pour les champs UUID
+        if ((key === 'instructor_id') && dataToUpdate[key] === '') {
+          delete dataToUpdate[key]
+        }
+        
+        // Supprimer les chaînes vides pour les champs texte optionnels
+        if (['featured_image', 'video_url', 'custom_instructor_name', 'custom_instructor_bio', 
+             'city', 'venue', 'platform_tools', 'seo_title', 'meta_description', 
+             'refund_policy', 'testimonials', 'faq'].includes(key) && dataToUpdate[key] === '') {
+          delete dataToUpdate[key]
+        }
+        
+        // Corriger les arrays vides ou null
+        if (Array.isArray(dataToUpdate[key]) && dataToUpdate[key].length === 0) {
+          dataToUpdate[key] = []
+        }
+        
+        // S'assurer que les champs array ne sont jamais null
+        if ((key === 'gallery_images' || key === 'seo_keywords' || key === 'tags' || 
+             key === 'whats_included' || key === 'learning_objectives' || key === 'prerequisites') && 
+            (dataToUpdate[key] === null || dataToUpdate[key] === undefined)) {
+          dataToUpdate[key] = []
+        }
+      })
+
+      console.log('Mise à jour de la formation avec ID:', id)
+      console.log('Données à mettre à jour:', dataToUpdate)
+
+      // D'abord vérifier que la formation existe
+      const { data: existingFormation } = await supabase
+        .from('formations')
+        .select('id')
+        .eq('id', id)
+        .single()
+
+      if (!existingFormation) {
+        throw new Error(`Formation avec ID ${id} non trouvée`)
+      }
+
       const { data, error } = await supabase
         .from('formations')
         .update({
-          ...formationData,
+          ...dataToUpdate,
           updated_at: new Date().toISOString()
         })
         .eq('id', id)
@@ -253,12 +479,14 @@ export class FormationsService {
         success: true,
         message: 'Formation mise à jour avec succès'
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erreur lors de la mise à jour de la formation:', error)
+      console.error('Message d\'erreur:', error?.message)
+      console.error('Détails:', error?.details)
       return {
         data: null as any,
         success: false,
-        message: 'Erreur lors de la mise à jour'
+        message: error?.message || 'Erreur lors de la mise à jour'
       }
     }
   }
@@ -398,4 +626,20 @@ export class FormationsService {
     const { data } = await query.single()
     return !data
   }
+}
+
+// Exports pour la compatibilité avec l'ancien système
+export const getAllFormations = FormationsService.getFormations
+export const getFormationById = FormationsService.getFormationById
+export const updateFormation = FormationsService.updateFormation
+export const createFormation = FormationsService.createFormation
+export const getCategories = async () => {
+  // Retourne des catégories par défaut pour les formations
+  return [
+    { id: '1', name: 'Module 1 - Fondamentaux', slug: 'module-1' },
+    { id: '2', name: 'Module 2 - Perfectionnement', slug: 'module-2' },
+    { id: '3', name: 'Module 3 - Expert', slug: 'module-3' },
+    { id: '4', name: 'Webinaires', slug: 'webinaires' },
+    { id: '5', name: 'Formations spéciales', slug: 'formations-speciales' }
+  ]
 }

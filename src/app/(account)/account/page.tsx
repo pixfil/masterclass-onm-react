@@ -139,8 +139,26 @@ export default function AccountPage() {
 
   return (
     <div>
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-900 to-cyan-900 py-20 mb-12">
+        <div className="absolute inset-0 bg-[url('/noise-pattern.png')] opacity-10 mix-blend-overlay"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <span className="inline-flex items-center rounded-full px-4 py-1 text-sm font-medium bg-blue-600/10 text-blue-400 ring-1 ring-inset ring-blue-600/20 mb-4">
+              Mon Espace Personnel
+            </span>
+            <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+              Mon Compte
+            </h1>
+            <p className="text-xl text-slate-200 max-w-2xl mx-auto">
+              Gérez vos informations personnelles et vos préférences
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* HEADING */}
-      <h1 className="text-3xl font-semibold">Informations du compte</h1>
+      <h2 className="text-3xl font-semibold">Informations du compte</h2>
 
       <Divider className="my-8 w-14!" />
 

@@ -1,6 +1,6 @@
 import Footer2 from '@/components/Footer2'
 import FooterQuickNavigation from '@/components/FooterQuickNavigation'
-import Header from '@/components/Header/Header'
+import ModernHeader from '@/components/Header/ModernHeader'
 import HeroSearchFormMobile from '@/components/HeroSearchFormMobile/HeroSearchFormMobile'
 import NewsletterBanner from '@/components/NewsletterBanner'
 import Aside from '@/components/aside'
@@ -11,13 +11,16 @@ import React, { ReactNode } from 'react'
 interface Props {
   children: ReactNode
   header?: ReactNode
+  transparentHeader?: boolean
 }
 
-const ApplicationLayout: React.FC<Props> = ({ children, header }) => {
+const ApplicationLayout: React.FC<Props> = ({ children, header, transparentHeader }) => {
   return (
     <Aside.Provider>
       {/* Desktop Header - Will be hidden on mobile devices  */}
-      <div className="relative z-20 hidden lg:block">{header ? header : <Header />}</div>
+      <div className={`${transparentHeader ? 'absolute inset-x-0 top-0' : 'relative'} z-20 hidden lg:block`}>
+        {header ? header : <ModernHeader transparentMode={transparentHeader} />}
+      </div>
       {/* HeroSearchFormMobile - will display on mobile devices instead of Header-desktop */}
       <div className="sticky top-0 z-20 bg-white shadow-xs lg:hidden dark:bg-neutral-900">
         <div className="container flex h-20 items-center justify-center">

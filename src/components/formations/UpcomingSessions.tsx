@@ -2,27 +2,31 @@
 
 import React, { useEffect, useState } from 'react'
 import Heading from '@/shared/Heading'
-import FormationCard from './FormationCard'
+import FormationCardSimple from './FormationCardSimple'
 import ButtonSecondary from '@/shared/ButtonSecondary'
-import { SessionsService } from '@/lib/supabase/sessions'
-import type { FormationSession } from '@/lib/supabase/formations-types'
+import { FormationsService } from '@/lib/supabase/formations'
+import type { Formation } from '@/lib/supabase/formations-types'
 
 const UpcomingSessions = () => {
-  const [sessions, setSessions] = useState<FormationSession[]>([])
+  const [formations, setFormations] = useState<Formation[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    loadUpcomingSessions()
+    loadUpcomingFormations()
   }, [])
 
-  const loadUpcomingSessions = async () => {
+  const loadUpcomingFormations = async () => {
     try {
-      const result = await SessionsService.getUpcomingSessions(6)
+      // Récupérer les formations actives
+      const result = await FormationsService.getFormations({ limit: 6 })
+      console.log('Formations récupérées:', result)
+      
       if (result.success && result.data) {
-        setSessions(result.data)
+        // Afficher toutes les formations actives, même sans dates
+        setFormations(result.data)
       }
     } catch (error) {
-      console.error('Erreur chargement sessions:', error)
+      console.error('Erreur chargement formations:', error)
     } finally {
       setLoading(false)
     }
@@ -31,7 +35,23 @@ const UpcomingSessions = () => {
   if (loading) {
     return (
       <div className="nc-UpcomingSessions relative py-16">
-        <div className="text-center">Chargement des prochaines sessions...</div>
+        <div className="text-center">Chargement des prochaines formations...</div>
+      </div>
+    )
+  }
+
+  if (formations.length === 0) {
+    return (
+      <div className="nc-UpcomingSessions relative py-16">
+        <Heading
+          desc="Inscrivez-vous dès maintenant aux prochaines formations"
+          isCenter
+        >
+          Prochaines formations disponibles
+        </Heading>
+        <div className="text-center mt-8 text-neutral-600 dark:text-neutral-400">
+          Aucune formation disponible pour le moment. Revenez bientôt !
+        </div>
       </div>
     )
   }
@@ -39,21 +59,21 @@ const UpcomingSessions = () => {
   return (
     <div className="nc-UpcomingSessions relative py-16">
       <Heading
-        desc="Inscrivez-vous dès maintenant aux prochaines sessions"
+        desc="Inscrivez-vous dès maintenant aux prochaines formations"
         isCenter
       >
-        Prochaines sessions disponibles
+        Prochaines formations disponibles
       </Heading>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-8 lg:mt-10">
-        {sessions.map((session) => (
-          <FormationCard key={session.id} session={session} />
+        {formations.map((formation) => (
+          <FormationCardSimple key={formation.id} formation={formation} />
         ))}
       </div>
 
       <div className="flex mt-12 justify-center">
-        <ButtonSecondary href="/formations/sessions">
-          Voir toutes les sessions
+        <ButtonSecondary href="/formations/catalogue">
+          Voir toutes les formations
         </ButtonSecondary>
       </div>
     </div>

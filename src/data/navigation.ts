@@ -7,21 +7,43 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
     },
     {
       id: '2',
-      href: '/real-estate-categories-map/all',
-      name: 'Nos biens',
+      name: 'Formations',
+      type: 'dropdown',
+      children: [
+        {
+          id: '2-1',
+          name: 'Toutes nos formations',
+          href: '/formations',
+        },
+        {
+          id: '2-2',
+          name: 'Module 1 - Fondamentaux',
+          href: '/formations?module=1',
+        },
+        {
+          id: '2-3',
+          name: 'Module 2 - Perfectionnement',
+          href: '/formations?module=2',
+        },
+        {
+          id: '2-4',
+          name: 'Formations à venir',
+          href: '/formations?status=upcoming',
+        },
+        {
+          id: '2-5',
+          name: 'Sessions par ville',
+          href: '/formations?view=cities',
+        },
+      ],
     },
     {
       id: '3',
-      href: '/estimer-mon-bien',
-      name: 'Estimer mon bien',
+      href: '/ceprof',
+      name: 'CEPROF',
     },
     {
       id: '4',
-      href: '/notre-agence',
-      name: 'Notre agence',
-    },
-    {
-      id: '5',
       href: '/contact',
       name: 'Contact',
     },
@@ -29,7 +51,114 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
 }
 
 export async function getNavMegaMenu(): Promise<TNavigationItem> {
-  return {}
+  return {
+    id: 'mega-menu-1',
+    name: 'ONM',
+    type: 'mega-menu',
+    children: [
+      {
+        id: 'mega-1',
+        name: 'Découvrir',
+        children: [
+          {
+            id: 'mega-1-1',
+            name: 'La méthode ONM',
+            href: '/la-methode',
+          },
+          {
+            id: 'mega-1-2',
+            name: 'L\'innovation ONM',
+            href: '/innovation-onm',
+            isNew: true,
+          },
+          {
+            id: 'mega-1-3',
+            name: 'Science & Recherche',
+            href: '/science-recherche',
+          },
+          {
+            id: 'mega-1-4',
+            name: 'Les orthodontistes formés à l\'ONM',
+            href: '/orthodontistes-formes-onm',
+          },
+        ],
+      },
+      {
+        id: 'mega-2',
+        name: 'Expertise',
+        children: [
+          {
+            id: 'mega-2-1',
+            name: 'Nos experts CEPROF',
+            href: '/ceprof',
+          },
+          {
+            id: 'mega-2-2',
+            name: 'Cercle d\'Excellence',
+            href: '/ceprof/cercle-excellence',
+            isNew: true,
+          },
+          {
+            id: 'mega-2-3',
+            name: 'Cas cliniques',
+            href: '/cas-cliniques',
+          },
+          {
+            id: 'mega-2-4',
+            name: 'Devenir Membre',
+            href: '/ceprof/devenir-membre',
+          },
+        ],
+      },
+      {
+        id: 'mega-3',
+        name: 'Formations',
+        children: [
+          {
+            id: 'mega-3-1',
+            name: 'Toutes nos formations',
+            href: '/formations',
+          },
+          {
+            id: 'mega-3-2',
+            name: 'Module 1 - Fondamentaux',
+            href: '/formations?module=1',
+          },
+          {
+            id: 'mega-3-3',
+            name: 'Module 2 - Perfectionnement',
+            href: '/formations?module=2',
+          },
+          {
+            id: 'mega-3-4',
+            name: 'Sessions par ville',
+            href: '/formations?view=cities',
+          },
+        ],
+      },
+      {
+        id: 'mega-4',
+        name: 'Espace membre',
+        children: [
+          {
+            id: 'mega-4-1',
+            name: 'Se connecter',
+            href: '/connexion',
+          },
+          {
+            id: 'mega-4-2',
+            name: 'Mon compte',
+            href: '/account',
+          },
+          {
+            id: 'mega-4-3',
+            name: 'Mes formations',
+            href: '/mes-formations',
+          },
+        ],
+      },
+    ],
+  }
 }
 
 // ============ TYPE =============

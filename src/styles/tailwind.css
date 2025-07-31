@@ -5,17 +5,38 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Animation pour le popup */
+@keyframes zoom-in-95 {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+}
+
+.zoom-in-95 {
+  animation-name: zoom-in-95;
+}
+
 @theme {
-  --color-primary-50: rgb(236, 254, 255);
-  --color-primary-100: rgb(207, 250, 254);
-  --color-primary-200: rgb(165, 243, 252);
-  --color-primary-300: rgb(103, 232, 249);
-  --color-primary-400: rgb(34, 211, 238);
-  --color-primary-500: rgb(0, 193, 207);
-  --color-primary-600: rgb(0, 154, 166);
-  --color-primary-700: rgb(0, 123, 132);
-  --color-primary-800: rgb(0, 98, 105);
-  --color-primary-900: rgb(0, 78, 84);
+  --color-primary-50: rgb(238, 242, 255);
+  --color-primary-100: rgb(224, 231, 255);
+  --color-primary-200: rgb(199, 210, 254);
+  --color-primary-300: rgb(165, 180, 252);
+  --color-primary-400: rgb(129, 140, 248);
+  --color-primary-500: rgb(99, 102, 241);
+  --color-primary-600: rgb(79, 70, 229);
+  --color-primary-700: rgb(67, 56, 202);
+  --color-primary-800: rgb(55, 48, 163);
+  --color-primary-900: rgb(49, 46, 129);
 
   --color-secondary-50: rgb(240, 253, 250);
   --color-secondary-100: rgb(204, 251, 241);

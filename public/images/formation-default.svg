@@ -1,0 +1,11 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#F3F4F6"/>
+  <circle cx="400" cy="250" r="40" fill="#D1D5DB"/>
+  <path d="M360 250C360 227.909 377.909 210 400 210C422.091 210 440 227.909 440 250C440 272.091 422.091 290 400 290C377.909 290 360 272.091 360 250Z" fill="#9CA3AF"/>
+  <path d="M380 270L420 270C424.418 270 428 273.582 428 278V300C428 304.418 424.418 308 420 308H380C375.582 308 372 304.418 372 300V278C372 273.582 375.582 270 380 270Z" fill="#9CA3AF"/>
+  <rect x="300" y="350" width="200" height="12" rx="6" fill="#E5E7EB"/>
+  <rect x="320" y="380" width="160" height="8" rx="4" fill="#E5E7EB"/>
+  <rect x="340" y="400" width="120" height="8" rx="4" fill="#E5E7EB"/>
+  <text x="400" y="450" fill="#6B7280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="500">Formation Masterclass ONM</text>
+  <text x="400" y="480" fill="#9CA3AF" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14">Image de présentation</text>
+</svg>

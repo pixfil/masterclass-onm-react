@@ -356,3 +356,6 @@ export class CEPROFExpertsService {
     }
   }
 }
+
+// Export pour la compatibilité
+export const getCeprofExperts = CEPROFExpertsService.getExperts

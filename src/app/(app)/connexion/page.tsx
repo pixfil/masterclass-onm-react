@@ -93,21 +93,29 @@ export default function ConnexionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-cyan-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      {/* Background pattern */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-900/40 to-cyan-900/20" />
+      
+      <div className="max-w-md w-full space-y-8 relative z-10">
         <div className="text-center">
-          <Link href="/" className="text-2xl font-bold text-primary-600">
-            Initiative Immobilier
+          <Link href="/" className="inline-block">
+            <div className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+              MASTERCLASS ONM
+            </div>
+            <div className="text-sm text-indigo-200 font-medium">
+              Orthodontie Neuro-Musculaire
+            </div>
           </Link>
-          <h2 className="mt-6 text-3xl font-bold text-neutral-900 dark:text-white">
+          <h2 className="mt-8 text-3xl font-bold text-white">
             {isLogin ? 'Connexion' : 'Créer un compte'}
           </h2>
-          <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-            {isLogin ? 'Connectez-vous à votre compte' : 'Rejoignez Initiative Immobilier'}
+          <p className="mt-2 text-lg text-slate-300">
+            {isLogin ? 'Accédez à votre espace formation' : 'Rejoignez la communauté ONM'}
           </p>
         </div>
 
-        <div className="bg-white dark:bg-neutral-800 rounded-2xl shadow-xl p-8">
+        <div className="bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-white/20">
           {message && (
             <div className="mb-6 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-sm dark:bg-green-900/20 dark:border-green-800 dark:text-green-400">
               {message}
@@ -134,7 +142,7 @@ export default function ConnexionPage() {
                       value={formData.firstName}
                       onChange={(e) => handleInputChange('firstName', e.target.value)}
                       required={!isLogin}
-                      className="w-full pl-10 pr-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-neutral-700 dark:text-white"
+                      className="w-full pl-10 pr-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-neutral-700 dark:text-white"
                       placeholder="Jean"
                     />
                   </div>
@@ -148,7 +156,7 @@ export default function ConnexionPage() {
                     value={formData.lastName}
                     onChange={(e) => handleInputChange('lastName', e.target.value)}
                     required={!isLogin}
-                    className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-neutral-700 dark:text-white"
+                    className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-neutral-700 dark:text-white"
                     placeholder="Dupont"
                   />
                 </div>
@@ -215,13 +223,13 @@ export default function ConnexionPage() {
               </div>
             )}
 
-            <Button
+            <button
               type="submit"
               disabled={loading}
-              className="w-full"
+              className="w-full bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {loading ? 'Chargement...' : (isLogin ? 'Se connecter' : 'Créer le compte')}
-            </Button>
+            </button>
           </form>
 
           <div className="mt-6 text-center">
@@ -229,7 +237,7 @@ export default function ConnexionPage() {
               {isLogin ? "Vous n'avez pas de compte ?" : 'Vous avez déjà un compte ?'}
               <button
                 onClick={() => setIsLogin(!isLogin)}
-                className="ml-1 font-medium text-primary-600 hover:text-primary-500"
+                className="ml-1 font-medium text-indigo-600 hover:text-indigo-500"
               >
                 {isLogin ? 'Créer un compte' : 'Se connecter'}
               </button>
@@ -240,7 +248,7 @@ export default function ConnexionPage() {
             <div className="mt-4 text-center">
               <Link 
                 href="/mot-de-passe-oublie" 
-                className="text-sm text-primary-600 hover:text-primary-500"
+                className="text-sm text-indigo-600 hover:text-indigo-500"
               >
                 Mot de passe oublié ?
               </Link>

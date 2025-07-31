@@ -94,10 +94,10 @@ export const ProfileDropdown = () => {
         {profile?.avatar_url ? (
           <Avatar 
             src={profile.avatar_url} 
-            className="h-10 w-10 hover:ring-2 hover:ring-primary-500 transition-all cursor-pointer" 
+            className="h-10 w-10 hover:ring-2 hover:ring-blue-500 transition-all cursor-pointer" 
           />
         ) : (
-          <div className="h-10 w-10 rounded-full bg-primary-600 flex items-center justify-center text-white font-medium hover:bg-primary-700 transition-colors">
+          <div className="h-10 w-10 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 flex items-center justify-center text-white font-medium hover:from-blue-700 hover:to-cyan-700 transition-all duration-200 shadow-lg">
             {user?.email ? getInitials(user.email) : 'U'}
           </div>
         )}
@@ -112,7 +112,7 @@ export const ProfileDropdown = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-neutral-100 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-neutral-800 dark:divide-neutral-700">
+        <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-neutral-100 rounded-xl bg-white shadow-xl ring-1 ring-blue-100 ring-opacity-20 focus:outline-none dark:bg-neutral-800 dark:divide-neutral-700 border border-blue-50 dark:border-blue-900/20">
           {/* Header avec email et nom */}
           <div className="px-4 py-3">
             <p className="text-sm text-neutral-500 dark:text-neutral-400">Connecté en tant que</p>
@@ -137,8 +137,8 @@ export const ProfileDropdown = () => {
                   <Link
                     href={item.href}
                     className={`${
-                      active ? 'bg-neutral-100 dark:bg-neutral-700' : ''
-                    } flex items-center px-4 py-2 text-sm text-neutral-700 dark:text-neutral-200`}
+                      active ? 'bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-700 dark:from-blue-900/20 dark:to-cyan-900/20 dark:text-blue-400' : ''
+                    } flex items-center px-4 py-2 text-sm text-neutral-700 dark:text-neutral-200 transition-all duration-150 rounded-lg mx-1`}
                   >
                     <item.icon className="mr-3 h-5 w-5 text-neutral-400" />
                     {item.label}
@@ -155,8 +155,8 @@ export const ProfileDropdown = () => {
                 <button
                   onClick={handleSignOut}
                   className={`${
-                    active ? 'bg-neutral-100 dark:bg-neutral-700' : ''
-                  } flex w-full items-center px-4 py-2 text-sm text-neutral-700 dark:text-neutral-200`}
+                    active ? 'bg-gradient-to-r from-red-50 to-orange-50 text-red-700 dark:from-red-900/20 dark:to-orange-900/20 dark:text-red-400' : ''
+                  } flex w-full items-center px-4 py-2 text-sm text-neutral-700 dark:text-neutral-200 transition-all duration-150 rounded-lg mx-1`}
                 >
                   <ArrowRightOnRectangleIcon className="mr-3 h-5 w-5 text-neutral-400" />
                   Déconnexion

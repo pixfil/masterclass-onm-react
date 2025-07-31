@@ -52,7 +52,7 @@ const FormationCardFeatured: React.FC<FormationCardFeaturedProps> = ({
         
         <div className="relative h-72 w-full overflow-hidden">
           <Image
-            src={formation.featured_image || '/images/formation-default.jpg'}
+            src={formation.thumbnail_image || formation.featured_image || '/images/formation-default.svg'}
             alt={formation.title}
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-500"
