@@ -13,3 +13,36 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Fichiers sensibles et scripts
+fix-admin.py
+update-slugs.js
+fix-geocoding.js
+check-table-structure.js
+check-geocoding-results.js
+geocode-properties.js
+check-missing-coords.js
+debug-adapter.js
+debug-featured.js
+add-property-types.js
+fix-image-urls.js
+test-images.js
+src/scripts/migrate-*.js
+src/scripts/create-*.js
+src/scripts/update-*.js
+src/app/admin-fix.html
+*.sql
+reset-*.sql
+create-*.sql
+confirm-*.sql
+insert-*.sql
+
+# Scripts Windows
+*.bat
+*.ps1
+nul
+
+# Python
+*.py
+__pycache__/
+*.pyc
