@@ -92,23 +92,23 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-cyan-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-900/40 to-cyan-900/20" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-900/40 to-cyan-900/20" />
       
       <div className="max-w-md w-full space-y-8 relative z-10">
         <div className="text-center">
           <Link href="/" className="inline-block">
-            <div className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+            <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
               MASTERCLASS ONM
             </div>
-            <div className="text-sm text-indigo-200 font-medium">
+            <div className="text-sm text-blue-200 font-medium">
               Orthodontie Neuro-Musculaire
             </div>
           </Link>
           <div className="mt-8 flex items-center justify-center">
-            <div className="p-3 bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 rounded-2xl border border-indigo-500/30 backdrop-blur-sm">
-              <ShieldCheckIcon className="w-8 h-8 text-indigo-300" />
+            <div className="p-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-500/30 backdrop-blur-sm">
+              <ShieldCheckIcon className="w-8 h-8 text-blue-300" />
             </div>
           </div>
           <h2 className="mt-6 text-3xl font-bold text-white">
@@ -146,7 +146,7 @@ export default function AdminLoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-neutral-700 dark:text-white"
+                  className="w-full pl-10 pr-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-neutral-700 dark:text-white"
                   placeholder="philippe@gclicke.com"
                   autoComplete="email"
                 />
@@ -184,7 +184,7 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {loading ? (
                 <>
@@ -203,7 +203,7 @@ export default function AdminLoginPage() {
               <button
                 type="button"
                 onClick={() => setShowResetPassword(true)}
-                className="text-sm text-indigo-600 hover:text-indigo-500 flex items-center gap-2 mx-auto"
+                className="text-sm text-blue-600 hover:text-blue-500 flex items-center gap-2 mx-auto"
               >
                 <KeyIcon className="w-4 h-4" />
                 Mot de passe oublié ?
@@ -213,8 +213,8 @@ export default function AdminLoginPage() {
           ) : (
             <div>
               <div className="text-center mb-6">
-                <div className="p-3 bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 rounded-2xl border border-indigo-500/30 backdrop-blur-sm inline-block mb-4">
-                  <KeyIcon className="w-8 h-8 text-indigo-300" />
+                <div className="p-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-500/30 backdrop-blur-sm inline-block mb-4">
+                  <KeyIcon className="w-8 h-8 text-blue-300" />
                 </div>
                 <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">
                   Réinitialiser le mot de passe
@@ -236,7 +236,7 @@ export default function AdminLoginPage() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="w-full pl-10 pr-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-neutral-700 dark:text-white"
+                      className="w-full pl-10 pr-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-neutral-700 dark:text-white"
                       placeholder="philippe@gclicke.com"
                       autoComplete="email"
                     />
@@ -254,7 +254,7 @@ export default function AdminLoginPage() {
                   <button
                     type="submit"
                     disabled={resetLoading}
-                    className="flex-1 bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                    className="flex-1 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
                     {resetLoading ? (
                       <>
@@ -291,7 +291,7 @@ export default function AdminLoginPage() {
         <div className="text-center">
           <Link 
             href="/" 
-            className="text-sm text-indigo-300 hover:text-indigo-200 transition-colors"
+            className="text-sm text-blue-300 hover:text-blue-200 transition-colors"
           >
             ← Retour au site public
           </Link>

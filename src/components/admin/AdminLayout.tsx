@@ -4,7 +4,6 @@ import { useAuth } from '@/contexts/AuthContext'
 import { signOut } from '@/lib/auth'
 import { Button } from '@/shared/Button'
 import { Heading } from '@/shared/Heading'
-import { AIUsageIndicator } from './AIUsageIndicator'
 import { ProfileDropdown } from './ProfileDropdown'
 import { NotificationsDropdown } from './NotificationsDropdown'
 import { 
@@ -30,13 +29,19 @@ import {
   FolderIcon,
   MicrophoneIcon,
   UserPlusIcon,
-  TrophyIcon
+  TrophyIcon,
+  TicketIcon,
+  BoltIcon,
+  EnvelopeOpenIcon,
+  ClockIcon,
+  InboxIcon,
+  CurrencyEuroIcon
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 interface AdminLayoutProps {
   children: React.ReactNode
-  currentPage: 'dashboard' | 'properties' | 'experts' | 'clients' | 'contacts' | 'newsletter' | 'accounts' | 'email-templates' | 'email-logs' | 'notifications' | 'analytics' | 'subscription' | 'settings' | 'formations' | 'orders' | 'satisfaction' | 'evaluations' | 'resources' | 'podcasts' | 'referrals' | 'badges'
+  currentPage: 'dashboard' | 'properties' | 'experts' | 'clients' | 'contacts' | 'newsletter' | 'accounts' | 'email-templates' | 'email-logs' | 'notifications' | 'analytics' | 'subscription' | 'settings' | 'formations' | 'orders' | 'satisfaction' | 'evaluations' | 'resources' | 'podcasts' | 'referrals' | 'badges' | 'promo-codes' | 'workflows' | 'historique'
 }
 
 export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
@@ -142,6 +147,54 @@ export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
       icon: ChartBarIcon,
       current: currentPage === 'analytics'
     },
+    {
+      name: 'Codes Promo',
+      href: '/admin/promo-codes',
+      icon: TicketIcon,
+      current: currentPage === 'promo-codes'
+    },
+    {
+      name: 'Workflows',
+      href: '/admin/workflows',
+      icon: BoltIcon,
+      current: currentPage === 'workflows'
+    },
+    {
+      name: 'Templates Emails',
+      href: '/admin/email-templates',
+      icon: EnvelopeOpenIcon,
+      current: currentPage === 'email-templates'
+    },
+    {
+      name: 'Historique',
+      href: '/admin/historique',
+      icon: ClockIcon,
+      current: currentPage === 'historique'
+    },
+    {
+      name: 'Logs Emails',
+      href: '/admin/email-logs',
+      icon: InboxIcon,
+      current: currentPage === 'email-logs'
+    },
+    {
+      name: 'Notifications',
+      href: '/admin/notifications',
+      icon: BellIcon,
+      current: currentPage === 'notifications'
+    },
+    {
+      name: 'Abonnement',
+      href: '/admin/subscription',
+      icon: CurrencyEuroIcon,
+      current: currentPage === 'subscription'
+    },
+    {
+      name: 'Paramètres',
+      href: '/admin/settings',
+      icon: CogIcon,
+      current: currentPage === 'settings'
+    },
   ]
 
   return (
@@ -166,8 +219,6 @@ export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
 
             {/* Actions droite */}
             <div className="flex items-center space-x-4">
-              {/* Indicateur usage IA avec cache */}
-              <AIUsageIndicator />
               
               <Link
                 href="/real-estate"

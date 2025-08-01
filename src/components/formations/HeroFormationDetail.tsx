@@ -15,7 +15,19 @@ import Link from 'next/link'
 import type { Formation } from '@/lib/supabase/formations-types'
 
 // Dynamic import pour Three.js pour éviter les problèmes SSR
-const JawAnimation = dynamic(() => import('../hero/JawAnimation'), {
+const JawAnimation = dynamic(() => import('../hero/JawAnimation').catch(() => {
+  // Fallback component si l'import échoue
+  return { default: () => (
+    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-3xl">
+      <div className="text-center text-white/80">
+        <div className="w-24 h-24 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
+          <AcademicCapIcon className="w-12 h-12" />
+        </div>
+        <p className="text-lg font-medium">Formation ONM</p>
+      </div>
+    </div>
+  )}
+}), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center">

@@ -97,6 +97,12 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
           href: '/lexique',
           isNew: true,
         },
+        {
+          id: '4-5',
+          name: 'Cas cliniques',
+          href: '/cas-cliniques',
+          isNew: true,
+        },
       ],
     },
     {
@@ -124,14 +130,15 @@ export async function getNavMegaMenu(): Promise<TNavigationItem> {
           },
           {
             id: 'mega-1-2',
-            name: 'L\'innovation ONM',
-            href: '/innovation-onm',
+            name: 'Timeline de Formation',
+            href: '/timeline-formation',
             isNew: true,
           },
           {
             id: 'mega-1-3',
-            name: 'Science & Recherche',
-            href: '/science-recherche',
+            name: 'Extraits de cas',
+            href: '/cas-cliniques',
+            isNew: true,
           },
           {
             id: 'mega-1-4',
@@ -164,6 +171,12 @@ export async function getNavMegaMenu(): Promise<TNavigationItem> {
             id: 'mega-2-4',
             name: 'Devenir Membre',
             href: '/ceprof/devenir-membre',
+          },
+          {
+            id: 'mega-2-5',
+            name: 'Témoignages',
+            href: '/ceprof/temoignages',
+            isNew: true,
           },
         ],
       },
@@ -230,11 +243,17 @@ export async function getNavMegaMenu(): Promise<TNavigationItem> {
             href: '/parrainage',
             isNew: true,
           },
+          {
+            id: 'mega-4-7',
+            name: 'Mon activité',
+            href: '/mon-activite',
+            isNew: true,
+          },
         ],
       },
       {
         id: 'mega-5',
-        name: 'Ressources',
+        name: 'Outils',
         children: [
           {
             id: 'mega-5-1',
@@ -243,26 +262,25 @@ export async function getNavMegaMenu(): Promise<TNavigationItem> {
           },
           {
             id: 'mega-5-2',
-            name: 'Podcasts & Interviews',
-            href: '/podcasts',
-            isNew: true,
-          },
-          {
-            id: 'mega-5-3',
-            name: 'Articles & Recherche',
-            href: '/articles',
-            isNew: true,
-          },
-          {
-            id: 'mega-5-4',
             name: 'Lexique ONM',
             href: '/lexique',
             isNew: true,
           },
           {
-            id: 'mega-5-5',
+            id: 'mega-5-3',
             name: 'Timeline Interactive',
             href: '/timeline',
+            isNew: true,
+          },
+          {
+            id: 'mega-5-4',
+            name: 'Mes Documents',
+            href: '/mes-documents',
+          },
+          {
+            id: 'mega-5-5',
+            name: 'Calendrier Formations',
+            href: '/formations?view=calendar',
             isNew: true,
           },
         ],

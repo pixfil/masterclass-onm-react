@@ -1,7 +1,7 @@
 import Footer2 from '@/components/Footer2'
 import FooterQuickNavigation from '@/components/FooterQuickNavigation'
 import ModernHeader from '@/components/Header/ModernHeader'
-import HeroSearchFormMobile from '@/components/HeroSearchFormMobile/HeroSearchFormMobile'
+// import HeroSearchFormMobile from '@/components/HeroSearchFormMobile/HeroSearchFormMobile' // Disabled - Real estate search
 import NewsletterBanner from '@/components/NewsletterBanner'
 import Aside from '@/components/aside'
 import AsideSidebarNavigation from '@/components/aside-sidebar-navigation'
@@ -21,12 +21,12 @@ const ApplicationLayout: React.FC<Props> = ({ children, header, transparentHeade
       <div className={`${transparentHeader ? 'absolute inset-x-0 top-0' : 'relative'} z-20 hidden lg:block`}>
         {header ? header : <ModernHeader transparentMode={transparentHeader} />}
       </div>
-      {/* HeroSearchFormMobile - will display on mobile devices instead of Header-desktop */}
-      <div className="sticky top-0 z-20 bg-white shadow-xs lg:hidden dark:bg-neutral-900">
+      {/* HeroSearchFormMobile - Disabled for ONM (was for real estate search) */}
+      {/* <div className="sticky top-0 z-20 bg-white shadow-xs lg:hidden dark:bg-neutral-900">
         <div className="container flex h-20 items-center justify-center">
           <HeroSearchFormMobile />
         </div>
-      </div>
+      </div> */}
       {/*  */}
       {children}
       {/*  */}

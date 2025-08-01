@@ -1,0 +1,663 @@
+\tailwind.config.ts:132 - default
+\src\type.ts:16 - TransactionType
+\src\type.ts:18 - ClassOfProperties
+\public\locales\en.ts:1 - en
+\src\app\not-found.tsx:22 - default
+\src\components\BackgroundSection.tsx:3 - BackgroundSectionProps (used in module)
+\src\components\BgGlassmorphism.tsx:3 - BgGlassmorphismProps (used in module)
+\src\components\CardCategory1.tsx:6 - CardCategory1Props (used in module)
+\src\components\CardCategory1.tsx:38 - default
+\src\components\CardCategory3.tsx:7 - CardCategory3Props (used in module)
+\src\components\CardCategory4.tsx:7 - CardCategory4Props (used in module)
+\src\components\CardCategory6.tsx:7 - CardCategory6Props (used in module)
+\src\components\CardCategory6.tsx:35 - default
+\src\components\CardCategoryBox1.tsx:8 - CardCategoryBox1Props (used in module)
+\src\components\CartPromoCode.tsx:24 - CartPromoCode
+\src\components\DatePickerCustomTime.tsx:20 - default
+\src\components\DPELabel.tsx:8 - DPELabel (used in module)
+\src\components\EstimationFormMultiStep.tsx:35 - EstimationFormMultiStep
+\src\components\EstimationFormSimple.tsx:5 - EstimationFormSimple
+\src\components\Footer.tsx:88 - default
+\src\components\Footer3.tsx:104 - default
+\src\components\Footer4.tsx:101 - default
+\src\components\Icons.tsx:44 - BedBunkIcon
+\src\components\Icons.tsx:543 - SeatSelectorIcon
+\src\components\Icons.tsx:598 - Settings03Icon
+\src\components\Icons.tsx:621 - Backpack03Icon
+\src\components\Icons.tsx:673 - UserSharingIcon
+\src\components\Icons.tsx:704 - AlignBoxMiddleLeftIcon
+\src\components\Icons.tsx:733 - FavouriteIcon
+\src\components\Icons.tsx:752 - Idea01Icon
+\src\components\Icons.tsx:813 - Task01Icon
+\src\components\Icons.tsx:843 - HelpSquareIcon
+\src\components\Icons.tsx:874 - Logout03Icon
+\src\components\Icons.tsx:900 - Car01Icon
+\src\components\Icons.tsx:974 - RealEstate02Icon
+\src\components\Icons.tsx:1033 - House04Icon
+\src\components\Icons.tsx:1095 - Backpack01Icon
+\src\components\Icons.tsx:1310 - HotAirBalloonIcon
+\src\components\Icons.tsx:1339 - Setup02Icon
+\src\components\Icons.tsx:1366 - HumidityIcon
+\src\components\Icons.tsx:1391 - Airplane02Icon
+\src\components\Icons.tsx:1425 - AirplaneTakeOff01Icon
+\src\components\Icons.tsx:1450 - AirplaneLanding02Icon
+\src\components\LikeSaveBtns.tsx:13 - LikeButton (used in module)
+\src\components\LikeSaveBtns.tsx:22 - ShareButton (used in module)
+\src\components\ListingFilterTabs.tsx:510 - default
+\src\components\PostCardMeta.tsx:44 - default
+\src\components\PostTypeFeaturedIcon.tsx:3 - PostTypeFeaturedIconProps (used in module)
+\src\components\PostTypeFeaturedIcon.tsx:120 - default
+\src\components\PropertyCard.tsx:86 - default
+\src\components\PropertyCardModern.tsx:185 - default
+\src\components\PropertyLabel.tsx:93 - PropertyLabelType
+\src\components\SaleOffBadge.tsx:3 - SaleOffBadgeProps (used in module)
+\src\components\SectionBecomeAnAuthor.tsx:39 - default
+\src\components\SectionCitiesSimple.tsx:50 - default
+\src\components\SectionGridAgents.tsx:163 - default
+\src\components\SectionGridCategoryBox.tsx:22 - default
+\src\components\SectionSliderNewCategories.tsx:68 - default
+\src\components\SectionVideos.tsx:159 - default
+\src\components\SubscriptionPaywall.tsx:104 - SubscriptionLimit
+\src\contains\contants.ts:30 - avatarColors (used in module)
+\src\contains\fakeData.ts:1 - avatarImgs (used in module)
+\src\contains\fakeData.ts:119 - _getImgRd (used in module)
+\src\contains\fakeData.ts:120 - _getTagNameRd (used in module)
+\src\contains\fakeData.ts:121 - _getAvatarRd (used in module)
+\src\contains\fakeData.ts:122 - _getImgHightQualityRd (used in module)
+\src\contains\fakeData.ts:123 - _getTitleRd (used in module)
+\src\contains\fakeData.ts:124 - _getPersonNameRd (used in module)
+\src\data\authors.ts:164 - getAuthorByHandle
+\src\data\categories.ts:5 - getStayCategories (used in module)
+\src\data\categories.ts:191 - getStayCategoryByHandle
+\src\data\categories.ts:220 - getExperienceCategories (used in module)
+\src\data\categories.ts:345 - getExperienceCategoryByHandle
+\src\data\categories.ts:373 - getRealEstateCategories (used in module)
+\src\data\categories.ts:495 - getCarCategories (used in module)
+\src\data\categories.ts:590 - getCarCategoryByHandle
+\src\data\categories.ts:618 - getFlightCategories (used in module)
+\src\data\categories.ts:653 - getFlightCategoryByHandle
+\src\data\categories.ts:681 - TStayCategory (used in module)
+\src\data\categories.ts:682 - TExperienceCategory (used in module)
+\src\data\categories.ts:683 - TCarCategory (used in module)
+\src\data\categories.ts:685 - TFlightCategory (used in module)
+\src\data\listings.ts:296 - getCarListings (used in module)
+\src\data\listings.ts:511 - getExperienceListings (used in module)
+\src\data\listings.ts:1103 - getFlightListings (used in module)
+\src\data\listings.ts:1224 - getStayListingFilterOptions
+\src\data\listings.ts:1417 - getExperienceListingFilterOptions
+\src\data\listings.ts:1775 - getCarListingFilterOptions
+\src\data\listings.ts:1891 - getFlightFilterOptions
+\src\data\listings.ts:248 - getStayListingByHandle
+\src\data\listings.ts:293 - TStayListing
+\src\data\listings.ts:460 - getCarListingByHandle
+\src\data\listings.ts:508 - TCarListing
+\src\data\listings.ts:778 - getExperienceListingByHandle
+\src\data\listings.ts:821 - TExperienceListing
+\src\data\listings.ts:1055 - getRealEstateListingByHandle
+\src\data\listings.ts:1221 - TFlightListing
+\src\data\navigation.ts:110 - getNavMegaMenu
+\src\data\navigation.ts:385 - getHeaderDropdownCategories
+\src\data\types.ts:1 - TwMainColor
+\src\hooks\use-carousel-arrow-buttons.ts:11 - useCarouselArrowButtons
+\src\hooks\useAIUsage.ts:5 - AIUsageData (used in module)
+\src\hooks\useAIUsage.ts:13 - AIUsageStats (used in module)
+\src\hooks\useAnalyticsSettings.ts:3 - AnalyticsSettings (used in module)
+\src\hooks\useLocalites.ts:6 - Localite (used in module)
+\src\hooks\usePrixRange.ts:6 - PrixRange (used in module)
+\src\hooks\useSettings.ts:46 - useSettings
+\src\hooks\useSettings.ts:3 - AppSettings (used in module)
+\src\hooks\useSubscription.ts:5 - SubscriptionFeatures (used in module)
+\src\hooks\useSubscription.ts:14 - SubscriptionData (used in module)
+\src\hooks\useTypesBiens.ts:6 - TypeBien (used in module)
+\src\lib\auth.ts:40 - isAdmin
+\src\routers\types.ts:5 - Route (used in module)
+\src\routers\types.ts:6 - PathName (used in module)
+\src\routers\types.ts:8 - Page
+\src\scripts\import-properties.ts:267 - importProperties (used in module)
+\src\shared\Avatar.tsx:53 - AvatarButton (used in module)
+\src\shared\Badge.tsx:52 - BadgeButton (used in module)
+\src\shared\combobox.tsx:7 - Combobox (used in module)
+\src\shared\combobox.tsx:124 - ComboboxOption (used in module)
+\src\shared\combobox.tsx:172 - ComboboxLabel
+\src\shared\combobox.tsx:176 - ComboboxDescription
+\src\shared\fieldset.tsx:17 - Legend (used in module)
+\src\shared\fieldset.tsx:30 - FieldGroup
+\src\shared\fieldset.tsx:77 - ErrorMessage
+\src\shared\Input.tsx:36 - Input (used in module)
+\src\shared\Label.tsx:7 - Label (used in module)
+\src\shared\Label.tsx:25 - default
+\src\shared\listbox.tsx:7 - Listbox (used in module)
+\src\shared\listbox.tsx:102 - ListboxOption (used in module)
+\src\shared\listbox.tsx:159 - ListboxLabel
+\src\shared\listbox.tsx:163 - ListboxDescription
+\src\shared\LogoSvg.tsx:24 - default
+\src\shared\LogoSvgLight.tsx:24 - default
+\src\shared\navbar.tsx:10 - Navbar
+\src\shared\navbar.tsx:14 - NavbarDivider
+\src\shared\navbar.tsx:20 - NavbarSection
+\src\shared\navbar.tsx:30 - NavbarSpacer
+\src\shared\navbar.tsx:96 - NavbarLabel
+\src\shared\navbar.tsx:34 - NavbarItem (used in module)
+\src\shared\NcModal.tsx:8 - NcModalProps (used in module)
+\src\shared\NcModal.tsx:107 - default
+\src\shared\NextPrev.tsx:8 - NextPrevProps (used in module)
+\src\shared\NextPrev.tsx:59 - default
+\src\shared\Pagination.tsx:7 - Pagination (used in module)
+\src\shared\Pagination.tsx:15 - PaginationPrevious (used in module)
+\src\shared\Pagination.tsx:36 - PaginationNext (used in module)
+\src\shared\Pagination.tsx:51 - PaginationList (used in module)
+\src\shared\Pagination.tsx:55 - PaginationPage (used in module)
+\src\shared\Pagination.tsx:78 - PaginationGap (used in module)
+\src\shared\radio.tsx:4 - RadioGroup (used in module)
+\src\shared\radio.tsx:23 - RadioField
+\src\shared\radio.tsx:120 - Radio (used in module)
+\src\shared\switch.tsx:5 - SwitchGroup
+\src\shared\switch.tsx:21 - SwitchField
+\src\shared\SwitchDarkMode.tsx:28 - default
+\src\shared\table.tsx:15 - Table
+\src\shared\table.tsx:37 - TableHead
+\src\shared\table.tsx:41 - TableBody
+\src\shared\table.tsx:51 - TableRow
+\src\shared\table.tsx:77 - TableHeader
+\src\shared\table.tsx:93 - TableCell
+\src\shared\Tag.tsx:21 - default
+\src\shared\Textarea.tsx:3 - TextareaProps (used in module)
+\src\types\property.ts:1 - Property
+\src\utils\isInViewport.ts:1 - default
+\src\utils\isInViewPortIntersectionObserver.ts:1 - InviewPortType (used in module)
+\src\utils\isInViewPortIntersectionObserver.ts:43 - default
+\.next\types\app\layout.ts:54 - PageProps
+\.next\types\app\layout.ts:58 - LayoutProps (used in module)
+\src\app\(account)\application-layout.tsx:38 - ApplicationLayout (used in module)
+\src\app\(account)\layout.tsx:22 - default
+\src\app\(auth)\layout.tsx:11 - default
+\src\app\robots.txt\route.ts:3 - GET
+\src\app\sitemap.xml\route.ts:4 - GET
+\src\components\admin\BackButton.tsx:14 - BackButton
+\src\components\admin\DashboardCard.tsx:56 - DashboardCard
+\src\components\admin\PropertyForm.tsx:29 - PropertyForm
+\src\components\aside\aside.tsx:102 - useDrawer
+\src\components\aside\index.tsx:10 - useAside (used in module)
+\src\components\aside\index.tsx:11 - default
+\src\components\formations\FormationCard.tsx:136 - default
+\src\components\formations\FormationSearchForm.tsx:108 - default
+\src\components\formations\ProgramEditor.tsx:9 - DayProgram (used in module)
+\src\components\formations\SessionForm.tsx:38 - SessionForm
+\src\components\forms\AuthRequiredModal.tsx:24 - AuthRequiredModal
+\src\components\Header\AuthButton.tsx:14 - default
+\src\components\Header\HamburgerBtnMenu.tsx:22 - default
+\src\components\Header\MegaMenuPopover.tsx:8 - default
+\src\components\Header\NotifyDropdown.tsx:236 - default
+\src\components\Header\SearchBtnPopover.tsx:75 - default
+\src\components\hero-sections\HeroSectionWithSearchForm1.tsx:43 - default
+\src\components\HeroSearchForm\HeroSearchForm.tsx:35 - default
+\src\components\HeroSearchForm\HeroSearchFormSmall.tsx:47 - default
+\src\components\HeroSearchFormMobile\DatesRangeInput.tsx:59 - default
+\src\components\MapboxMap\index.ts:1 - MapboxMap
+\src\components\MapboxMap\OrthodontistMap.tsx:14 - OrthodontistMapData (used in module)
+\src\components\MapboxMap\OrthodontistMap.tsx:39 - MapMethods (used in module)
+\src\components\MapboxMap\OrthodontistMap.tsx:295 - OrthodontistMap
+\src\lib\adapters\property-adapter.ts:7 - PropertyWithImagesAndAgent (used in module)
+\src\lib\email\referral-templates.ts:347 - initializeReferralTemplates
+\src\lib\email\referral-templates.ts:5 - REFERRAL_EMAIL_TEMPLATES (used in module)
+\src\lib\jobs\update-formation-statuses.ts:10 - updateFormationStatuses (used in module)
+\src\lib\stripe\config.ts:56 - getStripePublicKey
+\src\lib\stripe\config.ts:61 - STRIPE_URLS
+\src\lib\stripe\subscriptions.ts:111 - checkFeatureAccess
+\src\lib\stripe\subscriptions.ts:147 - cancelSubscription
+\src\lib\stripe\subscriptions.ts:4 - CreateCheckoutSessionParams (used in module)
+\src\lib\supabase\activity-logs.ts:502 - logUserActivity (used in module)
+\src\lib\supabase\activity-logs.ts:503 - getUserActivityHistory (used in module)
+\src\lib\supabase\activity-logs.ts:504 - getActivitySummary (used in module)
+\src\lib\supabase\activity-logs.ts:505 - logAdminActivity (used in module)
+\src\lib\supabase\activity-logs.ts:506 - getUserDocuments (used in module)
+\src\lib\supabase\admin-accounts.ts:34 - createAdminAccount
+\src\lib\supabase\admin-accounts.ts:64 - updateAdminAccount
+\src\lib\supabase\admin-accounts.ts:89 - deleteAdminAccount
+\src\lib\supabase\admin-accounts.ts:106 - updateLastLogin
+\src\lib\supabase\agents.ts:100 - getAgentStatistics
+\src\lib\supabase\agents.ts:129 - updateAgentPropertyCount
+\src\lib\supabase\analytics.ts:93 - getPropertyViewCount
+\src\lib\supabase\analytics.ts:162 - trackContactEvent
+\src\lib\supabase\articles.ts:547 - getArticles (used in module)
+\src\lib\supabase\articles.ts:548 - getArticleBySlug (used in module)
+\src\lib\supabase\articles.ts:549 - getFeaturedArticles (used in module)
+\src\lib\supabase\articles.ts:550 - getRelatedArticles (used in module)
+\src\lib\supabase\articles.ts:551 - getArticleCategories
+\src\lib\supabase\articles.ts:552 - toggleArticleLike
+\src\lib\supabase\auth-formations.ts:5 - AuthFormationsService
+\src\lib\supabase\badges.ts:601 - getBadgeTypes (used in module)
+\src\lib\supabase\badges.ts:602 - getUserBadges (used in module)
+\src\lib\supabase\badges.ts:603 - awardBadge (used in module)
+\src\lib\supabase\badges.ts:604 - checkAndAwardBadges (used in module)
+\src\lib\supabase\badges.ts:605 - getBadgeProgress (used in module)
+\src\lib\supabase\badges.ts:606 - getUserBadgeStats (used in module)
+\src\lib\supabase\ceprof-experts-temp.ts:6 - CEPROFExpert (used in module)
+\src\lib\supabase\ceprof-experts-temp.ts:28 - CEPROFExpertStats (used in module)
+\src\lib\supabase\ceprof-experts-temp.ts:37 - APIResponse (used in module)
+\src\lib\supabase\ceprof-experts-temp.ts:43 - PaginatedResponse (used in module)
+\src\lib\supabase\ceprof-experts-temp.ts:52 - ExpertSearchParams (used in module)
+\src\lib\supabase\ceprof-experts-temp.ts:64 - CEPROFExpertsService
+\src\lib\supabase\ceprof-experts.ts:35 - APIResponse (used in module)
+\src\lib\supabase\ceprof-experts.ts:41 - PaginatedResponse (used in module)
+\src\lib\supabase\client-formations.ts:117 - getClientsWithUpcomingFormations
+\src\lib\supabase\clients.ts:302 - getActiveClients
+\src\lib\supabase\clients.ts:334 - getClientByEmail
+\src\lib\supabase\clients.ts:407 - updateClientLastLogin
+\src\lib\supabase\clients.ts:23 - ClientInsert (used in module)
+\src\lib\supabase\clients.ts:38 - ClientUpdate (used in module)
+\src\lib\supabase\clients.ts:44 - ClientWishlist (used in module)
+\src\lib\supabase\clients.ts:52 - ClientWishlistInsert
+\src\lib\supabase\contacts.ts:91 - getContactById
+\src\lib\supabase\contacts.ts:107 - createContact
+\src\lib\supabase\contacts.ts:153 - deleteContact
+\src\lib\supabase\contacts.ts:254 - markContactsAsRead
+\src\lib\supabase\contacts.ts:271 - archiveContacts
+\src\lib\supabase\contacts.ts:284 - deleteContacts
+\src\lib\supabase\contacts.ts:24 - ContactInsert (used in module)
+\src\lib\supabase\dashboard-formations.ts:61 - MonthlyStats (used in module)
+\src\lib\supabase\email-templates-types.ts:67 - EmailCondition (used in module)
+\src\lib\supabase\estimations.ts:83 - getEstimationRequests (used in module)
+\src\lib\supabase\estimations.ts:133 - getEstimationRequestById
+\src\lib\supabase\estimations.ts:149 - createEstimationRequest
+\src\lib\supabase\estimations.ts:202 - updateEstimationRequest
+\src\lib\supabase\estimations.ts:219 - deleteEstimationRequest
+\src\lib\supabase\estimations.ts:342 - getDistinctCities
+\src\lib\supabase\estimations.ts:358 - assignAgentToEstimation
+\src\lib\supabase\estimations.ts:370 - scheduleVisit
+\src\lib\supabase\estimations.ts:382 - finalizeEstimation
+\src\lib\supabase\estimations.ts:394 - archiveEstimations
+\src\lib\supabase\estimations.ts:407 - deleteEstimations
+\src\lib\supabase\estimations.ts:4 - EstimationRequest (used in module)
+\src\lib\supabase\estimations.ts:44 - EstimationRequestInsert (used in module)
+\src\lib\supabase\formations-types.ts:3 - ExperienceLevel (used in module)
+\src\lib\supabase\formations-types.ts:4 - FormationStatus (used in module)
+\src\lib\supabase\formations-types.ts:8 - RegistrationStatus (used in module)
+\src\lib\supabase\formations-types.ts:9 - AttendanceStatus (used in module)
+\src\lib\supabase\formations-types.ts:10 - QuestionnaireType (used in module)
+\src\lib\supabase\formations-types.ts:11 - PaymentMethodStatus (used in module)
+\src\lib\supabase\formations-types.ts:12 - CouponType (used in module)
+\src\lib\supabase\formations-types.ts:53 - Instructor (used in module)
+\src\lib\supabase\formations-types.ts:76 - CEPROFMember (used in module)
+\src\lib\supabase\formations-types.ts:267 - QuestionnaireQuestion (used in module)
+\src\lib\supabase\formations-types.ts:276 - Questionnaire (used in module)
+\src\lib\supabase\formations-types.ts:289 - QuestionnaireResponse (used in module)
+\src\lib\supabase\formations-types.ts:331 - Review (used in module)
+\src\lib\supabase\formations-types.ts:358 - Coupon (used in module)
+\src\lib\supabase\formations-types.ts:380 - CouponUse (used in module)
+\src\lib\supabase\formations-types.ts:420 - AdminStats
+\src\lib\supabase\formations-types.ts:431 - SessionAnalytics
+\src\lib\supabase\formations-types.ts:519 - DatabaseTables (used in module)
+\src\lib\supabase\formations-types.ts:538 - TableName
+\src\lib\supabase\formations.ts:633 - getFormationById (used in module)
+\src\lib\supabase\formations.ts:634 - updateFormation (used in module)
+\src\lib\supabase\formations.ts:635 - createFormation (used in module)
+\src\lib\supabase\lexicon.ts:422 - getLexiconEntries
+\src\lib\supabase\lexicon.ts:423 - getLexiconEntryBySlug
+\src\lib\supabase\lexicon.ts:424 - getFeaturedLexiconEntries
+\src\lib\supabase\lexicon.ts:425 - getLexiconCategories
+\src\lib\supabase\lexicon.ts:426 - getLexiconAlphabet
+\src\lib\supabase\listings.ts:142 - getRealEstateListingFilterOptionsFromSupabase
+\src\lib\supabase\listings.ts:245 - adaptFilterOptionsForListingTabs
+\src\lib\supabase\listings.ts:304 - getRealEstateListingByHandle
+\src\lib\supabase\listings.ts:4 - ListingFilters (used in module)
+\src\lib\supabase\listings.ts:14 - FilterOptions (used in module)
+\src\lib\supabase\newsletter.ts:137 - checkEmailSubscription
+\src\lib\supabase\notifications.ts:123 - createNotification
+\src\lib\supabase\orders-admin.ts:14 - OrderSearchParams (used in module)
+\src\lib\supabase\orders-admin.ts:28 - OrderStats (used in module)
+\src\lib\supabase\orders-admin.ts:40 - OrdersAdminService
+\src\lib\supabase\orders.ts:13 - OrdersService
+\src\lib\supabase\personal-documents.ts:642 - getPersonalDocuments
+\src\lib\supabase\personal-documents.ts:643 - uploadDocument (used in module)
+\src\lib\supabase\personal-documents.ts:644 - deleteDocument (used in module)
+\src\lib\supabase\personal-documents.ts:645 - getDocumentFolders
+\src\lib\supabase\personal-documents.ts:646 - createDocumentFolder
+\src\lib\supabase\personal-documents.ts:647 - getStorageStats (used in module)
+\src\lib\supabase\podcasts.ts:586 - getPodcastEpisodes
+\src\lib\supabase\podcasts.ts:587 - getPodcastBySlug
+\src\lib\supabase\podcasts.ts:588 - createPodcastEpisode
+\src\lib\supabase\podcasts.ts:589 - updatePodcastEpisode
+\src\lib\supabase\podcasts.ts:590 - getFeaturedPodcasts
+\src\lib\supabase\podcasts.ts:591 - getLatestPodcasts
+\src\lib\supabase\profile-tags.ts:18 - UserProfileTag (used in module)
+\src\lib\supabase\profiles.ts:174 - deleteAvatar
+\src\lib\supabase\profiles.ts:16 - UserProfileUpdate (used in module)
+\src\lib\supabase\properties.ts:78 - getProperties
+\src\lib\supabase\properties.ts:147 - getPropertyById
+\src\lib\supabase\properties.ts:371 - getSimilarProperties
+\src\lib\supabase\properties.ts:393 - getPropertyStatistics
+\src\lib\supabase\properties.ts:423 - searchPropertiesInArea
+\src\lib\supabase\properties.ts:471 - checkUserPermissions
+\src\lib\supabase\properties.ts:620 - deleteProperty
+\src\lib\supabase\properties.ts:11 - PropertyWithImagesAndAgent (used in module)
+\src\lib\supabase\property-features.ts:77 - createMultipleHighlights
+\src\lib\supabase\property-features.ts:111 - createPropertyEquipment
+\src\lib\supabase\property-features.ts:127 - deletePropertyEquipment
+\src\lib\supabase\property-features.ts:142 - deleteAllPropertyEquipments (used in module)
+\src\lib\supabase\property-features.ts:157 - createMultipleEquipments (used in module)
+\src\lib\supabase\property-features.ts:174 - getEquipmentTypes (used in module)
+\src\lib\supabase\property-images.ts:44 - updateImageOrder (used in module)
+\src\lib\supabase\property-images.ts:116 - addMultiplePropertyImages
+\src\lib\supabase\propertyLabels.ts:59 - getAllUsedLabels
+\src\lib\supabase\propertyLabels.ts:76 - getPropertiesByLabel
+\src\lib\supabase\propertyLabels.ts:3 - PropertyLabel
+\src\lib\supabase\referrals.ts:615 - createReferral (used in module)
+\src\lib\supabase\referrals.ts:616 - getUserReferrals (used in module)
+\src\lib\supabase\referrals.ts:617 - getUserReferralStats (used in module)
+\src\lib\supabase\referrals.ts:618 - trackReferralClick (used in module)
+\src\lib\supabase\referrals.ts:619 - convertReferral (used in module)
+\src\lib\supabase\reminder-workflows.ts:18 - ReminderAction (used in module)
+\src\lib\supabase\reminder-workflows.ts:676 - initializeWorkflows (used in module)
+\src\lib\supabase\reminder-workflows.ts:677 - scheduleReminders (used in module)
+\src\lib\supabase\reminder-workflows.ts:678 - processReminders (used in module)
+\src\lib\supabase\reminder-workflows.ts:679 - cancelUserReminders (used in module)
+\src\lib\supabase\reminder-workflows.ts:680 - getUserReminders (used in module)
+\src\lib\supabase\resources.ts:517 - getResources (used in module)
+\src\lib\supabase\resources.ts:518 - getResourceById (used in module)
+\src\lib\supabase\resources.ts:519 - createResource (used in module)
+\src\lib\supabase\resources.ts:520 - updateResource (used in module)
+\src\lib\supabase\resources.ts:521 - deleteResource (used in module)
+\src\lib\supabase\resources.ts:522 - recordResourceDownload
+\src\lib\supabase\resources.ts:523 - getResourceCategories
+\src\lib\supabase\sessions.ts:11 - SessionsService
+\src\lib\supabase\storage.ts:3 - UploadResult (used in module)
+\src\lib\supabase\storage.ts:9 - StorageService (used in module)
+\src\lib\supabase\storage.ts:165 - uploadCertificate (used in module)
+\src\lib\supabase\timeline.ts:328 - getUserTimeline (used in module)
+\src\lib\supabase\timeline.ts:329 - getTimelineStats (used in module)
+\src\lib\supabase\timeline.ts:330 - getAvailableYears (used in module)
+\src\lib\supabase\timeline.ts:331 - getUpcomingMilestones (used in module)
+\src\lib\supabase\timeline.ts:332 - createCustomEvent (used in module)
+\src\lib\supabase\types.ts:3 - Database (used in module)
+\src\lib\supabase\types.ts:340 - PropertyImageUpdate
+\src\lib\supabase\types.ts:342 - PropertyAmenity
+\src\lib\supabase\types.ts:343 - PropertyAmenityInsert
+\src\lib\supabase\types.ts:344 - PropertyAmenityUpdate
+\src\lib\supabase\types.ts:346 - PropertyReview
+\src\lib\supabase\types.ts:347 - PropertyReviewInsert
+\src\lib\supabase\types.ts:348 - PropertyReviewUpdate
+\src\lib\supabase\types.ts:350 - PropertyFavorite
+\src\lib\supabase\types.ts:351 - PropertyFavoriteInsert
+\src\lib\supabase\types.ts:353 - ContactRequest
+\src\lib\supabase\types.ts:354 - ContactRequestInsert
+\src\lib\supabase\types.ts:356 - PropertyEstimation
+\src\lib\supabase\types.ts:362 - PointFortProprieteUpdate
+\src\lib\supabase\types.ts:366 - EquipementProprieteUpdate
+\src\lib\supabase\types.ts:368 - AvisPropriete
+\src\lib\supabase\types.ts:369 - AvisProprieteInsert
+\src\lib\supabase\types.ts:370 - AvisProprieteUpdate
+\src\lib\supabase\types.ts:372 - Agence
+\src\lib\supabase\types.ts:373 - AgenceInsert
+\src\lib\supabase\types.ts:374 - AgenceUpdate
+\src\lib\supabase\types.ts:381 - TypeEquipementInsert
+\src\lib\supabase\types.ts:382 - TypeEquipementUpdate
+\src\lib\supabase\types.ts:386 - NewsletterSubscriptionUpdate
+\src\lib\supabase\types.ts:388 - PropertyStatistics
+\src\lib\utils\formation-status.ts:105 - shouldHaveOrthodontistBadge
+\src\lib\utils\formation-status.ts:4 - FormationStatus (used in module)
+\src\lib\utils\seo.ts:8 - generatePropertySlug
+\src\lib\utils\seo.ts:50 - generateSEOTitle
+\src\lib\utils\seo.ts:80 - generateSEODescription
+\src\lib\utils\seo.ts:133 - generateSEOKeywords
+\src\lib\utils\seo.ts:171 - cleanSlug
+\src\lib\utils\slugify.ts:4 - slugify (used in module)
+\src\lib\utils\slugify.ts:32 - generateUniqueSlug
+\src\lib\workflows\reminder-workflows.ts:6 - ReminderWorkflow (used in module)
+\src\lib\workflows\reminder-workflows.ts:16 - ReminderWorkflowsService (used in module)
+\src\app\(account)\account\page.tsx:17 - default
+\src\app\(account)\account-billing\page.tsx:6 - metadata
+\src\app\(account)\account-billing\page.tsx:39 - default
+\src\app\(account)\account-password\page.tsx:9 - metadata
+\src\app\(account)\account-password\page.tsx:49 - default
+\src\app\(account)\account-savelists\page.tsx:8 - metadata
+\src\app\(account)\account-savelists\page.tsx:38 - default
+\src\app\(app)\(home-pages)\page.tsx:346 - default
+\src\app\(app)\(listings)\layout.tsx:20 - default
+\src\app\(app)\(other-pages)\layout.tsx:12 - default
+\src\app\(app)\(other-pages)\layout.tsx:5 - metadata
+\src\app\(app)\agents\page.tsx:16 - default
+\src\app\(app)\articles\page.tsx:12 - default
+\src\app\(app)\cas-cliniques\layout.tsx:4 - default
+\src\app\(app)\cas-cliniques\page.tsx:110 - default
+\src\app\(app)\ceprof\layout.tsx:4 - default
+\src\app\(app)\ceprof\page.tsx:319 - default
+\src\app\(app)\checkout-formations\page.tsx:340 - default
+\src\app\(app)\conditions-utilisation\page.tsx:8 - default
+\src\app\(app)\conditions-utilisation\page.tsx:3 - metadata
+\src\app\(app)\connexion\page.tsx:15 - default
+\src\app\(app)\contact\page.tsx:414 - default
+\src\app\(app)\evaluation-form\page.tsx:511 - default
+\src\app\(app)\home-2\layout.tsx:4 - default
+\src\app\(app)\innovation-onm\layout.tsx:4 - default
+\src\app\(app)\innovation-onm\page.tsx:85 - default
+\src\app\(app)\la-methode\layout.tsx:4 - default
+\src\app\(app)\la-methode\page.tsx:263 - default
+\src\app\(app)\lexique\page.tsx:12 - default
+\src\app\(app)\mentions-legales\page.tsx:8 - default
+\src\app\(app)\mentions-legales\page.tsx:3 - metadata
+\src\app\(app)\mes-badges\page.tsx:13 - default
+\src\app\(app)\mes-documents\page.tsx:11 - default
+\src\app\(app)\mon-activite\page.tsx:11 - default
+\src\app\(app)\mon-parcours\page.tsx:15 - default
+\src\app\(app)\mon-profil\page.tsx:13 - default
+\src\app\(app)\notifications\page.tsx:21 - default
+\src\app\(app)\onm\layout.tsx:4 - default
+\src\app\(app)\onm\page.tsx:6 - default
+\src\app\(app)\orthodontistes-formes\layout.tsx:4 - default
+\src\app\(app)\orthodontistes-formes\page.tsx:453 - default
+\src\app\(app)\orthodontistes-formes-onm\layout.tsx:4 - default
+\src\app\(app)\orthodontistes-formes-onm\page.tsx:103 - default
+\src\app\(app)\orthodontistes-formes-onm\page.tsx:7 - metadata
+\src\app\(app)\panier\page.tsx:10 - default
+\src\app\(app)\panier\page.tsx:5 - metadata
+\src\app\(app)\parrainage\page.tsx:10 - default
+\src\app\(app)\podcasts\page.tsx:12 - default
+\src\app\(app)\politique-confidentialite\page.tsx:8 - default
+\src\app\(app)\politique-confidentialite\page.tsx:3 - metadata
+\src\app\(app)\register\page.tsx:6 - default
+\src\app\(app)\ressources\page.tsx:12 - default
+\src\app\(app)\rgpd\page.tsx:8 - default
+\src\app\(app)\rgpd\page.tsx:3 - metadata
+\src\app\(app)\satisfaction-form\page.tsx:352 - default
+\src\app\(app)\science-recherche\layout.tsx:4 - default
+\src\app\(app)\science-recherche\page.tsx:9 - default
+\src\app\(app)\social-media\page.tsx:169 - default
+\src\app\(app)\test-formations\page.tsx:3 - default
+\src\app\(app)\timeline\page.tsx:11 - default
+\src\app\(app)\wishlist\page.tsx:278 - default
+\src\app\(auth)\forgot-password\page.tsx:9 - metadata
+\src\app\(auth)\forgot-password\page.tsx:48 - default
+\src\app\(auth)\login\page.tsx:52 - metadata
+\src\app\(auth)\login\page.tsx:114 - default
+\src\app\(auth)\signup\page.tsx:52 - metadata
+\src\app\(auth)\signup\page.tsx:112 - default
+\src\app\api\hello\route.ts:1 - GET
+\src\components\Header\Navigation\Navigation.tsx:127 - Props (used in module)
+\src\components\Header\Navigation\Navigation.tsx:152 - default
+\src\components\HeroSearchForm\ui\index.tsx:11 - ButtonSubmit (used in module)
+\src\components\HeroSearchForm\ui\index.tsx:12 - ClearDataButton (used in module)
+\src\components\HeroSearchForm\ui\index.tsx:13 - DateRangeField (used in module)
+\src\components\HeroSearchForm\ui\index.tsx:14 - GuestNumberField (used in module)
+\src\components\HeroSearchForm\ui\index.tsx:15 - LocationInputField (used in module)
+\src\components\HeroSearchForm\ui\index.tsx:16 - PriceRangeInputField (used in module)
+\src\components\HeroSearchForm\ui\index.tsx:17 - PropertyTypeSelectField (used in module)
+\src\components\HeroSearchForm\ui\index.tsx:18 - VerticalDividerLine (used in module)
+\src\lib\supabase\types\new-features-types.ts:13 - PaginatedResponse
+\src\lib\supabase\types\new-features-types.ts:25 - APIResponse
+\src\lib\supabase\types\new-features-types.ts:32 - BatchOperationResult
+\src\lib\supabase\types\new-features-types.ts:41 - ImportExportData
+\src\lib\supabase\types\new-features-types.ts:52 - DashboardStats
+\src\lib\supabase\types\new-features-types.ts:92 - AccessControl
+\src\lib\supabase\types\new-features-types.ts:119 - GlobalSearchResult (used in module)
+\src\lib\supabase\types\new-features-types.ts:133 - GlobalSearchParams
+\src\lib\supabase\types\new-features-types.ts:3 - ResourceCategory
+\src\lib\supabase\types\new-features-types.ts:14 - Resource
+\src\lib\supabase\types\new-features-types.ts:43 - ResourceDownload
+\src\lib\supabase\types\new-features-types.ts:53 - ResourceFilters
+\src\lib\supabase\types\new-features-types.ts:62 - ResourceSearchParams
+\src\lib\supabase\types\new-features-types.ts:71 - ResourceFormData
+\src\lib\supabase\types\new-features-types.ts:86 - ResourceStats
+\src\lib\supabase\types\new-features-types.ts:3 - Referral
+\src\lib\supabase\types\new-features-types.ts:31 - ReferralReward
+\src\lib\supabase\types\new-features-types.ts:53 - ReferralProgram
+\src\lib\supabase\types\new-features-types.ts:75 - ReferralStats
+\src\lib\supabase\types\new-features-types.ts:95 - CreateReferralData
+\src\lib\supabase\types\new-features-types.ts:102 - ReferralEmailData
+\src\lib\supabase\types\new-features-types.ts:3 - PodcastEpisode
+\src\lib\supabase\types\new-features-types.ts:41 - PodcastFilters
+\src\lib\supabase\types\new-features-types.ts:51 - PodcastSearchParams
+\src\lib\supabase\types\new-features-types.ts:60 - PodcastFormData
+\src\lib\supabase\types\new-features-types.ts:86 - PodcastEngagement
+\src\lib\supabase\types\new-features-types.ts:99 - PodcastStats
+\src\lib\supabase\types\new-features-types.ts:3 - UserActionType
+\src\lib\supabase\types\new-features-types.ts:18 - UserActivityLog
+\src\lib\supabase\types\new-features-types.ts:37 - AdminActivityLog
+\src\lib\supabase\types\new-features-types.ts:55 - ActivitySummary
+\src\lib\supabase\types\new-features-types.ts:73 - UserDocument
+\src\lib\supabase\types\new-features-types.ts:106 - UserDocumentFilters
+\src\lib\supabase\types\new-features-types.ts:115 - ActivityFilters
+\src\lib\supabase\types\new-features-types.ts:124 - ActivitySearchParams
+\src\lib\supabase\types\new-features-types.ts:3 - BadgeType
+\src\lib\supabase\types\new-features-types.ts:23 - UserBadge
+\src\lib\supabase\types\new-features-types.ts:40 - BadgeProgress
+\src\lib\supabase\types\new-features-types.ts:52 - BadgeStats
+\src\lib\supabase\types\new-features-types.ts:66 - BadgeShareData
+\src\lib\supabase\types\new-features-types.ts:78 - LexiconEntry
+\src\lib\supabase\types\new-features-types.ts:103 - LexiconFilters
+\src\lib\supabase\types\new-features-types.ts:110 - LexiconSearchParams
+\src\lib\supabase\types\new-features-types.ts:3 - Article
+\src\lib\supabase\types\new-features-types.ts:54 - ArticleFilters
+\src\lib\supabase\types\new-features-types.ts:66 - ArticleSearchParams
+\src\lib\supabase\types\new-features-types.ts:75 - ArticleFormData
+\src\lib\supabase\types\new-features-types.ts:100 - CaseStudyData
+\src\lib\supabase\types\new-features-types.ts:144 - ArticleEngagement
+\src\lib\supabase\types\new-features-types.ts:3 - JourneyStepType
+\src\lib\supabase\types\new-features-types.ts:12 - UserJourneyStep
+\src\lib\supabase\types\new-features-types.ts:38 - JourneyMilestone
+\src\lib\supabase\types\new-features-types.ts:61 - UserProgress
+\src\lib\supabase\types\new-features-types.ts:90 - TagType
+\src\lib\supabase\types\new-features-types.ts:99 - UserTag
+\src\lib\supabase\types\new-features-types.ts:111 - TagRule
+\src\lib\supabase\types\new-features-types.ts:129 - UserNotification
+\src\lib\supabase\types\new-features-types.ts:154 - NotificationTemplate
+\src\lib\supabase\types\new-features-types.ts:170 - NotificationPreferences
+\.next\types\app\(app)\(home-pages)\layout.ts:54 - PageProps
+\.next\types\app\(app)\(home-pages)\layout.ts:58 - LayoutProps (used in module)
+\src\app\(app)\(home-pages)\formations\page.tsx:15 - default
+\src\app\(app)\(home-pages)\formations\page.tsx:10 - metadata
+\src\app\(app)\(listings)\components\DatesRangeInputPopover.tsx:102 - default
+\src\app\(app)\(listings)\components\GuestsInputPopover.tsx:101 - default
+\src\app\(app)\(listings)\components\SectionDateRange.tsx:47 - default
+\src\app\(app)\(other-pages)\about\page.tsx:11 - metadata
+\src\app\(app)\(other-pages)\about\page.tsx:44 - default
+\src\app\(app)\(other-pages)\checkout\page.tsx:104 - default
+\src\app\(app)\(other-pages)\estimer-mon-bien\page.tsx:31 - default
+\src\app\(app)\(other-pages)\notre-agence\page.tsx:62 - default
+\src\app\(app)\(other-pages)\pay-done\page.tsx:102 - default
+\src\app\(app)\(other-pages)\subscription\page.tsx:34 - metadata
+\src\app\(app)\(other-pages)\subscription\page.tsx:104 - default
+\src\app\(app)\admin\accounts\page.tsx:246 - default
+\src\app\(app)\admin\agencies\page.tsx:204 - default
+\src\app\(app)\admin\agents\page.tsx:271 - default
+\src\app\(app)\admin\contacts\page.tsx:9 - default
+\src\app\(app)\admin\create-account\page.tsx:12 - default
+\src\app\(app)\admin\debug\page.tsx:119 - default
+\src\app\(app)\admin\debug-auth\page.tsx:159 - default
+\src\app\(app)\admin\debug-simple\page.tsx:138 - default
+\src\app\(app)\admin\email-logs\page.tsx:362 - default
+\src\app\(app)\admin\email-templates\page.tsx:349 - default
+\src\app\(app)\admin\estimations\page.tsx:9 - default
+\src\app\(app)\admin\evaluations\page.tsx:712 - default
+\src\app\(app)\admin\experts\page.tsx:527 - default
+\src\app\(app)\admin\formations\debug-log.tsx:8 - default
+\src\app\(app)\admin\formations\page.tsx:404 - default
+\src\app\(app)\admin\historique\page.tsx:10 - default
+\src\app\(app)\admin\login\page.tsx:17 - default
+\src\app\(app)\admin\newsletter\page.tsx:294 - default
+\src\app\(app)\admin\notifications\page.tsx:379 - default
+\src\app\(app)\admin\orders\page.tsx:669 - default
+\src\app\(app)\admin\podcasts\page.tsx:10 - default
+\src\app\(app)\admin\profile\page.tsx:332 - default
+\src\app\(app)\admin\promo-codes\page.tsx:459 - default
+\src\app\(app)\admin\properties\page.tsx:614 - default
+\src\app\(app)\admin\referrals\page.tsx:9 - default
+\src\app\(app)\admin\reset-admin\page.tsx:194 - default
+\src\app\(app)\admin\reset-password\page.tsx:241 - default
+\src\app\(app)\admin\resources\page.tsx:10 - default
+\src\app\(app)\admin\satisfaction\page.tsx:469 - default
+\src\app\(app)\admin\settings\page.tsx:935 - default
+\src\app\(app)\admin\setup\page.tsx:199 - default
+\src\app\(app)\admin\subscription\page.tsx:343 - default
+\src\app\(app)\admin\workflows\page.tsx:10 - default
+\src\app\(app)\agents\[id]\page.tsx:22 - default
+\src\app\(app)\articles\[slug]\page.tsx:12 - default
+\src\app\(app)\ceprof\cercle-excellence\page.tsx:50 - default
+\src\app\(app)\ceprof\communaute\page.tsx:25 - default
+\src\app\(app)\ceprof\devenir-membre\page.tsx:21 - default
+\src\app\(app)\lexique\[slug]\page.tsx:11 - default
+\src\app\(app)\onm\cas-cliniques\page.tsx:6 - default
+\src\app\(app)\onm\methode\page.tsx:6 - default
+\src\app\(app)\onm\science\page.tsx:6 - default
+\src\app\(app)\podcasts\[slug]\page.tsx:11 - default
+\src\app\api\admin\settings\route.ts:4 - GET
+\src\app\api\admin\settings\route.ts:55 - POST
+\src\app\api\ai\generate-highlights\route.ts:3 - POST
+\src\app\api\ai\usage\route.ts:5 - GET
+\src\app\api\ai\usage\route.ts:58 - POST
+\src\app\api\auth\me\route.ts:4 - GET
+\src\app\api\jobs\process-reminders\route.ts:8 - POST
+\src\app\api\jobs\process-reminders\route.ts:112 - GET
+\src\app\api\jobs\reminder-workflows\route.ts:9 - POST
+\src\app\api\jobs\reminder-workflows\route.ts:50 - GET
+\src\app\api\jobs\update-formations\route.ts:7 - POST
+\src\app\api\jobs\update-formations\route.ts:44 - GET
+\src\app\api\jobs\update-profile-tags\route.ts:9 - POST
+\src\app\api\jobs\update-profile-tags\route.ts:53 - GET
+\src\app\api\stripe\webhook\route.ts:11 - POST
+\src\app\api\stripe\webhook\route.ts:9 - runtime
+\src\app\api\subscription\billing-portal\route.ts:6 - POST
+\src\app\api\subscription\create-checkout\route.ts:6 - POST
+\src\app\api\subscription\current\route.ts:6 - GET
+\src\app\api\subscription\features\route.ts:5 - GET
+\.next\types\app\(app)\(home-pages)\real-estate\page.ts:54 - PageProps (used in module)
+\.next\types\app\(app)\(home-pages)\real-estate\page.ts:58 - LayoutProps
+\.next\types\app\(app)\admin\analytics\page.ts:54 - PageProps (used in module)
+\.next\types\app\(app)\admin\analytics\page.ts:58 - LayoutProps
+\.next\types\app\(app)\admin\clients\page.ts:54 - PageProps (used in module)
+\.next\types\app\(app)\admin\clients\page.ts:58 - LayoutProps
+\.next\types\app\(app)\admin\dashboard\page.ts:54 - PageProps (used in module)
+\.next\types\app\(app)\admin\dashboard\page.ts:58 - LayoutProps
+\.next\types\app\api\admin\check-role\route.ts:313 - PageProps
+\.next\types\app\api\admin\check-role\route.ts:317 - LayoutProps
+\src\app\(app)\(categories)\(real-estate)\real-estate-categories\layout.tsx:14 - default
+\src\app\(app)\(categories)\(real-estate)\real-estate-categories-map\layout.tsx:9 - default
+\src\app\(app)\(home-pages)\formations\[slug]\page.tsx:10 - generateMetadata
+\src\app\(app)\(home-pages)\formations\[slug]\page.tsx:37 - default
+\src\app\(app)\(listings)\real-estate-listings\[handle]\page.tsx:48 - generateMetadata
+\src\app\(app)\(listings)\real-estate-listings\[handle]\page.tsx:675 - default
+\src\app\(app)\admin\agents\new\page.tsx:16 - default
+\src\app\(app)\admin\clients\new\page.tsx:16 - default
+\src\app\(app)\admin\email-templates\initialize\page.tsx:8 - default
+\src\app\(app)\admin\experts\new\page.tsx:477 - default
+\src\app\(app)\admin\formations\debug-log\page.tsx:89 - default
+\src\app\(app)\admin\formations\new\page.tsx:6 - default
+\src\app\(app)\admin\orders\[id]\page.tsx:637 - default
+\src\app\(app)\admin\podcasts\new\page.tsx:7 - default
+\src\app\(app)\admin\properties\new\page.tsx:41 - default
+\src\app\(app)\admin\properties\trash\page.tsx:325 - default
+\.next\types\app\(app)\admin\resources\new\page.ts:54 - PageProps (used in module)
+\.next\types\app\(app)\admin\resources\new\page.ts:58 - LayoutProps
+\src\app\(app)\(categories)\(real-estate)\real-estate-categories\[[...handle]]\page.tsx:13 - generateMetadata
+\src\app\(app)\(categories)\(real-estate)\real-estate-categories\[[...handle]]\page.tsx:95 - default
+\src\app\(app)\(categories)\(real-estate)\real-estate-categories-map\[[...handle]]\page.tsx:8 - generateMetadata
+\src\app\(app)\(categories)\(real-estate)\real-estate-categories-map\[[...handle]]\page.tsx:64 - default
+\src\app\(app)\admin\agents\edit\[id]\page.tsx:69 - default
+\src\app\(app)\admin\clients\edit\[id]\page.tsx:69 - default
+\src\app\(app)\admin\email-templates\edit\[id]\page.tsx:446 - default
+\src\app\(app)\admin\experts\edit\[id]\page.tsx:539 - default
+\src\app\(app)\admin\formations\edit\[id]\page.tsx:146 - default
+\src\app\(app)\admin\podcasts\edit\[id]\page.tsx:10 - default
+\src\app\(app)\admin\promo-codes\edit\[id]\page.tsx:554 - default
+\src\app\(app)\admin\properties\edit\[id]\page.tsx:104 - default
+\src\app\(app)\admin\resources\edit\[id]\page.tsx:10 - default
