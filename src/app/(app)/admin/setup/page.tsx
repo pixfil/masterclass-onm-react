@@ -123,7 +123,7 @@ const AdminSetupPage = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               />
             </div>
 
@@ -137,7 +137,7 @@ const AdminSetupPage = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Minimum 6 caractères"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               />
             </div>
           </div>
@@ -146,7 +146,7 @@ const AdminSetupPage = () => {
             <Button
               onClick={handleCreateAdmin}
               loading={loading}
-              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white"
             >
               Créer compte admin
             </Button>
@@ -172,7 +172,7 @@ const AdminSetupPage = () => {
               ⚠️ Cette page doit être supprimée en production
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-400 text-center mt-2">
-              <a href="/admin/login" className="text-indigo-600 hover:text-indigo-500">
+              <a href="/admin/login" className="text-blue-600 hover:text-blue-500">
                 Retour à la connexion
               </a>
             </p>

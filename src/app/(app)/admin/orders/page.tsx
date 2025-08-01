@@ -155,7 +155,7 @@ const OrdersAdminPage = () => {
     const statusConfig = {
       pending: { color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400', label: 'En attente' },
       confirmed: { color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400', label: 'Confirmée' },
-      processing: { color: 'bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400', label: 'En cours' },
+      processing: { color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400', label: 'En cours' },
       completed: { color: 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400', label: 'Terminée' },
       cancelled: { color: 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400', label: 'Annulée' },
       refunded: { color: 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400', label: 'Remboursée' }
@@ -168,7 +168,7 @@ const OrdersAdminPage = () => {
         <span className={`w-2 h-2 rounded-full mr-2 ${
           status === 'completed' ? 'bg-green-500' :
           status === 'confirmed' ? 'bg-blue-500' :
-          status === 'processing' ? 'bg-purple-500' :
+          status === 'processing' ? 'bg-blue-500' :
           status === 'cancelled' ? 'bg-red-500' :
           status === 'refunded' ? 'bg-gray-500' :
           'bg-yellow-500'
@@ -208,9 +208,9 @@ const OrdersAdminPage = () => {
     const colors = [
       'bg-blue-500',
       'bg-green-500', 
-      'bg-purple-500',
+      'bg-blue-500',
       'bg-pink-500',
-      'bg-indigo-500',
+      'bg-blue-500',
       'bg-yellow-500',
       'bg-red-500',
       'bg-teal-500',
@@ -342,7 +342,7 @@ const OrdersAdminPage = () => {
                     <div className="p-5">
                       <div className="flex items-center">
                         <div className="flex-shrink-0">
-                          <div className="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center">
+                          <div className="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center">
                             <span className="text-white font-bold text-sm">{formatPrice(stats.average_order_value).replace('€', '').trim()}</span>
                           </div>
                         </div>

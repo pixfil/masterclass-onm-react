@@ -217,7 +217,7 @@ const EditPromoCodeContent = () => {
       <AdminLayout currentPage="promo-codes">
         <div className="flex justify-center items-center min-h-[400px]">
           <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-gradient-to-r from-indigo-600 to-cyan-600 transition ease-in-out duration-150">
+            <div className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-gradient-to-r from-blue-600 to-cyan-600 transition ease-in-out duration-150">
               <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -238,7 +238,7 @@ const EditPromoCodeContent = () => {
           <div className="flex items-center space-x-4">
             <Link
               href="/admin/promo-codes"
-              className="inline-flex items-center px-3 py-2 border border-neutral-300 shadow-sm text-sm leading-4 font-medium rounded-md text-neutral-700 bg-white hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:bg-neutral-800 dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-700"
+              className="inline-flex items-center px-3 py-2 border border-neutral-300 shadow-sm text-sm leading-4 font-medium rounded-md text-neutral-700 bg-white hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-600 dark:text-neutral-300 dark:hover:bg-neutral-700"
             >
               <ArrowLeftIcon className="w-4 h-4 mr-2" />
               Retour
@@ -340,7 +340,7 @@ const EditPromoCodeContent = () => {
                 <select
                   value={formData.discount_type}
                   onChange={(e) => handleInputChange('discount_type', e.target.value)}
-                  className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+                  className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                   required
                 >
                   <option value="percentage">Pourcentage</option>
@@ -479,7 +479,7 @@ const EditPromoCodeContent = () => {
                   type="checkbox"
                   checked={formData.auto_apply}
                   onChange={(e) => handleInputChange('auto_apply', e.target.checked)}
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-neutral-300 rounded"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
                 />
                 <label htmlFor="auto_apply" className="ml-2 block text-sm text-neutral-900 dark:text-white">
                   Application automatique
@@ -492,7 +492,7 @@ const EditPromoCodeContent = () => {
                   type="checkbox"
                   checked={formData.first_order_only}
                   onChange={(e) => handleInputChange('first_order_only', e.target.checked)}
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-neutral-300 rounded"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
                 />
                 <label htmlFor="first_order_only" className="ml-2 block text-sm text-neutral-900 dark:text-white">
                   Première commande uniquement
@@ -505,7 +505,7 @@ const EditPromoCodeContent = () => {
                   type="checkbox"
                   checked={formData.stackable}
                   onChange={(e) => handleInputChange('stackable', e.target.checked)}
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-neutral-300 rounded"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
                 />
                 <label htmlFor="stackable" className="ml-2 block text-sm text-neutral-900 dark:text-white">
                   Cumulable avec d'autres codes
@@ -520,7 +520,7 @@ const EditPromoCodeContent = () => {
               <select
                 value={formData.status}
                 onChange={(e) => handleInputChange('status', e.target.value)}
-                className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
               >
                 <option value="draft">Brouillon</option>
                 <option value="active">Actif</option>

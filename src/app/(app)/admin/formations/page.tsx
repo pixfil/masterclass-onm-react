@@ -103,7 +103,7 @@ const FormationsAdminPage = () => {
     const colors = {
       debutant: 'bg-green-100 text-green-800',
       intermediaire: 'bg-blue-100 text-blue-800',
-      avance: 'bg-purple-100 text-purple-800',
+      avance: 'bg-blue-100 text-blue-800',
       expert: 'bg-red-100 text-red-800'
     }
     
@@ -134,7 +134,7 @@ const FormationsAdminPage = () => {
           <div className="mt-4 sm:mt-0">
             <Link
               href="/admin/formations/new"
-              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               <PlusIcon className="-ml-1 mr-2 h-5 w-5" />
               Nouvelle formation
@@ -155,7 +155,7 @@ const FormationsAdminPage = () => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   placeholder="Titre de la formation..."
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 />
               </div>
               
@@ -166,7 +166,7 @@ const FormationsAdminPage = () => {
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 >
                   <option value="all">Tous les statuts</option>
                   <option value="active">Actif</option>
@@ -193,7 +193,7 @@ const FormationsAdminPage = () => {
           <div className="px-4 py-5 sm:p-6">
             {loading ? (
               <div className="text-center py-12">
-                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div>
+                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
                 <p className="mt-2 text-sm text-gray-500">Chargement...</p>
               </div>
             ) : filteredFormations.length === 0 ? (
@@ -287,14 +287,14 @@ const FormationsAdminPage = () => {
                           <div className="flex items-center space-x-2">
                             <Link
                               href={`/formations/${formation.slug}`}
-                              className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
+                              className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
                               target="_blank"
                             >
                               <EyeIcon className="h-5 w-5" />
                             </Link>
                             <Link
                               href={`/admin/formations/edit/${formation.id}`}
-                              className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400 dark:hover:text-indigo-300"
+                              className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
                             >
                               <PencilIcon className="h-5 w-5" />
                             </Link>
@@ -359,7 +359,7 @@ const FormationsAdminPage = () => {
             <div className="p-5">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center">
+                  <div className="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center">
                     <span className="text-white font-bold text-sm">{formations.reduce((sum, f) => sum + (f.total_registrations || 0), 0)}</span>
                   </div>
                 </div>

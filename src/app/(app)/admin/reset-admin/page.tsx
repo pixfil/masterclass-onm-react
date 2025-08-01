@@ -181,7 +181,7 @@ const ResetAdminPage = () => {
         <div className="text-center">
           <a
             href="/admin/login"
-            className="text-indigo-400 hover:text-indigo-300 text-sm"
+            className="text-blue-400 hover:text-blue-300 text-sm"
           >
             ← Retour à la page de connexion
           </a>

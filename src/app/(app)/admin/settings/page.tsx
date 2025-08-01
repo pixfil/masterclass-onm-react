@@ -131,6 +131,7 @@ const SettingsContent = () => {
     { id: 'email-logs', name: 'Logs Emails', icon: DocumentTextIcon },
     { id: 'email-templates', name: 'Modèles Emails', icon: DocumentTextIcon },
     { id: 'analytics', name: 'Analytics', icon: ChartBarIcon },
+    { id: 'payment', name: 'Paiement', icon: CreditCardIcon },
     ...(isSuperAdmin ? [{ id: 'stripe', name: 'Configuration Stripe', icon: CreditCardIcon }] : [])
   ]
 
@@ -717,6 +718,141 @@ const SettingsContent = () => {
                     onChange={(e) => handleInputChange('googleTagManagerId', e.target.value)}
                     placeholder="GTM-XXXXXXX"
                   />
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Payment Settings */}
+          {activeTab === 'payment' && (
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-medium mb-4">Configuration des Paiements</h3>
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-6">
+                  Gérez vos solutions de paiement et passerelles
+                </p>
+              </div>
+
+              <div className="grid gap-4">
+                {/* Carte Sherlock's */}
+                <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl">
+                        <CreditCardIcon className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                          Sherlock's LCL
+                        </h4>
+                        <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1 mb-3">
+                          Solution de paiement sécurisée par carte bancaire via LCL
+                        </p>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded dark:bg-green-900/20 dark:text-green-400">
+                            Cartes bancaires
+                          </span>
+                          <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded dark:bg-blue-900/20 dark:text-blue-400">
+                            3D Secure
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <Button
+                        href="/admin/sherlocks"
+                        size="sm"
+                        className="flex items-center gap-2"
+                      >
+                        <CogIcon className="w-4 h-4" />
+                        Configurer
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Carte Stripe */}
+                <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:shadow-lg transition-shadow opacity-50">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl">
+                        <CreditCardIcon className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                          Stripe
+                        </h4>
+                        <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1 mb-3">
+                          Plateforme de paiement moderne avec support abonnements
+                        </p>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded dark:bg-gray-800 dark:text-gray-400">
+                            Bientôt disponible
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <Button
+                        disabled
+                        size="sm"
+                        className="flex items-center gap-2"
+                      >
+                        <CogIcon className="w-4 h-4" />
+                        Configurer
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Carte PayPal */}
+                <div className="border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 hover:shadow-lg transition-shadow opacity-50">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl">
+                        <CreditCardIcon className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-neutral-900 dark:text-white">
+                          PayPal
+                        </h4>
+                        <p className="text-sm text-neutral-600 dark:text-neutral-400 mt-1 mb-3">
+                          Solution de paiement en ligne populaire et sécurisée
+                        </p>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded dark:bg-gray-800 dark:text-gray-400">
+                            Bientôt disponible
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <Button
+                        disabled
+                        size="sm"
+                        className="flex items-center gap-2"
+                      >
+                        <CogIcon className="w-4 h-4" />
+                        Configurer
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Information */}
+              <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-4 mt-6">
+                <div className="flex items-start gap-3">
+                  <ShieldCheckIcon className="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="text-sm font-medium text-blue-800 dark:text-blue-300 mb-1">
+                      Sécurité des paiements
+                    </h4>
+                    <p className="text-sm text-blue-700 dark:text-blue-400">
+                      Toutes les transactions sont sécurisées et conformes aux normes PCI-DSS.
+                      Les informations bancaires ne sont jamais stockées sur nos serveurs.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

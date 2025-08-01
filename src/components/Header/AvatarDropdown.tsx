@@ -39,8 +39,8 @@ export default function AvatarDropdown({ className, user }: Props) {
     window.location.href = '/'
   }
 
-  // Déterminer si l'utilisateur est admin
-  const isAdmin = user?.email === 'philippe@gclicke.com'
+  // Déterminer si l'utilisateur est admin en vérifiant le rôle
+  const isAdmin = profile?.role === 'admin' || user?.email === 'philippe@gclicke.com'
   
   // Informations utilisateur basées sur le profil réel
   const displayName = profile?.first_name && profile?.last_name
@@ -88,16 +88,26 @@ export default function AvatarDropdown({ className, user }: Props) {
               <p className="ms-4 text-sm font-medium">Mon compte</p>
             </Link>
 
-            {/* Mes annonces (admin seulement) */}
-            {isAdmin && (
+            {/* Administration (admin) ou Mes formations (client) */}
+            {isAdmin ? (
               <Link
-                href={'/admin/properties'}
+                href={'/admin/dashboard'}
                 className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-orange-500/50 dark:hover:bg-neutral-700"
               >
                 <div className="flex shrink-0 items-center justify-center text-neutral-500 dark:text-neutral-300">
                   <HugeiconsIcon icon={Task01Icon} size={24} strokeWidth={1.5} />
                 </div>
                 <p className="ms-4 text-sm font-medium">Administration</p>
+              </Link>
+            ) : (
+              <Link
+                href={'/account/mes-formations'}
+                className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-hidden focus-visible:ring-3 focus-visible:ring-orange-500/50 dark:hover:bg-neutral-700"
+              >
+                <div className="flex shrink-0 items-center justify-center text-neutral-500 dark:text-neutral-300">
+                  <HugeiconsIcon icon={Task01Icon} size={24} strokeWidth={1.5} />
+                </div>
+                <p className="ms-4 text-sm font-medium">Mes formations</p>
               </Link>
             )}
 

@@ -1,12 +1,12 @@
 import BackgroundSection from '@/components/BackgroundSection'
 import BgGlassmorphism from '@/components/BgGlassmorphism'
-import SectionClientSay from '@/components/SectionClientSay'
-import SectionSubscribe2 from '@/components/SectionSubscribe2'
+// import SectionClientSay from '@/components/SectionClientSay' // Component not found - commented out to fix build
+// import SectionSubscribe2 from '@/components/SectionSubscribe2' // Component not found - commented out to fix build
 import rightImg from '@/images/about-hero-right.png'
 import { Metadata } from 'next'
 import SectionFounder from './SectionFounder'
-import SectionHero from './SectionHero'
-import SectionStatistic from './SectionStatistic'
+// import SectionHero from './SectionHero' // Component not found - commented out to fix build
+// import SectionStatistic from './SectionStatistic' // Component not found - commented out to fix build
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -21,21 +21,21 @@ const PageAbout = () => {
       <BgGlassmorphism />
 
       <div className="container flex flex-col gap-y-16 py-16 lg:gap-y-28 lg:py-28">
-        <SectionHero
+        {/* <SectionHero
           rightImg={rightImg}
           heading="👋 About Us."
           subHeading="We're impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
-        />
+        /> */}
 
         <SectionFounder />
         <div className="relative py-20">
           <BackgroundSection />
-          <SectionClientSay />
+          {/* <SectionClientSay /> */}
         </div>
 
-        <SectionStatistic />
+        {/* <SectionStatistic /> */}
 
-        <SectionSubscribe2 />
+        {/* <SectionSubscribe2 /> */}
       </div>
     </div>
   )

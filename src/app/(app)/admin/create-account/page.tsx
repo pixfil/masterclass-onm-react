@@ -108,11 +108,11 @@ export default function CreateAdminAccountPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-cyan-900 flex items-center justify-center py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900 flex items-center justify-center py-12 px-4">
       <div className="max-w-md w-full relative z-10">
         <div className="text-center mb-8">
-          <div className="p-3 bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 rounded-2xl border border-indigo-500/30 backdrop-blur-sm inline-block mb-4">
-            <UserPlusIcon className="w-8 h-8 text-indigo-300" />
+          <div className="p-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl border border-blue-500/30 backdrop-blur-sm inline-block mb-4">
+            <UserPlusIcon className="w-8 h-8 text-blue-300" />
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">
             Créer Compte Admin
@@ -146,7 +146,7 @@ export default function CreateAdminAccountPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-neutral-700 dark:text-white"
+                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-neutral-700 dark:text-white"
               />
             </div>
 
@@ -159,7 +159,7 @@ export default function CreateAdminAccountPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-neutral-700 dark:text-white"
+                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-neutral-700 dark:text-white"
               />
             </div>
 
@@ -172,7 +172,7 @@ export default function CreateAdminAccountPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-neutral-700 dark:text-white"
+                className="w-full px-4 py-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-neutral-700 dark:text-white"
               />
             </div>
 
@@ -189,7 +189,7 @@ export default function CreateAdminAccountPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-indigo-600 to-cyan-600 hover:from-indigo-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-all disabled:opacity-50"
               >
                 {loading ? 'Création...' : '2. Créer nouveau compte'}
               </button>
@@ -213,7 +213,7 @@ export default function CreateAdminAccountPage() {
         <div className="text-center mt-6">
           <Link 
             href="/admin/login" 
-            className="text-sm text-indigo-300 hover:text-indigo-200 transition-colors"
+            className="text-sm text-blue-300 hover:text-blue-200 transition-colors"
           >
             ← Retour à la connexion
           </Link>

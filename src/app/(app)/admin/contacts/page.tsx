@@ -105,7 +105,7 @@ export default function ContactsPage() {
               <div className="text-sm text-gray-600 dark:text-gray-400">Aujourd'hui</div>
             </div>
             <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border">
-              <div className="text-2xl font-bold text-purple-600">{stats.this_week}</div>
+              <div className="text-2xl font-bold text-blue-600">{stats.this_week}</div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Cette semaine</div>
             </div>
           </div>

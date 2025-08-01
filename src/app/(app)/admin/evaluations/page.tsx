@@ -428,8 +428,8 @@ const EvaluationsContent = () => {
 
           <div className="bg-white rounded-xl shadow-sm p-6 dark:bg-neutral-800">
             <div className="flex items-center">
-              <div className="p-3 rounded-xl bg-purple-100 dark:bg-purple-900/20">
-                <UserIcon className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+              <div className="p-3 rounded-xl bg-blue-100 dark:bg-blue-900/20">
+                <UserIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">

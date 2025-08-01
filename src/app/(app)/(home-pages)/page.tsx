@@ -320,7 +320,7 @@ function HomePage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <ButtonPrimary 
                 href="/formations" 
-                className="bg-white text-blue-600 hover:bg-cyan-50">
+                className="bg-white text-blue-600 hover:bg-cyan-50"
                 sizeClass="px-8 py-4 text-lg"
               >
                 <span className="flex items-center gap-2">

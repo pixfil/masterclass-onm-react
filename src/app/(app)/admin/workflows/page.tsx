@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Bell, Clock, Mail, ToggleLeft, ToggleRight, Zap, Calendar, RefreshCw, Play, Pause } from 'lucide-react'
-import AdminLayout from '@/components/admin/AdminLayout'
+import { AdminLayout } from '@/components/admin/AdminLayout'
 import { ReminderWorkflowsService } from '@/lib/supabase/reminder-workflows'
 import type { ReminderWorkflow, ScheduledReminder } from '@/lib/supabase/reminder-workflows'
 import { supabase } from '@/lib/supabaseClient'
@@ -253,7 +253,7 @@ export default function AdminWorkflowsPage() {
                 <p className="text-sm font-medium text-gray-600">Workflows actifs</p>
                 <p className="text-2xl font-bold text-gray-900">{stats.active_workflows}</p>
               </div>
-              <Zap className="w-8 h-8 text-purple-600" />
+              <Zap className="w-8 h-8 text-blue-600" />
             </div>
           </div>
         </div>
@@ -357,7 +357,7 @@ export default function AdminWorkflowsPage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
+                <tbody className="bg-white dark:bg-neutral-900 divide-y divide-neutral-200 dark:divide-neutral-700">
                   {pendingReminders.map((reminder) => (
                     <tr key={reminder.id}>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">

@@ -42,7 +42,7 @@ export default function AdminReferralsPage() {
   const statusConfig = {
     pending: { label: 'En attente', color: 'text-gray-600 bg-gray-100', icon: Clock },
     clicked: { label: 'Cliqué', color: 'text-blue-600 bg-blue-100', icon: Mail },
-    registered: { label: 'Inscrit', color: 'text-purple-600 bg-purple-100', icon: UserPlus },
+    registered: { label: 'Inscrit', color: 'text-blue-600 bg-blue-100', icon: UserPlus },
     converted: { label: 'Converti', color: 'text-green-600 bg-green-100', icon: CheckCircle },
     expired: { label: 'Expiré', color: 'text-red-600 bg-red-100', icon: XCircle }
   }
@@ -88,7 +88,7 @@ export default function AdminReferralsPage() {
                       : '0%'}
                   </p>
                 </div>
-                <Mail className="w-12 h-12 text-purple-500 opacity-20" />
+                <Mail className="w-12 h-12 text-blue-500 opacity-20" />
               </div>
             </div>
 

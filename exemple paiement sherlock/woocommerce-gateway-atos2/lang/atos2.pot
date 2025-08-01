@@ -1,0 +1,894 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Gateway Woldline Sips 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-09 23:15+0200\n"
+"PO-Revision-Date: 2014-02-11 15:18+0100\n"
+"Last-Translator: ABSOLUTE Web <woocommerce@absoluteweb.net>\n"
+"Language-Team: ABSOLUTE Web <nicolas@absoluteweb.net>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../woocommerce-gateway-atos2.php:48
+#, php-format
+msgid ""
+"Désolé ! Pour utiliser l'extension de passerelle WooCommerce %s, vous devez "
+"installer et activer l'extension WooCommerce."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:49
+msgid "Extension Passerelle de Paiement Wordline Sips 2.0"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:68
+msgid "Payer par Carte Bancaire"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:70
+msgid ""
+"Accepter les paiements par carte bancaire pour les commerçants qui disposent "
+"d'un contrat Worldline Sips 2.0 (Mercanet 2.0 de BNP Paribas, Sogenactif 2.0 "
+"de la Société Générale, Scellius Net 2.0 de la Banque Postale, Sherlock's "
+"2.0 du LCL, Wordline en contrat direct)"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:108
+msgid "Activer/Désactiver"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:110
+msgid "Activer le paiement Wordlline Sips 2.0"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:114
+msgid "Titre"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:116
+msgid "Correspond au titre que le client verra pendant la commande."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:117
+msgid "Carte Bancaire"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:121
+msgid "Message au client"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:123
+msgid "Informez le client du mode de paiement par carte bancaire."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:124
+msgid ""
+"En choisissant ce mode de paiement vous pourrez effectuer votre règlement "
+"sur le serveur sécurisé de notre banque."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:131
+msgid "Votre établissement bancaire"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:133
+msgid "Veuillez sélectionner votre contrat bancaire"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:134 ../woocommerce-gateway-atos2.php:150
+msgid "LCL - Sherlock's"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:135 ../woocommerce-gateway-atos2.php:151
+msgid "BNP Paribas - Merc@net"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:136 ../woocommerce-gateway-atos2.php:152
+msgid "Société Générale - Sogenactif"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:137 ../woocommerce-gateway-atos2.php:153
+msgid "La Banque Postale - Scellius Net"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:138
+msgid "Wordline Sips (contrat en direct)"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:146
+msgid "Icône de paiement"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:148
+msgid "image affichée lors du choix du moyen de paiement."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:154
+msgid "CB - VISA - MASTERCARD"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:155
+msgid "Indiquez l'URL de votre icône"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:161
+msgid "Icône personnalisée"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:163
+msgid "Url de l'image affichée lors du choix du moyen de paiement."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:168
+msgid "Migration simplifiée ?"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:170
+msgid "Cochez pour utiliser votre contrat version 1.0 sur cette passerelle."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:172
+msgid ""
+"Pour bénéficier de la migration simplifiée, votre solution bancaire doit "
+"vous permettre de générer une clé secrète qui remplace votre ancien "
+"certificat commerçant (fichier certif.fr.xxxx.php)."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:176
+msgid "Référence transaction ?"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:178
+msgid ""
+"La boutique NE doit PAS transmettre la référence de transaction (A cocher "
+"par défaut pour Sogenactif 2.0 de Société Générale et Sherlock's 2.0 de LCL)."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:180
+msgid ""
+"Doit obligatoirement correspondre à l'option choisie sur votre contrat "
+"bancaire. Si vous ne faites pas le même choix, vous obtiendrez une erreur "
+"lors de la connexion au serveur de la banque."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:184
+msgid "Mode d'utilisation de la solution bancaire"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:186
+msgid "Cartes de simulation :"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:186
+msgid "Date future"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:186
+msgid "Cryptogramme 600"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:188
+msgid "SIMULATION"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:190
+msgid "PRODUCTION"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:199
+msgid "Identifiant commerçant de production fourni par votre banque."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:207
+msgid ""
+"Version de la clé secrète de production récupérée sur le site de votre "
+"banque."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:215
+msgid "Clé secrète de production récupérée sur le site de votre banque."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:223
+msgid ""
+"Souhait du commerçant pour l'authentification du client. Consultez la "
+"documentation Worldline pour le transfert des responsabilités"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:225
+msgid "Authentification demandée"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:226
+msgid "Authentification règlementaire demandée"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:227
+msgid "Pas d'authentification demandée"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:228
+msgid "Pas d'authentification demandée jusqu'à 100 €"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:229
+msgid "Aucune préférence d'authentification"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:244
+msgid "Devise utilisée sur la boutique."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:253
+msgid "Langue utilisée sur la boutique."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:262
+msgid ""
+"Mode d'envoi en banque. AUTHOR_CAPTURE (encaissement automatique après x "
+"jours) ou VALIDATION (encaissement manuel, annulation après x jours si non "
+"encaissé). Voir la documentation de votre banque."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:275
+msgid ""
+"Délai en jours avant l'envoi en banque (AUTHOR_CAPTURE) ou l'expiration "
+"(VALIDATION). Voir la documentation de votre banque. La valeur peut être "
+"plafonnée par votre banque."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:283
+msgid ""
+"Ce champ peut être utilisé pour retrouver le contexte de la commande d’un "
+"acheteur. Voir la documentation de votre banque."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:285
+msgid "Aucun contexte"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:286
+msgid "Prénom Nom"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:287
+msgid "Email"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:295
+msgid ""
+"Ce champ liste les moyens de paiement autorisés. Laisser vide pour proposer "
+"tous les moyens de paiement compatibles avec votre contrat."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:306
+msgid ""
+"Activer le paiement avec <a href=\"http://e-solutions.franfinance.com/"
+"produit/3xweb-solution-paiement-3-fois/\" target=\"_blank\">3x Web "
+"FRANFINANCE</a>.<p id=\"woocommerce_atos2_3xweb_msg\">Ce moyen de paiement "
+"nécessite un contrat spécifique avec la Société Générale. Vérifiez que "
+"<strong>FRANFINANCE_3X</strong> est bien présent dans le champ "
+"paymentMeanBrandList ci-dessus.</p>"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:307 ../woocommerce-gateway-atos2.php:331
+msgid "Nécessite un contrat spécifique Société Générale."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:312
+msgid "Chaîne d’authentification cryptée 3x Web"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:314 ../woocommerce-gateway-atos2.php:338
+msgid ""
+"Permet l’authentification du partenaire (chaîne fournie par FRANFINANCE). "
+"Type : a=X&b=X&c=X&d=X."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:320 ../woocommerce-gateway-atos2.php:344
+msgid "Code de personnalisation"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:322 ../woocommerce-gateway-atos2.php:346
+msgid ""
+"Permet la personnalisation des écrans aux couleurs du partenaire, (code "
+"fourni par FRANFINANCE)."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:330
+msgid ""
+"Activer le paiement avec <a href=\"http://e-solutions.franfinance.com/nos-"
+"solutions/\" target=\"_blank\">4x Web FRANFINANCE</a>.<p id="
+"\"woocommerce_atos2_4xweb_msg\">Ce moyen de paiement nécessite un contrat "
+"spécifique avec la Société Générale. Vérifiez que <strong>FRANFINANCE_4X</"
+"strong> est bien présent dans le champ paymentMeanBrandList ci-dessus.</p>"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:336
+msgid "Chaîne d’authentification cryptée 4x Web"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:352
+msgid "Seuil 3D Secure V1"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:354
+msgid ""
+"Montant maximum pour lequel la procédure 3D Secure sera contournée. "
+"Exemple : 4.99. Votre contrat doit être compatible avec cette option."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:362
+msgid ""
+"Nom du modèle de styles intégré sur le serveur de la banque pour "
+"personnaliser l’apparence de la page de paiement (sans .css)."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:368
+msgid "Retour automatique"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:370
+msgid ""
+"Forcer le retour du client sur la boutique après paiement (désactive la page "
+"de confirmation de la banque)."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:374
+msgid "Paiements en plusieurs fois"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:376
+msgid ""
+"Ce champ liste les fractionnements disponibles pour le paiement en plusieurs "
+"fois. Une fois les réglages enregistrés, vous trouverez les méthodes de "
+"paiement correspondantes dans l'onglet Paiements de WooCommerce."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:387
+msgid ""
+"Laisser vide pour ne pas enregister de log. Le dossier de destination doit "
+"être accessible en écriture. Si le fichier n'existe pas il sera créé."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:393
+msgid "Debug"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:395
+msgid "Afficher les informations de débogage."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:396
+msgid "Ne pas activer en production."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:406
+msgid "Paiement Wordline Sips 2.0"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:406
+msgid "Retour aux paiements"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:407
+msgid ""
+"Autorise les paiements par carte bancaire avec la solution <a href=\"https://"
+"sips.worldline.com/fr/home.html\" target=\"_blank\">Wordline Sips 2.0</a>. "
+"Cela nécessite la signature d'un contrat de vente à distance auprès d'une "
+"banque compatible. Vous disposerez alors des informations nécessaires au "
+"paramétrage de cette passerelle de paiement."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:408
+#, php-format
+msgid ""
+"Consultez nos %sinstructions%s avec attention pour paramétrer votre solution "
+"de paiement Wordline Sips 2.0."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:526
+msgid "Informations sur votre installation :"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:527
+msgid "Racine Wordpress"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:528
+msgid "Racine de l'hébergement"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:540
+msgid "3x Web"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:543
+msgid "4x Web"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:831
+msgid "Accéder au serveur de la banque"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:838
+msgid "Débug mode"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:856
+msgid "Veuillez préciser le moyen de paiement"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:865
+msgid ""
+"Vous allez être redirigé vers le serveur sécurisé de notre banque pour "
+"effectuer le paiement. Si ce n'est pas le cas, veuillez cliquer sur le "
+"bouton ci-dessous."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:951
+#, php-format
+msgid "%s le %s"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:953
+#, php-format
+msgid "Paiement CB en %s fois confirmé.<blockquote>%s</blockquote>"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:958 ../woocommerce-gateway-atos2.php:1068
+msgid "Paiement CB confirmé."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:968
+msgid ""
+"Demande d’autorisation par téléphone à la banque à cause d’un dépassement du "
+"plafond d’autorisation sur la carte, si vous êtes autorisé à forcer les "
+"transactions."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:969
+msgid "Contrat commerçant invalide"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:970
+msgid "Autorisation refusée"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:971
+msgid "Utilisé dans le cas d'un contrôle différé. Le PAN est en opposition"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:972
+msgid ""
+"Transaction invalide, vérifier les paramètres transférés dans la requête"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:973
+msgid ""
+"Coordonnées du moyen de paiement invalides (ex: n° de carte ou cryptogramme "
+"visuel de la carte)"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:974 ../woocommerce-gateway-atos2.php:1054
+msgid "Annulation de l’internaute"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:975
+msgid ""
+"Opération impossible. L’opération que vous souhaitez réaliser n’est pas "
+"compatible avec l’état de la transaction."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:976
+msgid "Transaction non trouvée dans la base de données Sips"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:977
+msgid "Erreur de format"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:978
+msgid "Suspicion de fraude"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:979
+msgid ""
+"Fonction non supportée : l’opération que vous souhaitez réaliser ne fait pas "
+"partie de la liste des opérations auxquelles vous êtes autorisés"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:980
+msgid "Montant trop élevé"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:981
+msgid "Date de validité du moyen de paiement est dépassée"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:982
+msgid "Transaction en attente"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:983
+msgid "Règles de sécurité non respectées, transaction arrêtée"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:984 ../woocommerce-gateway-atos2.php:1037
+msgid ""
+"Nombre de tentatives de saisie des coordonnées du moyen de paiement dépassé"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:985
+msgid "Service temporairement indisponible"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:986
+msgid ""
+"Transaction dupliquée : le transactionReference de la transaction a déjà été "
+"utilisé"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:987
+msgid "Délais expiré, transation refusée"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:988
+msgid "Problème temporaire au niveau du serveur Sips"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:989
+msgid "Erreur inconnue."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:992
+msgid ""
+"Le commerçant et le porteur de la carte sont inscrits au programme "
+"d’authentification mais l’acheteur n’a pas réussi à s’authentifier (mauvais "
+"mot de passe)."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:993
+msgid ""
+"Le commerçant participe au programme d’authentification mais le serveur a "
+"rencontré un problème technique durant le processus d’authentification (lors "
+"de la vérification de l’inscription de la carte au programme 3-D Secure ou "
+"de l’authentification du porteur)."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:994
+msgid ""
+"Le commerçant participe au programme d'authentification mais la carte du "
+"porteur n’est pas enrôlée."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:997
+msgid "Code réponse du serveur d'autorisation bancaire :"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:999
+msgid ""
+"Transaction refusée pour cause d'absence des données d'authentification 3-D "
+"Secure"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1000
+msgid ""
+"Transaction refusée pour cause de mauvaise utilisation de l'exemption "
+"d'authentification 3-D Secure"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1001
+msgid ""
+"Le porteur (ou sa banque) a révoqué les paiements récurrents effectués chez "
+"un commerçant"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1002
+msgid "Le porteur (ou sa banque) a révoqué tous les paiements récurrents"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1003
+msgid "Contacter l'émetteur de carte."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1004
+msgid "Accepteur invalide."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1005
+msgid "Conserver la carte."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1006
+msgid "Ne pas honorer."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1007
+msgid "Conserver la carte, conditions spéciales."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1008
+msgid "Approuver après identification."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1009
+msgid "Transaction invalide."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1010
+msgid "Montant invalide."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1011
+msgid "Numéro de porteur invalide."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1012
+msgid "Emetteur de carte inconnu."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1013
+msgid "Paiement interrompu par l'acheteur"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1014
+msgid "Réponse erronée (erreur dans le domaine serveur)"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1015
+msgid "Opération impossible"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1016
+msgid "Transaction inconnue"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1017
+msgid "Erreur de format."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1018
+msgid "Identifiant de l'organisme acquéreur inconnu."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1019 ../woocommerce-gateway-atos2.php:1025
+msgid "Date de validité de la carte dépassée."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1020 ../woocommerce-gateway-atos2.php:1030
+msgid "Suspicion de fraude."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1021
+msgid "Fonction non supportée"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1022
+msgid "Carte perdue."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1023
+msgid "Carte volée."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1024
+msgid "Provision insuffisante ou crédit dépassé."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1026
+msgid "PIN invalide"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1027
+msgid "Carte absente du fichier."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1028
+msgid "Transaction non permise à ce porteur."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1029
+msgid "Transaction interdite au terminal."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1031
+msgid "L'accepteur de carte doit contacter l'acquéreur."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1032
+msgid "Dépasse la limite du montant de retrait."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1033
+msgid "Transaction en attente de confirmation de paiement"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1034
+msgid "Règles de sécurité non respectées."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1035
+msgid "Nombre de transactions du jour dépassé"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1036
+msgid "Réponse non parvenue ou reçue trop tard."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1038
+msgid "Terminal inconnu"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1039
+msgid "Arrêt momentané du système."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1040
+msgid "Emetteur de cartes inaccessible."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1041
+msgid ""
+"La transaction ne contient pas les informations suffisantes pour être "
+"redirigées vers l'organisme d'autorisation"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1042
+msgid "Transaction dupliquée"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1043
+msgid "Mauvais fonctionnement du système."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1044
+msgid "Échéance de la temporisation de surveillance globale."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1045
+msgid "Serveur indisponible routage réseau demandé à nouveau."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1046
+msgid "Incident domaine initiateur"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1047
+msgid "Erreur inconnue"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1050
+msgid "Paiement CB : ECHEC<br/>Erreur :"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1052 ../woocommerce-gateway-atos2.php:1152
+#, php-format
+msgid ""
+"Échec du règlement par carte bancaire de votre commande, <a href=\"%s"
+"\">cliquez ici</a> pour effectuer une nouvelle tentative de paiement."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1054
+msgid "Paiement CB :"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1073
+#, php-format
+msgid "Paiement CB en %d fois confirmé."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1087
+msgid "Paiement en attente de confirmation"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1091
+msgid "Paiement non reçu"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1093
+msgid "Erreur de paiement !"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1109
+msgid "Votre commande est en attente de confirmation de paiement."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1113
+msgid "Le processus de paiement par carte bancaire a été annulé."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1115
+msgid "Erreur de paiement ! Votre commande n'est pas validée."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1137
+#, php-format
+msgid ""
+"Votre règlement par carte bancaire de %s sur un total de %s a été finalisé "
+"auprès de notre banque"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1139
+#, php-format
+msgid ""
+"Votre règlement par carte bancaire de %s a bien été finalisé auprès de notre "
+"banque"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1142
+#, php-format
+msgid ", <a href=\"%s\">cliquez ici</a> pour consulter votre commande."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1149
+msgid ""
+"La banque n'a pas encore confirmé le paiement de votre commande. Vous pouvez "
+"tentez d'actualiser la page, si le paiement n'est pas confirmé, veuillez "
+"nous contacter."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1203
+msgid "Réglages"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1221
+msgid "Votre licence « WooCommerce Gateway Worldline Sips 2.0 » expire dans"
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1222
+msgid ""
+"Après expiration, vous ne disposerez plus, ni des mises à jour de votre "
+"passerelle WL Sips 2.0, ni du support ABSOLUTE Web."
+msgstr ""
+
+#: ../woocommerce-gateway-atos2.php:1223
+#, php-format
+msgid "Prolongez votre licence avec 50%% de réduction avant le %s !"
+msgstr ""
+
+#, fuzzy
+#~ msgid "Voir le dictionnaire des donn&eacute;es."
+#~ msgstr "voir le dictionnaire des données Atos."
+
+#, fuzzy
+#~ msgid "Paiement CB : OK"
+#~ msgstr "Icône de paiement"
+
+#~ msgid "Enable/Disable"
+#~ msgstr "Activer/Désactiver"
+
+#~ msgid "Enable Atos Payment"
+#~ msgstr "Activer le paiement Atos"
+
+#~ msgid "This controls the title which the user sees during checkout."
+#~ msgstr "Texte que le client voit lors du choix du mode de paiement."
+
+#~ msgid "Atos Payment"
+#~ msgstr "Paiement Atos"
+
+#~ msgid "Customer Message"
+#~ msgstr "Message Client"
+
+#~ msgid "Url of image displayed during payement method choice."
+#~ msgstr ""
+#~ "Url absolue de l'icône affichée sur la page du choix de la méthode de "
+#~ "paiement."
+
+#, fuzzy
+#~ msgid ""
+#~ "Leave empty to stop saving log see dictionnaire des donn&eacute;es Atos."
+#~ msgstr "Laisser vide pour arrêter la sauvegarde des logs."
+
+#~ msgid "Site root"
+#~ msgstr "Racine du site"
+
+#~ msgid "Awaiting Atos payment"
+#~ msgstr "Attente du paiement CB"

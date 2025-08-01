@@ -1,0 +1,89 @@
+﻿Installation
+------------
+
+Dans votre tableau de bord WordPress, rendez-vous dans l'onglet Extensions puis cliquez sur Ajouter. Choisissez l'option Téléverser une extension puis cliquez sur le bouton parcourir pour sélectionner l'extension depuis votre disque dur. Cliquez sur Installer maintenant pour lancer l'installation. Activez l'extension à la fin de l'installation.
+
+Paramétrages
+------------
+
+Pour paramétrer votre passerelle de paiement Wordline Sips 2.0, rendez-vous dans l'onglet WooCommerce > Réglages, cliquez sur l'onglet Paiements. La passerelle "Wordline Sips 2.0" doit être présente dans la liste des méthodes de paiement.
+Cliquez sur Wordline Sips 2.0 ou sur le bouton "Gérer" pour accéder aux réglages de la passerelle.
+Vous pouvez également y accéder directement sur la page des extensions, depuis le lien Réglages de la passerelle.
+
+- Cochez "Activer le paiement Wordline Sips 2.0" pour le rendre disponible à vos clients lors du règlement de leurs commandes.
+- Adaptez le titre et le message de paiement selon vos préférences. Ces deux éléments sont affichés au client lors du choix de son mode de paiement.
+- Sélectionnez votre banque dans la liste proposée.
+- L'icône associée par défaut à votre banque est sélectionnée, vous pouvez changer ce choix et indiquer votre propre URL pour l'icône qui sera affichée au client lors du choix de son mode de paiement.
+- Si vous êtes dans le cadre de la migration simplifiée d'un contrat 1.0, cochez l'option correspondante.
+- Indiquez si la référence de transaction doit être transmise ou non à la banque par la boutique. Si le contrat bancaire du commerçant spécifie ce choix, il doit être identique dans les réglages de la passerelle, autrement le paiement va échouer !
+- Sélectionnez le mode de fonctionnement de votre passerelle, SIMULATION en phase de test et PRODUCTION pour réellement encaisser sur votre boutique.
+- Renseignez l'ID commerçant qui vous a été communiqué par votre banque. Il s'agit de l'ID de production.
+- Renseignez la version de la clé secrète que vous trouverez sur l'espace de téléchargement de votre banque.
+- Renseignez la clé secrète de production que vous trouverez sur l'espace de téléchargement de votre banque.
+- Sélectionnez votre souhait pour le Challenge 3DS2, préférez "Authentification demandée" pour bénéficier d'une garantie sur les fraudes.
+- Sélectionnez la devise et la langue utilisées sur la boutique.
+- Précisez le mode d'envoi en banque, encaissement automatique (AUTHOR_CAPTURE) ou annulation automatique (VALIDATION) après X jours, puis le nombre de jours correspondant.
+- Pour faciliter le rapprochement bancaire, choisissez éventuellement le contexte de retour.
+- Sélectionnez les moyens de paiements que vous souhaitez proposer. Ces moyens de paiement doivent être compatibles avec votre contrat bancaire. Si vous n'en sélectionnez aucun, tous ceux liés à votre contrat seront proposés sur la page de paiement.
+- Si vous avez un contrat 3xweb Franfinance auprès de la Société Générale, cochez la case correspondante puis renseignez la chaîne d’authentification cryptée et le code de personnalisation fournis par Franfinance. Vérifiez que le moyen de paiement FRANFINANCE_3X est bien présent dans le champ paymentMeanBrandList.
+- Si vous avez un contrat 4xweb Franfinance auprès de la Société Générale, cochez la case correspondante puis renseignez la chaîne d’authentification cryptée et le code de personnalisation fournis par Franfinance. Vérifiez que le moyen de paiement FRANFINANCE_4X est bien présent dans le champ paymentMeanBrandList.
+- Si votre contrat bancaire le gère, vous pouvez définir un montant maximum pour lequel 3D Secure sera désactivé. Cette option n'est plus opérationnelle avec 3D Secure 2.0.
+- Si un modèle de styles a été intégré sur le serveur de la banque pour personnaliser l’apparence de la page de paiement, vous devez indiquer le nom de ce modèle (sans .css) pour qu’il soit pris en compte. 
+- Vous pouvez forcer le retour du client sur la boutique après paiement. Attention parfois le client arrive sur le site avant que le traitement de la commande WooCommerce ne soit effectif.
+- Paiements en plusieurs fois, si vous avez fait activer le paiement en plusieurs fois au niveau de votre contrat, vous pouvez sélectionner les échéances que vous souhaitez proposer à vos clients. Après enregistrement des réglages, vous retrouverez les passerelles de paiement correspondantes dans l'onglet Paiements de WooCommerce avec des réglages spécifiques (voir plus bas).
+- Pour enregistrer des logs (erreurs, retour de la banque), renseignez le chemin et le nom d'un fichier texte. Chemin absolu depuis la racine du serveur.
+- En phase de test, vous pouvez cocher l'affichage du débogage pour visualiser les données envoyées à la banque et autres paramètres utiles.
+
+N'oubliez pas d'enregistrer les modifications.
+
+URL de l'extension :
+
+https://www.absoluteweb.net/boutique/passerelle-atos-2-woocommerce/
+
+
+Réglages spécifiques aux passerelles des paiements fractionnés
+--------------------------------------------------------------
+
+Pour activer les passerelles des paiements fractionnés, vous devez sélectionner ces moyens dans les réglages principaux Worldline Sips 2.0 (voir ci-dessus). Après validation de votre liste de paiements fractionnés, les passerelles correspondantes doivent être présentes dans la liste des passerelles. Cliquez sur le bouton Gérer pour accéder aux réglages de la passerelle de votre choix.
+
+Cochez "Activer le paiement ..." pour le rendre disponible à vos clients lors du règlement de leurs commandes.
+Adaptez le titre, le message et l'icône de paiement selon vos préférences. Ces trois éléments sont affichés au client lors du choix de son mode de paiement.
+Définissez si nécessaire les montants minimum et/ou maximum pour lesquels le moyen de paiement doit être proposé lors d'une commande.
+
+Ces réglages sont similaires sur l'ensemble des moyens de paiement fractionnés.
+
+
+Les filtres
+-----------
+
+Vous disposez de divers filtres pour modifier dynamiquement textes, variables ou URL :
+
+atos2_change_currency_code : pour modifier la devise, par exemple si vous utilisez un sélecteur de devises sur votre boutique. Note : si vous êtes en multilingue, vous pouvez également "traduire" la devise et ne pas utiliser de filtre.
+atos2_change_customer_language : pour changer la langue de l'interface de paiement. Note : si vous êtes en multilingue, vous pouvez également "traduire" la langue et ne pas utiliser de filtre.
+atos2_change_Data : pour modifier ou ajouter des paramètres bancaires. A manipuler avec précaution car la chaine Data contient déjà tous les paramétres nécéssaires au paiement.
+atos2_change_liste_statuts_ok : pour modifier la liste des statuts d'un paiement réussi (par défaut : processing, completed).
+atos2_change_normal_return_url : pour modifier l'URL de retour du client après un paiement réussi ou en échec.
+atos2_change_return_context : pour passer des informations en contexte de commande.
+
+Exemple de changement de devise :
+
+add_action('before_woocommerce_pay', 'abw_change_atos2');
+function abw_change_atos2() {
+	add_filter('atos2_change_currency_code', 'new_currency_code'); // Modification de la devise
+	add_filter('atos2_change_return_context', 'new_return_context', 10, 2); // Modification du contexte de commande
+}
+function new_currency_code($devise) {
+	return 'USD'; // US dollar (code 840)
+}
+function new_return_context($contexte, $order) {
+	return 'Donnée de votre choix';
+}
+
+Activation de la licence
+------------------------
+
+Vous bénéficiez d'un an de support et de mises à jour lors de l'achat de votre passerelle. Pour activer votre licence et être automatiquement informé des mises à jour, vous devez activer votre licence.
+Dans votre tableau de bord WordPress, rendez-vous dans Réglages > Licence Passerelle WL Sips 2.0.
+Renseignez votre clé de licence ainsi que votre e-mail de commande. Ces éléments vous ont été envoyés par e-mail lors de la validation de votre achat. Vous pouvez également les retrouver sur votre compte ABSOLUTE Web à l'adresse https://www.absoluteweb.net/mon-compte/.
+Pensez à cliquer sur "Enregistrer les changements" pour que votre licence s'active.
+Si vous devez déplacer votre site, vous devrez désactiver la licence sur le site actuel pour pouvoir la réactiver sur un autre site. Passez par l'onglet "Désactivation de la Licence" pour cela.

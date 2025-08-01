@@ -13,7 +13,7 @@ const testimonials = [
     rating: 5,
     comment: 'Une formation exceptionnelle qui a transformé ma pratique. Les concepts ONM sont expliqués avec clarté et les cas cliniques sont très pertinents.',
     formation: 'Initiation à l\'ONM',
-    photo: '/images/testimonial-1.jpg'
+    photo: '/default-avatar.png'
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const testimonials = [
     rating: 5,
     comment: 'L\'approche pédagogique est remarquable. J\'ai pu immédiatement appliquer les techniques apprises dans mon cabinet.',
     formation: 'Diagnostic neuro-musculaire',
-    photo: '/images/testimonial-2.jpg'
+    photo: '/default-avatar.png'
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const testimonials = [
     rating: 5,
     comment: 'Formateurs passionnés et compétents. Le niveau d\'expertise partagé est exceptionnel. Je recommande vivement.',
     formation: 'Perfectionnement ONM',
-    photo: '/images/testimonial-3.jpg'
+    photo: '/default-avatar.png'
   }
 ]
 

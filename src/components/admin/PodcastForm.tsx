@@ -453,13 +453,13 @@ export default function PodcastForm({ episode, onSuccess, onCancel }: PodcastFor
             {topics.map((topic) => (
               <span
                 key={topic}
-                className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-purple-100 text-purple-800"
+                className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800"
               >
                 {topic}
                 <button
                   type="button"
                   onClick={() => handleRemoveTopic(topic)}
-                  className="ml-2 text-purple-600 hover:text-purple-800"
+                  className="ml-2 text-blue-600 hover:text-blue-800"
                 >
                   <X className="w-4 h-4" />
                 </button>

@@ -1,0 +1,8 @@
+<wpml-config>
+  <admin-texts>
+	<key name="woocommerce_atos2_settings">
+	  <key name="currency_code" />
+	  <key name="customer_language" />
+	</key>
+  </admin-texts>
+</wpml-config>

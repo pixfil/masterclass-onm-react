@@ -313,8 +313,8 @@ const SubscriptionContent = () => {
 
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <div className="p-3 bg-purple-100 dark:bg-purple-900/20 rounded-lg">
-                  <SparklesIcon className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                <div className="p-3 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
+                  <SparklesIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                 </div>
               </div>
               <div>

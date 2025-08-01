@@ -32,7 +32,7 @@ const CEPROFPage = () => {
             </span>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">CEPROF</span>
+              Découvrir le <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">CEPROF</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">

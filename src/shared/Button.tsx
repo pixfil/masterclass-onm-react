@@ -6,7 +6,7 @@ import { Link } from './link'
 const styles = {
   base: [
     // Base
-    'relative isolate inline-flex shrink-0 items-center justify-center gap-x-2.5 rounded-full border ',
+    'relative isolate inline-flex shrink-0 items-center justify-center gap-x-2.5 rounded-lg border ',
     // Sizing
     'px-[calc(--spacing(4)-1px)] py-[calc(--spacing(2.5)-1px)] sm:px-[calc(--spacing(5)-1px)] sm:text-sm/6',
     // Focus
@@ -22,17 +22,17 @@ const styles = {
     // Dark mode: border is rendered on `after` so background is set to button background
     'dark:bg-(--btn-bg)',
     // Button background, implemented as foreground layer to stack on top of pseudo-border layer
-    'before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-(--btn-bg)',
+    'before:absolute before:inset-0 before:-z-10 before:rounded-lg before:bg-(--btn-bg)',
     // Background color is moved to control and shadow is removed in dark mode so hide `before` pseudo
     'dark:before:hidden',
     // Dark mode: Subtle white outline is applied using a border
     'dark:border-white/5',
     // Shim/overlay, inset to match button foreground and used for hover state + highlight shadow
-    'after:absolute after:inset-0 after:-z-10 after:rounded-full',
+    'after:absolute after:inset-0 after:-z-10 after:rounded-lg',
     // White overlay on hover
     'data-active:after:bg-(--btn-hover-overlay) data-hover:after:bg-(--btn-hover-overlay)',
     // Dark mode: `after` layer expands to cover entire button
-    'dark:after:-inset-px dark:after:rounded-full',
+    'dark:after:-inset-px dark:after:rounded-lg',
     // Disabled
     'data-disabled:before:shadow-none data-disabled:after:shadow-none',
   ],

@@ -111,10 +111,10 @@ const DashboardContent = () => {
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                <div className="bg-white p-6 rounded-xl shadow-sm dark:bg-neutral-800 border border-indigo-100 dark:border-indigo-900/20">
+                <div className="bg-white p-6 rounded-xl shadow-sm dark:bg-neutral-800 border border-blue-100 dark:border-blue-900/20">
                   <div className="flex items-center">
-                    <div className="p-3 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 shadow-lg">
-                      <HomeIcon className="h-6 w-6 text-indigo-100" />
+                    <div className="p-3 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg">
+                      <HomeIcon className="h-6 w-6 text-blue-100" />
                     </div>
                     <div className="ml-4">
                       <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
@@ -123,7 +123,7 @@ const DashboardContent = () => {
                       <p className="text-2xl font-semibold text-neutral-900 dark:text-white">
                         {stats?.total_formations || 0}
                       </p>
-                      <p className="text-xs text-indigo-600 dark:text-indigo-400">
+                      <p className="text-xs text-blue-600 dark:text-blue-400">
                         +{stats?.draft_formations || 0} brouillons
                       </p>
                     </div>
@@ -219,7 +219,7 @@ const DashboardContent = () => {
               <div className="pt-2 border-t border-neutral-200 dark:border-neutral-700">
                 <div className="flex justify-between items-center">
                   <span className="text-sm font-medium text-neutral-900 dark:text-white">Total</span>
-                  <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400">{stats?.total_sessions || 0}</span>
+                  <span className="text-lg font-bold text-blue-600 dark:text-blue-400">{stats?.total_sessions || 0}</span>
                 </div>
               </div>
             </div>
@@ -231,7 +231,7 @@ const DashboardContent = () => {
             <div className="space-y-3">
               <div className="flex justify-between items-center">
                 <span className="text-sm text-neutral-600 dark:text-neutral-400">Taux de conversion</span>
-                <span className="text-sm font-semibold text-purple-600 dark:text-purple-400">
+                <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">
                   {stats?.conversion_rate ? stats.conversion_rate.toFixed(1) + '%' : '0%'}
                 </span>
               </div>
@@ -265,9 +265,9 @@ const DashboardContent = () => {
             <div className="space-y-3">
               <Link
                 href="/admin/formations/edit/new"
-                className="flex items-center p-3 border border-neutral-300 rounded-lg hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors dark:border-neutral-600"
+                className="flex items-center p-3 border border-neutral-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors dark:border-neutral-600"
               >
-                <PlusIcon className="h-5 w-5 text-indigo-600 mr-3" />
+                <PlusIcon className="h-5 w-5 text-blue-600 mr-3" />
                 <div>
                   <p className="text-sm font-medium text-neutral-900 dark:text-white">Nouvelle formation</p>
                 </div>
@@ -303,7 +303,7 @@ const DashboardContent = () => {
               <Heading as="h3" className="text-lg">Prochaines formations</Heading>
               <Link
                 href="/admin/formations"
-                className="text-indigo-600 hover:text-indigo-700 text-sm font-medium"
+                className="text-blue-600 hover:text-blue-700 text-sm font-medium"
               >
                 Voir toutes
               </Link>
@@ -329,7 +329,7 @@ const DashboardContent = () => {
                 {upcomingSessions.map((session) => (
                   <div key={session.id} className="flex items-center justify-between p-4 border border-neutral-200 rounded-lg hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-700/50 transition-colors">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                         <CalendarIcon className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -361,7 +361,7 @@ const DashboardContent = () => {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-lg font-bold text-indigo-600 dark:text-indigo-400">
+                      <div className="text-lg font-bold text-blue-600 dark:text-blue-400">
                         {session.formation?.price ? 
                           new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(session.formation.price)
                           : 'Gratuit'
@@ -384,7 +384,7 @@ const DashboardContent = () => {
                 <div className="mt-6">
                   <Link
                     href="/admin/formations/edit/new"
-                    className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+                    className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
                   >
                     <PlusIcon className="-ml-1 mr-2 h-5 w-5" />
                     Nouvelle formation
@@ -404,7 +404,7 @@ const DashboardContent = () => {
                 <Heading as="h3">Formations populaires</Heading>
                 <Link
                   href="/admin/formations"
-                  className="text-indigo-600 hover:text-indigo-700 text-sm font-medium"
+                  className="text-blue-600 hover:text-blue-700 text-sm font-medium"
                 >
                   Voir tout
                 </Link>
@@ -416,7 +416,7 @@ const DashboardContent = () => {
                   {stats.popular_formations.slice(0, 5).map((formation, index) => (
                     <div key={formation.formation_id} className="flex items-center justify-between p-3 bg-neutral-50 dark:bg-neutral-700 rounded-lg">
                       <div className="flex items-center">
-                        <div className="w-8 h-8 bg-indigo-100 dark:bg-indigo-900/20 rounded-full flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-semibold mr-3">
+                        <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 text-sm font-semibold mr-3">
                           {index + 1}
                         </div>
                         <div>
@@ -457,7 +457,7 @@ const DashboardContent = () => {
                 <div className="space-y-4">
                   {stats.recent_activity.slice(0, 8).map((activity) => (
                     <div key={activity.id} className="flex items-start">
-                      <div className="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-3"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm text-neutral-900 dark:text-white">
                           {activity.description}

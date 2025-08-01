@@ -12,7 +12,7 @@ const instructors = [
     title: 'Orthodontiste spécialisé ONM',
     bio: 'Expert en orthodontie neuro-musculaire avec 15 ans d\'expérience',
     specialties: ['ONM', 'Orthodontie'],
-    photo_url: '/images/instructor-1.jpg',
+    photo_url: '/default-avatar.png',
     rating: 4.8,
     formations_count: 12,
     total_students: 450
@@ -23,7 +23,7 @@ const instructors = [
     title: 'Spécialiste en rééducation',
     bio: 'Pionnière de la rééducation oro-faciale',
     specialties: ['Rééducation', 'Orthophonie'],
-    photo_url: '/images/instructor-2.jpg',
+    photo_url: '/default-avatar.png',
     rating: 4.9,
     formations_count: 8,
     total_students: 320
@@ -34,7 +34,7 @@ const instructors = [
     title: 'Expert en diagnostic ONM',
     bio: 'Formateur certifié en diagnostic neuro-musculaire',
     specialties: ['Diagnostic', 'Imagerie'],
-    photo_url: '/images/instructor-3.jpg',
+    photo_url: '/default-avatar.png',
     rating: 4.7,
     formations_count: 15,
     total_students: 580

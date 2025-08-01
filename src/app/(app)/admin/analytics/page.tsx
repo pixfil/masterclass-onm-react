@@ -121,7 +121,7 @@ const AnalyticsContent = () => {
           <div className={`p-3 rounded-lg ${
             color === 'blue' ? 'bg-blue-100 dark:bg-blue-900/20' :
             color === 'green' ? 'bg-green-100 dark:bg-green-900/20' :
-            color === 'purple' ? 'bg-purple-100 dark:bg-purple-900/20' :
+            color === 'purple' ? 'bg-blue-100 dark:bg-blue-900/20' :
             color === 'orange' ? 'bg-orange-100 dark:bg-orange-900/20' :
             color === 'yellow' ? 'bg-yellow-100 dark:bg-yellow-900/20' :
             'bg-neutral-100 dark:bg-neutral-700'
@@ -129,7 +129,7 @@ const AnalyticsContent = () => {
             <Icon className={`h-6 w-6 ${
               color === 'blue' ? 'text-blue-600 dark:text-blue-400' :
               color === 'green' ? 'text-green-600 dark:text-green-400' :
-              color === 'purple' ? 'text-purple-600 dark:text-purple-400' :
+              color === 'purple' ? 'text-blue-600 dark:text-blue-400' :
               color === 'orange' ? 'text-orange-600 dark:text-orange-400' :
               color === 'yellow' ? 'text-yellow-600 dark:text-yellow-400' :
               'text-neutral-600 dark:text-neutral-400'

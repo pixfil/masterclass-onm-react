@@ -1,0 +1,256 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Licence et Update\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-12-07 15:54+0100\n"
+"PO-Revision-Date: 2021-12-07 16:01+0100\n"
+"Last-Translator: ABSOLUTE Web <woocommerce@absoluteweb.net>\n"
+"Language-Team: ABSOLUTE Web <woocommerce@absoluteweb.net>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../am/admin/class-wc-api-manager-menu.php:58
+#: ../am/admin/class-wc-api-manager-menu.php:62
+msgid "Save Changes"
+msgstr "Enregistrer les changements"
+
+#: ../am/admin/class-wc-api-manager-menu.php:77
+msgid "API License Activation"
+msgstr "Activation de la licence"
+
+#: ../am/admin/class-wc-api-manager-menu.php:78
+msgid "API License Key Status"
+msgstr "Statut de la licence"
+
+#: ../am/admin/class-wc-api-manager-menu.php:79
+msgid "API License Key"
+msgstr "Clé de licence"
+
+#: ../am/admin/class-wc-api-manager-menu.php:80
+msgid "API License email"
+msgstr "E-mail de licence"
+
+#: ../am/admin/class-wc-api-manager-menu.php:84
+msgid "API License Deactivation"
+msgstr "Désactivation de la licence"
+
+#: ../am/admin/class-wc-api-manager-menu.php:85
+msgid "Deactivate API License Key"
+msgstr "Désactiver la licence"
+
+#: ../am/admin/class-wc-api-manager-menu.php:165
+msgid "Plugin activated. "
+msgstr "Extension activée. "
+
+#: ../am/admin/class-wc-api-manager-menu.php:171
+msgid "Connection failed to the License Key API server. Try again later."
+msgstr ""
+"La connexion au serveur de l'API de la licence a échouée. Veuillez essayer "
+"plus tard."
+
+#: ../am/admin/class-wc-api-manager-menu.php:258
+msgid ""
+"The license could not be deactivated. Use the License Deactivation tab to "
+"manually deactivate the license before activating a new license."
+msgstr ""
+"La licence ne peut pas être désactivée. Utilisez l'onglet Désactivation de "
+"la licence pour désactiver manuellement la licence avant d'activer une "
+"nouvelle licence."
+
+#: ../am/admin/class-wc-api-manager-menu.php:297
+msgid "Plugin license deactivated. "
+msgstr "Licence désactivée. "
+
+#: ../am/admin/class-wc-api-manager-menu.php:366
+msgid "Deactivates an API License Key so it can be used on another blog."
+msgstr ""
+"Désactive une licence pour qu'elle puisse être utilisée sur un autre site."
+
+#: ../am/classes/class-wc-plugin-update.php:370
+#, php-format
+msgid ""
+"The license key for %s has expired. You can reactivate or purchase a license "
+"key from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"La licence pour %s a expiré. Vous pouvez réactiver ou acquérir une licence "
+"depuis le <a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre "
+"compte."
+
+#: ../am/classes/class-wc-plugin-update.php:385
+#, php-format
+msgid ""
+"The subscription for %s is on-hold. You can reactivate the subscription from "
+"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement pour %s est en attente. Vous pouvez réactiver l'abonnement "
+"depuis le <a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre "
+"compte."
+
+#: ../am/classes/class-wc-plugin-update.php:400
+#, php-format
+msgid ""
+"The subscription for %s has been cancelled. You can renew the subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>. A new "
+"license key will be emailed to you after your order has been completed."
+msgstr ""
+"L'abonnement pour %s a été annulé. Vous pouvez renouveller l'abonnement "
+"depuis le <a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre "
+"compte. Une nouvelle clé de licence vous sera envoyée par email dès que "
+"votre commande sera complétée."
+
+#: ../am/classes/class-wc-plugin-update.php:415
+#, php-format
+msgid ""
+"The subscription for %s has expired. You can reactivate the subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement pour %s a expiré. Vous pouvez réactiver l'abonnement depuis le "
+"<a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre compte."
+
+#: ../am/classes/class-wc-plugin-update.php:430
+#, php-format
+msgid ""
+"The subscription for %s has been suspended. You can reactivate the "
+"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
+"a>."
+msgstr ""
+"L'abonnement pour %s a été suspendu. Vous pouvez réactiver l'abonnement "
+"depuis le <a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre "
+"compte."
+
+#: ../am/classes/class-wc-plugin-update.php:445
+#, php-format
+msgid ""
+"The subscription for %s is still pending. You can check on the status of the "
+"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
+"a>."
+msgstr ""
+"L'abonnement pour %s est toujours en traitement. Vous pouvez vérifier le "
+"statut de l'abonnement depuis le <a href=\"%s\" target=\"_blank\">tableau de "
+"bord</a> de votre compte."
+
+#: ../am/classes/class-wc-plugin-update.php:460
+#, php-format
+msgid ""
+"The subscription for %s has been placed in the trash and will be deleted "
+"soon. You can purchase a new subscription from your account <a href=\"%s\" "
+"target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement pour %s a été placé dans la corbeille et sera bientôt supprimé. "
+"Vous pouvez acheter un nouvel abonnement depuis le <a href=\"%s\" target="
+"\"_blank\">tableau de bord</a> de votre compte."
+
+#: ../am/classes/class-wc-plugin-update.php:475
+#, php-format
+msgid ""
+"A subscription for %s could not be found. You can purchase a subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement pour %s ne peut être trouvé. Vous pouvez acheter un abonnement "
+"depuis le <a href=\"%s\" target=\"_blank\">tableau de bord</a> de votre "
+"compte."
+
+#: ../am/classes/class-wc-plugin-update.php:490
+#, php-format
+msgid ""
+"A license key for %s could not be found. Maybe you forgot to enter a license "
+"key when setting up %s, or the key was deactivated in your account. You can "
+"reactivate or purchase a license key from your account <a href=\"%s\" target="
+"\"_blank\">dashboard</a>."
+msgstr ""
+"La licence pour %s ne peut être trouvée. Peut être avez-vous oublié de la "
+"saisir dans la page Réglages lors de l'installation de %s, ou bien la "
+"licence a été désactivée dans votre compte. Vous pouvez réactiver ou "
+"acquérir une licence depuis le <a href=\"%s\" target=\"_blank\">tableau de "
+"bord</a> de votre compte client."
+
+#: ../am/classes/class-wc-plugin-update.php:505
+#, php-format
+msgid ""
+"Download permission for %s has been revoked possibly due to a license key or "
+"subscription expiring. You can reactivate or purchase a license key from "
+"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"La permission de téléchargement pour %s a été révoquée, certainement à cause "
+"de l'expiration de la licence ou de l'abonnement. Vous pouvez réactiver ou "
+"acheter une licence depuis le <a href=\"%s\" target=\"_blank\">tableau de "
+"bord</a> de votre compte."
+
+#: ../am/classes/class-wc-plugin-update.php:520
+#, php-format
+msgid ""
+"%s has not been activated. Go to the settings page and enter the license key "
+"and license email to activate %s."
+msgstr ""
+"%s n'a pas été activé. Allez sur la page Réglages et entrez la clé et l'e-"
+"mail de licence pour activer %s."
+
+#: ../am/classes/class-wc-plugin-update.php:535
+#, php-format
+msgid ""
+"You changed the subscription for %s, so you will need to enter your new API "
+"License Key in the settings page. The License Key should have arrived in "
+"your email inbox, if not you can get it by logging into your account <a href="
+"\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"Vous avez changé l'abonnement pour %s, aussi devez vous saisir votre "
+"nouvelle clé de licence API dans la page Réglages. La clé de licence doit "
+"être arrivée dans vos courriers entrants, autrement vous pouvez l'obtenir en "
+"vous identifiant dans le <a href=\"%s\" target=\"_blank\">tableau de bord</"
+"a> de votre compte."
+
+#: ../woocommerce-gateway-atos2.php:177
+msgid "License Activation"
+msgstr "Activation de la licence"
+
+#: ../woocommerce-gateway-atos2.php:178
+msgid "License Deactivation"
+msgstr "Désactivation de la licence"
+
+#: ../woocommerce-gateway-atos2.php:388
+#, php-format
+msgid ""
+"The Wordline Sips 2.0 Gateway API License Key has not been activated, so the "
+"plugin is inactive! %sClick here%s to activate the license key and the "
+"plugin."
+msgstr ""
+"La licence de la passerelle Worldline Sips 2.0 n'a pas été activée, vous ne "
+"pourrez pas recevoir les mises à jour ! %sCliquez ici%s pour activer la "
+"licence."
+
+#: ../woocommerce-gateway-atos2.php:407
+#, php-format
+msgid ""
+"<b>Warning!</b> You're blocking external requests which means you won't be "
+"able to get %s updates. Please add %s to %s."
+msgstr ""
+"<b>Attention !</b> Vous bloquez les requêtes externes ce qui signifie que "
+"vous ne pourrez pas obtenir les mises à jour %s. Veuillez ajouter %s à %s."
+
+#~ msgid "WooCommerce Atos Gateway"
+#~ msgstr "WooCommerce Atos Gateway"
+
+#~ msgid "API Manager Example"
+#~ msgstr "WooCommerce Atos Gateway"
+
+#~ msgid "Dashboard"
+#~ msgstr "Tableau de Bord"
+
+#~ msgid "License Information"
+#~ msgstr "Information sur la licence"
+
+#~ msgid "Plugin License Deactivation"
+#~ msgstr "Désactivation de la licence"
+
+#~ msgid "Prevent Comment Spam"
+#~ msgstr "Prévenir les spams de commentaires"
+
+#~ msgid "Licence Passerelle Klik & Pay"
+#~ msgstr "Licence Passerelle Klik & Pay"

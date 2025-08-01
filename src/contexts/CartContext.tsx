@@ -59,8 +59,15 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     setLoading(true)
     try {
       const result = await CartService.getOrCreateCart(user?.id, sessionId || undefined)
+      console.log('LoadCart result:', result)
       if (result.success && result.data) {
-        setCart(result.data)
+        // Créer un nouvel objet pour forcer la mise à jour de React
+        const newCart = {
+          ...result.data,
+          items: result.data.items ? [...result.data.items] : []
+        }
+        setCart(newCart)
+        console.log('Cart updated with', newCart.items.length, 'items')
       }
     } catch (error) {
       console.error('Erreur chargement panier:', error)
@@ -85,13 +92,33 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [user?.id, sessionId, loadCart])
 
   // Ajouter au panier
-  const addToCart = async (sessionId: string, quantity = 1): Promise<boolean> => {
-    if (!cart) return false
+  const addToCart = async (formationSessionId: string, quantity = 1): Promise<boolean> => {
+    if (!cart) {
+      console.error('Pas de panier disponible')
+      return false
+    }
 
     try {
-      const result = await CartService.addToCart(cart.id, sessionId, quantity)
+      console.log('Adding to cart:', { cartId: cart.id, sessionId: formationSessionId, quantity })
+      const result = await CartService.addToCart(cart.id, formationSessionId, quantity)
+      console.log('Add to cart result:', result)
+      
       if (result.success) {
-        await loadCart()
+        // Attendre un peu avant de recharger pour s'assurer que la BD est à jour
+        await new Promise(resolve => setTimeout(resolve, 500))
+        
+        // Réinitialiser l'état du panier pour forcer React à re-render
+        setCart(null)
+        
+        // Forcer le rechargement complet du panier
+        const reloadResult = await CartService.getOrCreateCart(user?.id, sessionId || undefined)
+        console.log('Reload cart result:', reloadResult)
+        
+        if (reloadResult.success && reloadResult.data) {
+          setCart(reloadResult.data)
+          console.log('Cart reloaded with', reloadResult.data.items?.length || 0, 'items')
+        }
+        
         return true
       }
       return false

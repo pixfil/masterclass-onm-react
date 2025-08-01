@@ -120,7 +120,7 @@ const ExpertsAdminPage = () => {
     const colors = [
       'bg-blue-100 text-blue-800',
       'bg-green-100 text-green-800', 
-      'bg-purple-100 text-purple-800',
+      'bg-blue-100 text-blue-800',
       'bg-orange-100 text-orange-800',
       'bg-pink-100 text-pink-800'
     ]
@@ -228,7 +228,7 @@ const ExpertsAdminPage = () => {
                     <div className="p-5">
                       <div className="flex items-center">
                         <div className="flex-shrink-0">
-                          <div className="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center">
+                          <div className="w-8 h-8 bg-blue-500 rounded-md flex items-center justify-center">
                             <span className="text-white font-bold text-sm">{stats.instructors}</span>
                           </div>
                         </div>

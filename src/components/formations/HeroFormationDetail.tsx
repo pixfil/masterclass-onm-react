@@ -156,7 +156,7 @@ const HeroFormationDetail: React.FC<HeroFormationDetailProps> = ({ formation, on
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button 
                 onClick={onReservationClick}
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold rounded-xl shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold rounded-lg shadow-2xl hover:shadow-blue-500/25 transform hover:-translate-y-1 transition-all duration-300"
               >
                 S'inscrire à la formation
               </button>
@@ -169,7 +169,7 @@ const HeroFormationDetail: React.FC<HeroFormationDetailProps> = ({ formation, on
                     window.scrollTo({ top: y, behavior: 'smooth' });
                   }
                 }}
-                className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl border border-white/20 hover:border-white/30 backdrop-blur-sm transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-lg border border-white/20 hover:border-white/30 backdrop-blur-sm transition-all duration-300"
               >
                 Voir le programme
               </button>

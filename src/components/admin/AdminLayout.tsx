@@ -41,7 +41,7 @@ import Link from 'next/link'
 
 interface AdminLayoutProps {
   children: React.ReactNode
-  currentPage: 'dashboard' | 'properties' | 'experts' | 'clients' | 'contacts' | 'newsletter' | 'accounts' | 'email-templates' | 'email-logs' | 'notifications' | 'analytics' | 'subscription' | 'settings' | 'formations' | 'orders' | 'satisfaction' | 'evaluations' | 'resources' | 'podcasts' | 'referrals' | 'badges' | 'promo-codes' | 'workflows' | 'historique'
+  currentPage: 'dashboard' | 'properties' | 'experts' | 'clients' | 'contacts' | 'newsletter' | 'accounts' | 'email-templates' | 'email-logs' | 'notifications' | 'analytics' | 'subscription' | 'settings' | 'formations' | 'orders' | 'satisfaction' | 'evaluations' | 'resources' | 'podcasts' | 'referrals' | 'badges' | 'promo-codes' | 'workflows' | 'historique' | 'sherlocks'
 }
 
 export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
@@ -207,12 +207,12 @@ export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center">
                 <Link href="/" className="flex items-center">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent">
+                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
                     MASTERCLASS ONM
                   </div>
                 </Link>
               </div>
-              <div className="bg-gradient-to-r from-indigo-600 to-cyan-600 text-white px-3 py-1 rounded-lg text-sm font-medium">
+              <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-3 py-1 rounded-lg text-sm font-medium">
                 Administration
               </div>
             </div>
@@ -251,8 +251,8 @@ export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
                     href={item.href}
                     className={`group flex items-center px-3 py-2.5 text-sm font-medium rounded-xl transition-all duration-200 ${
                       item.current
-                        ? 'bg-gradient-to-r from-indigo-50 to-cyan-50 text-blue-700 border border-indigo-200 dark:from-indigo-900/20 dark:to-cyan-900/20 dark:text-blue-400 dark:border-indigo-800'
-                        : 'text-neutral-700 hover:bg-gradient-to-r hover:from-indigo-50/50 hover:to-cyan-50/50 hover:text-blue-600 dark:text-neutral-300 dark:hover:bg-neutral-700/50'
+                        ? 'bg-gradient-to-r from-blue-50 to-cyan-50 text-blue-700 border border-blue-200 dark:from-blue-900/20 dark:to-cyan-900/20 dark:text-blue-400 dark:border-blue-800'
+                        : 'text-neutral-700 hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-cyan-50/50 hover:text-blue-600 dark:text-neutral-300 dark:hover:bg-neutral-700/50'
                     }`}
                   >
                     <Icon

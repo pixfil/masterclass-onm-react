@@ -14,7 +14,7 @@ const ceprofMembers = [
     profession: 'Kinésithérapeute',
     speciality: 'Rééducation oro-faciale',
     bio: 'Experte en rééducation des troubles oro-faciaux chez l\'enfant et l\'adulte',
-    photo_url: '/images/ceprof-1.jpg',
+    photo_url: '/default-avatar.png',
     city: 'Lyon',
     contributions: ['Protocoles de rééducation ONM', 'Formation des praticiens']
   },
@@ -25,7 +25,7 @@ const ceprofMembers = [
     profession: 'Ostéopathe',
     speciality: 'Ostéopathie cranio-sacrée',
     bio: 'Spécialiste des dysfonctions cranio-mandibulaires',
-    photo_url: '/images/ceprof-2.jpg',
+    photo_url: '/default-avatar.png',
     city: 'Paris',
     contributions: ['Approche holistique ONM', 'Techniques manuelles complémentaires']
   },
@@ -36,7 +36,7 @@ const ceprofMembers = [
     profession: 'Orthophoniste',
     speciality: 'Troubles de la déglutition',
     bio: 'Rééducation des fonctions oro-myo-faciales',
-    photo_url: '/images/ceprof-3.jpg',
+    photo_url: '/default-avatar.png',
     city: 'Bordeaux',
     contributions: ['Diagnostic fonctionnel', 'Exercices de rééducation']
   },
@@ -47,7 +47,7 @@ const ceprofMembers = [
     profession: 'Chirurgien-dentiste',
     speciality: 'Occlusodontie',
     bio: 'Expert en réhabilitation occlusale globale',
-    photo_url: '/images/ceprof-4.jpg',
+    photo_url: '/default-avatar.png',
     city: 'Marseille',
     contributions: ['Équilibration occlusale', 'Gouttières thérapeutiques']
   }

@@ -1,0 +1,98 @@
+﻿20 mai 2022 - Version 1.5.6
+[fix] Suppression et correction de code source.
+
+9 avril 2022 - Version 1.5.5
+[new] Information sur l’échéance proche de la licence de la passerelle de paiement.
+
+4 avril 2022 - Version 1.5.4
+[maj] Utilisation de sanitize_user() en remplacement de remove_accents() pour supprimer des caractères non autorisés par la banque.
+
+1er avril 2022 - Version 1.5.3
+[maj] Activation du paiement fractionné 4x. Pensez à vérifier que le 4x est bien activé sur votre contrat bancaire, ce n’est pas automatique avec tous les contrats !
+[fix] Suppression d’un « screen_icon » déprécié dans le code du gestionnaire de licences.
+
+4 février 2022 - Version 1.5.2
+[new] Ajout du réglage « templateName » pour transmettre le nom d’une feuille de style personnalisée intégrée sur le serveur de la banque.
+[fix] Ne plus adapter l'option de transmission de la référence de transaction en fonction de la banque lorsque les réglages ont déjà été enregistrés.
+[maj] Renommage du fichier de logs par défaut en « worldline-sips-2.log ».
+
+22 décembre 2021 - Version 1.5.1
+[maj] Prise en charge de l'URL autoresponse au format terminaison : https//votresite.fr/wc-api/wc_gateway_atos2.
+[maj] Nettoyage de code source spécifique à WooCommerce < 3.0.
+[fix] Correction d’un problème de rétrocompatibilité avec les versions 1.3.1 et inférieures. Le mode PRODUCTION n’était pas pris en compte sans enregistrement des réglages de la passerelle après mise à jour.
+
+7 décembre 2021 - Version 1.5
+[new] Ajout des paiements fractionnés 2x et 3x.
+[new] Ajout du filtre atos2_change_return_context pour passer du contenu pour le contexte de commande.
+[new] Adaptation du titre de la page « Commande reçue » en cas de problème de paiement, « Paiement non reçu », « Paiement en attente de confirmation » ou « Erreur de paiement ! » suivant la situation.
+[new] Le choix de l'établissement bancaire prédéfini l'icône de paiement correspondante et adapte l'option de transmission de la référence de transaction.
+[maj] Actualisation de la liste des codes d'erreur renvoyés par la banque.
+[maj] Gestion de l'annulation de la procédure de paiement par l'internaute. La commande reste en attente de paiement et n'est plus passée en échouée. Le message à destination du client est adapté à la situation.
+[maj] Gestion des erreurs dans les logs de la passerelle. Lorsqu'une erreur se produit sur le serveur de la banque, le message d'erreur en PRODUCTION est lapidaire : "Une erreur s’est produite. Veuillez contacter votre commerçant.". Le détail de l'erreur peut maintenant être consulté dans les logs.
+[fix] Appel de la fonction load_plugin_textdomain sur l'action init.
+[fix] En mode SIMULATION la référence de transaction doit être transmise quelque soit le contrat bancaire.
+
+10 juin 2021 - Version 1.4
+[new] Prise en charge des contrats LCL Sherlock's en version Wordline Sips 2.0 (aka Atos 2.0).
+[new] Prise en charge de la migration simplifiée des contrats en version Wordline Sips 1.0 (aka Atos Sips).
+[new] Utilisation de l'algorithme de cryptage HMAC-SHA-256 à la place de SHA-256 qui n’est plus recommandé par Wordline.
+[new] Indication dans les réglages des cartes bancaires de l'environnement de simulation.
+[maj] Compatibilité PHP 8.
+[maj] Utilisation de la fonction WordPress remove_accents() pour nettoyer plus efficacement les chaines de caractères.
+[maj] Suppression du code spécifique à WooCommerce < 2.1.
+[maj] Changement de dénomination, Atos remplacé par Worldline Sips.
+[fix] La longueur testée de certains champs transmis à Atos n'étaient pas à leur valeur maximale autorisée (e-mail 50 à 128 caractères, rue 35 à 50 caractères, ville 25 à 50 caractères).
+[fix] Les dernières versions de WooCommerce ne permettaient plus de traduire la description du moyen de paiement, appel de get_description() directement dans payment_fields().
+
+1er février 2019 - Version 1.3.1
+[maj] Lors de tests d'accès à l'URL de retour de banque, l'absence de données bancaires conduisait à une erreur serveur. Dorénavant le script est arrêté avant l'erreur et un message confirme l'accès à l'URL.
+[fix] Correction d'une erreur javascript pour l'affichage des options des solutions Franfinance.
+
+29 janvier 2019 - Version 1.3
+[new] Si l'établissement bancaire ne confirme pas le statut du paiement (erreur ou délai de retour), des messages adaptés remplacent les messages d'erreur de paiement supposée sur la page de retour du client.
+[new] Gestion des statuts de commande payée sous forme d'un tableau et création d'un filtre atos2_change_liste_statuts_ok pour ajouter des statuts à ce tableau, par exemple pour un statut personnalisé géré par une extension de paiement d'acompte.
+[new] Prise en charge des solutions 3X Web et 4X Web Franfinance de la Société Générale.
+[new] Ajout du filtre atos2_change_normal_return_url pour modifier l'URL de retour du client après paiement réussi ou échoué.
+[fix] Il n'est plus possible d'annuler une commande déjà payée en ouvrant plusieurs pages de paiement simultanément (merci Sylvie). 
+
+23 juillet 2018 - Version 1.2
+[new] Ajout de la Banque Postale, solution Scellius Paypage, qui propose dorénavant Atos 2.
+[new] Ajout d'Atos en contrat direct, dans le cas ou le contrat est signé avec Atos et non une banque.
+[maj] Modifications pour prendre en charge l'onglet Paiements de WooCommerce 3.4 (nouveau descriptif du moyen de paiement, lien de retour).
+[maj] Passage de l'URL d'activation de la licence en https.
+
+2 mai 2018 - Version 1.1.7
+[new] Ajout du paramètre paypageData.bypassReceiptPage pour forcer le retour du client sur la boutique.
+[maj] Calcul du montant en centime avec round() et non plus number_format().
+
+1er février 2018 - Version 1.1.6
+[new] Ajout du paramètre customerContact.email.
+ 
+31 mars 2017 - Version 1.1.5
+[fix] Correction d'un problème de calcul de sceau de sécurité en retour de banque pour certains types de cartes bancaires.
+[maj] Gestion des méthodes dépréciées par WooCommerce 3.0.
+
+12 décembre 2016 - Version 1.1.4
+[new] Ajout d'une option pour indiquer si la boutique transmet ou non la référence de transaction. Nécessaire suite au choix laissé au commerçant lors de la signature de son contrat.
+
+8 décembre 2016 - Version 1.1.3
+[maj] Nettoyage de l'adresse IP du client avant transmission à la banque suite à un bug OVH qui renvoit toute une chaine de caractères en plus de l'IP !
+
+14 novembre 2016 - Version 1.1.2
+[fix] Test de la présence de la class PHP Normalize, absente de certaines configurations.
+
+4 novembre 2016 - Version 1.1.1
+[fix] Correction d'un problème d'URL retour automatique avec WPML.
+[fix] Correction du chemin par défaut vers le logo bancaire.
+
+10 octobre 2016 - Version 1.1
+[new] Ajout de la banque Société Générale, solution Sogenactif Paypage, qui propose Atos 2 depuis le 15 septembre 2016.
+
+24 juin 2016 - Version 1.0.2
+[fix] Suppression des accents dans le prénom et le nom du client avant l'envoi à la banque.
+
+3 juin 2016 - Version 1.0.1
+[fix] Correction d'un bug sous PHP 7 lors de la réponse automatique de la banque.
+
+22 avril 2016 - Version 1.0
+Version initiale de la passerelle de paiement.

@@ -98,13 +98,13 @@ const ModernHero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href="/formations"
-                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105"
               >
                 Découvrir nos formations
                 <ChevronRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               
-              <button className="group inline-flex items-center px-8 py-4 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/20">
+              <button className="group inline-flex items-center px-8 py-4 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/20">
                 <PlayIcon className="w-5 h-5 mr-2" />
                 Voir la vidéo
               </button>

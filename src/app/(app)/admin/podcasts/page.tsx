@@ -50,7 +50,7 @@ export default function AdminPodcastsPage() {
 
   const episodeTypes = {
     podcast: { label: 'Podcast', icon: Mic, color: 'text-blue-600 bg-blue-100' },
-    interview: { label: 'Interview', icon: Mic, color: 'text-purple-600 bg-purple-100' },
+    interview: { label: 'Interview', icon: Mic, color: 'text-blue-600 bg-blue-100' },
     webinar: { label: 'Webinaire', icon: Video, color: 'text-green-600 bg-green-100' }
   }
 

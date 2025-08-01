@@ -714,7 +714,7 @@ const FormationDetailPage: React.FC<FormationDetailPageProps> = ({ formation }) 
                       break
                   }
                 }}
-                className="group inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
+                className="group inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
               >
                 {activeTab === 'program' && 'Voir les sessions'}
                 {activeTab === 'sessions' && 'Voir les informations'}
@@ -804,9 +804,9 @@ const FormationDetailPage: React.FC<FormationDetailPageProps> = ({ formation }) 
                             </div>
                             
                             <AddToCartButton
-                              formation={formation}
-                              session={session}
-                              onSuccess={() => setShowReservationModal(false)}
+                              sessionId={session.id}
+                              sessionName={`${formation.title} - ${session.city || 'En ligne'}`}
+                              availableSpots={session.available_spots || 0}
                               className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-2 rounded-lg font-medium shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all"
                             />
                           </div>

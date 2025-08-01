@@ -111,7 +111,7 @@ const PromoCodesContent = () => {
     return (
       <div className="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2">
         <div 
-          className="bg-indigo-600 h-2 rounded-full transition-all duration-300" 
+          className="bg-blue-600 h-2 rounded-full transition-all duration-300" 
           style={{ width: `${Math.min(100, percentage)}%` }}
         />
       </div>
@@ -143,7 +143,7 @@ const PromoCodesContent = () => {
       <AdminLayout currentPage="promo-codes">
         <div className="flex justify-center items-center min-h-[400px]">
           <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-gradient-to-r from-indigo-600 to-cyan-600 transition ease-in-out duration-150">
+            <div className="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white bg-gradient-to-r from-blue-600 to-cyan-600 transition ease-in-out duration-150">
               <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -188,8 +188,8 @@ const PromoCodesContent = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-700 p-6">
             <div className="flex items-center">
-              <div className="p-3 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 shadow-lg">
-                <TicketIcon className="w-6 h-6 text-indigo-100" />
+              <div className="p-3 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg">
+                <TicketIcon className="w-6 h-6 text-blue-100" />
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
@@ -266,7 +266,7 @@ const PromoCodesContent = () => {
                 value={filters.search || ''}
                 onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}
                 placeholder="Code ou nom..."
-                className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
               />
             </div>
 
@@ -277,7 +277,7 @@ const PromoCodesContent = () => {
               <select
                 value={filters.status || ''}
                 onChange={(e) => setFilters(prev => ({ ...prev, status: e.target.value as any }))}
-                className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Tous les statuts</option>
                 <option value="active">Actif</option>
@@ -294,7 +294,7 @@ const PromoCodesContent = () => {
               <select
                 value={filters.discount_type || ''}
                 onChange={(e) => setFilters(prev => ({ ...prev, discount_type: e.target.value as any }))}
-                className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+                className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Tous les types</option>
                 <option value="percentage">Pourcentage</option>
@@ -409,7 +409,7 @@ const PromoCodesContent = () => {
                         <div className="flex space-x-2">
                           <button
                             onClick={() => navigator.clipboard.writeText(code.code)}
-                            className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400"
+                            className="text-blue-600 hover:text-blue-900 dark:text-blue-400"
                             title="Copier le code"
                           >
                             <ClipboardDocumentIcon className="h-4 w-4" />
@@ -423,7 +423,7 @@ const PromoCodesContent = () => {
                           </Link>
                           <Link 
                             href={`/admin/promo-codes/edit/${code.id}`}
-                            className="text-indigo-600 hover:text-indigo-900 dark:text-indigo-400"
+                            className="text-blue-600 hover:text-blue-900 dark:text-blue-400"
                             title="Modifier"
                           >
                             <PencilIcon className="h-4 w-4" />

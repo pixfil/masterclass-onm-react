@@ -243,12 +243,12 @@ const LaMethodePage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/formations">
-                <button className="px-8 py-4 bg-white text-indigo-600 font-semibold rounded-xl hover:bg-indigo-50 transition-colors duration-300">
+                <button className="px-8 py-4 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-indigo-50 transition-colors duration-300">
                   Voir les formations
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="px-8 py-4 bg-indigo-700 text-white font-semibold rounded-xl hover:bg-indigo-800 transition-colors duration-300 border border-indigo-500">
+                <button className="px-8 py-4 bg-indigo-700 text-white font-semibold rounded-lg hover:bg-indigo-800 transition-colors duration-300 border border-indigo-500">
                   Nous contacter
                 </button>
               </Link>

@@ -103,8 +103,8 @@ const EmailTemplatesContent = () => {
   const getTypeBadge = (type: EmailTemplateType) => {
     const styles: Record<EmailTemplateType, string> = {
       order_confirmation_client: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400',
-      order_confirmation_admin: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/20 dark:text-indigo-400',
-      formation_schedule: 'bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-400',
+      order_confirmation_admin: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400',
+      formation_schedule: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400',
       pre_questionnaire: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/20 dark:text-cyan-400',
       formation_reminder: 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400',
       formation_completion: 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400',
@@ -113,7 +113,7 @@ const EmailTemplatesContent = () => {
       payment_confirmation: 'bg-teal-100 text-teal-800 dark:bg-teal-900/20 dark:text-teal-400',
       payment_failed: 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400',
       refund_notification: 'bg-pink-100 text-pink-800 dark:bg-pink-900/20 dark:text-pink-400',
-      welcome: 'bg-violet-100 text-violet-800 dark:bg-violet-900/20 dark:text-violet-400',
+      welcome: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400',
       password_reset: 'bg-slate-100 text-slate-800 dark:bg-slate-900/20 dark:text-slate-400',
       account_activation: 'bg-lime-100 text-lime-800 dark:bg-lime-900/20 dark:text-lime-400',
       newsletter: 'bg-sky-100 text-sky-800 dark:bg-sky-900/20 dark:text-sky-400',

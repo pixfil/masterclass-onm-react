@@ -25,6 +25,9 @@ export interface UserProfileTag {
 }
 
 export class ProfileTagsService {
+  // Cache pour les tags utilisateur
+  private static userTagsCache: Map<string, { data: UserProfileTag[], timestamp: number }> = new Map()
+  private static CACHE_DURATION = 5 * 60 * 1000 // 5 minutes
   
   // =============================================================================
   // GESTION DES TAGS
@@ -45,6 +48,22 @@ export class ProfileTagsService {
     }
     
     return data || []
+  }
+  
+  /**
+   * Récupérer les tags d'un utilisateur avec mise en cache
+   */
+  static async getUserTagsFromCache(userId: string): Promise<UserProfileTag[]> {
+    const cached = this.userTagsCache.get(userId)
+    
+    if (cached && Date.now() - cached.timestamp < this.CACHE_DURATION) {
+      return cached.data
+    }
+    
+    const tags = await this.getUserTags(userId)
+    this.userTagsCache.set(userId, { data: tags, timestamp: Date.now() })
+    
+    return tags
   }
   
   /**
@@ -69,6 +88,13 @@ export class ProfileTagsService {
   }
   
   /**
+   * Invalider le cache des tags d'un utilisateur
+   */
+  static invalidateUserTagsCache(userId: string) {
+    this.userTagsCache.delete(userId)
+  }
+  
+  /**
    * Assigner un tag à un utilisateur
    */
   static async assignTag(userId: string, tagId: string, metadata?: Record<string, any>) {
@@ -85,6 +111,9 @@ export class ProfileTagsService {
       console.error('Erreur assignation tag:', error)
       throw error
     }
+    
+    // Invalider le cache
+    this.invalidateUserTagsCache(userId)
   }
   
   /**
@@ -101,6 +130,9 @@ export class ProfileTagsService {
       console.error('Erreur suppression tag:', error)
       throw error
     }
+    
+    // Invalider le cache
+    this.invalidateUserTagsCache(userId)
   }
   
   // =============================================================================

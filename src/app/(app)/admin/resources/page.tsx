@@ -68,7 +68,7 @@ export default function AdminResourcesPage() {
   const accessLevels = {
     public: { label: 'Public', color: 'bg-green-100 text-green-800' },
     authenticated: { label: 'Connecté', color: 'bg-blue-100 text-blue-800' },
-    certified: { label: 'Certifié', color: 'bg-purple-100 text-purple-800' },
+    certified: { label: 'Certifié', color: 'bg-blue-100 text-blue-800' },
     premium: { label: 'Premium', color: 'bg-yellow-100 text-yellow-800' }
   }
 

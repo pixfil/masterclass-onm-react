@@ -403,26 +403,45 @@ export class FormationDashboardService {
           id,
           start_date,
           end_date,
-          location,
-          max_participants,
-          current_participants,
-          formation:formations(
+          city,
+          venue,
+          address,
+          total_spots,
+          available_spots,
+          price,
+          status,
+          formation:formations (
             id,
             title,
-            slug,
-            price
+            slug
           )
         `)
         .gte('start_date', new Date().toISOString())
+        .eq('status', 'confirmed')
         .order('start_date', { ascending: true })
         .limit(limit)
 
       if (error) {
-        console.error('Erreur récupération sessions à venir:', error)
+        // Log plus détaillé de l'erreur
+        console.error('Erreur récupération sessions à venir:', {
+          message: error.message || 'Erreur inconnue',
+          code: error.code,
+          details: error.details,
+          hint: error.hint
+        })
         return []
       }
 
-      return data || []
+      // Transformer les données pour correspondre au format attendu
+      const transformedData = (data || []).map(session => ({
+        ...session,
+        location: `${session.city}${session.venue ? ` - ${session.venue}` : ''}`,
+        max_participants: session.total_spots,
+        current_participants: session.total_spots - session.available_spots,
+        formation: session.formation
+      }))
+
+      return transformedData
     } catch (error) {
       console.error('Erreur getUpcomingSessions:', error)
       return []

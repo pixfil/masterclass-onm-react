@@ -21,11 +21,11 @@ export class CartService {
         .from('carts')
         .select(`
           *,
-          items:cart_items(
+          cart_items (
             *,
-            session:formation_sessions(
+            formation_sessions (
               *,
-              formation:formations(*)
+              formations (*)
             )
           )
         `)
@@ -43,11 +43,36 @@ export class CartService {
         }
       }
 
+      console.log('Recherche panier avec:', { userId, sessionId })
       const { data: existingCart, error: fetchError } = await query.single()
 
       if (existingCart && !fetchError) {
+        // Mapper cart_items vers items et formation_sessions vers session
+        const cartWithItems = {
+          ...existingCart,
+          items: existingCart.cart_items?.map((item: any) => ({
+            ...item,
+            session: item.formation_sessions ? {
+              ...item.formation_sessions,
+              formation: item.formation_sessions.formations
+            } : undefined
+          })) || []
+        }
+        
+        // Supprimer cart_items pour éviter la confusion
+        delete cartWithItems.cart_items
+        
+        console.log('Panier trouvé:', cartWithItems)
+        console.log('Items dans le panier:', cartWithItems.items)
+        console.log('Nombre d\'items:', cartWithItems.items?.length || 0)
+        
+        // Vérifier si les items sont bien chargés
+        if (cartWithItems.items && cartWithItems.items.length > 0) {
+          console.log('Premier item:', cartWithItems.items[0])
+        }
+        
         return {
-          data: existingCart,
+          data: cartWithItems,
           success: true
         }
       }
@@ -88,13 +113,17 @@ export class CartService {
     quantity: number = 1
   ): Promise<APIResponse<CartItem>> {
     try {
+      console.log('AddToCart appelé avec:', { cartId, sessionId, quantity })
+      
       // Vérifier si l'item existe déjà
-      const { data: existingItem } = await supabase
+      const { data: existingItem, error: checkError } = await supabase
         .from('cart_items')
         .select('*')
         .eq('cart_id', cartId)
         .eq('session_id', sessionId)
         .single()
+      
+      console.log('Item existant:', existingItem, 'Erreur:', checkError)
 
       if (existingItem) {
         // Mettre à jour la quantité
@@ -107,9 +136,9 @@ export class CartService {
           .eq('id', existingItem.id)
           .select(`
             *,
-            session:formation_sessions(
+            formation_sessions (
               *,
-              formation:formations(*)
+              formations (*)
             )
           `)
           .single()
@@ -136,6 +165,13 @@ export class CartService {
       const price = session?.price_override || session?.formation?.price || 0
 
       // Créer un nouvel item
+      console.log('Création nouvel item avec:', {
+        cart_id: cartId,
+        session_id: sessionId,
+        quantity,
+        price_at_time: price
+      })
+      
       const { data, error } = await supabase
         .from('cart_items')
         .insert([{
@@ -146,29 +182,65 @@ export class CartService {
         }])
         .select(`
           *,
-          session:formation_sessions(
+          formation_sessions (
             *,
-            formation:formations(*)
+            formations (*)
           )
         `)
         .single()
 
+      console.log('Résultat insertion:', { data, error })
+      
       if (error) throw error
 
       // Mettre à jour l'expiration du panier
       await this.extendCartExpiration(cartId)
 
+      console.log('Item ajouté avec succès:', data)
+
+      // Vérifier immédiatement après l'ajout
+      const { data: verifyCart } = await supabase
+        .from('carts')
+        .select(`
+          *,
+          cart_items (
+            *,
+            formation_sessions (
+              *,
+              formations (*)
+            )
+          )
+        `)
+        .eq('id', cartId)
+        .single()
+      
+      if (verifyCart) {
+        console.log('Vérification après ajout - Panier brut:', verifyCart)
+        console.log('Vérification après ajout - cart_items:', verifyCart.cart_items)
+        console.log('Vérification après ajout - Nombre cart_items:', verifyCart.cart_items?.length || 0)
+      }
+
+      // Mapper les données pour cohérence avec le format attendu
+      const itemWithSession = {
+        ...data,
+        session: data.formation_sessions ? {
+          ...data.formation_sessions,
+          formation: data.formation_sessions.formations
+        } : undefined
+      }
+      delete itemWithSession.formation_sessions
+
       return {
-        data,
+        data: itemWithSession,
         success: true,
         message: 'Formation ajoutée au panier'
       }
-    } catch (error) {
-      console.error('Erreur lors de l\'ajout au panier:', error)
+    } catch (error: any) {
+      console.error('Erreur lors de l\'ajout au panier:', error?.message || error)
       return {
         data: null as any,
         success: false,
-        message: 'Erreur lors de l\'ajout au panier'
+        message: error?.message || 'Erreur lors de l\'ajout au panier'
       }
     }
   }
