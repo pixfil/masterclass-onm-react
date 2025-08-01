@@ -125,7 +125,7 @@ const AccountsContent = () => {
         <div className="bg-white rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800">
           {loading ? (
             <div className="p-12 text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
               <p className="mt-4 text-neutral-600 dark:text-neutral-400">Chargement des comptes...</p>
             </div>
           ) : (
@@ -163,8 +163,8 @@ const AccountsContent = () => {
                         <td className="px-6 py-4">
                           <div className="flex items-center">
                             <div className="flex-shrink-0 h-10 w-10">
-                              <div className="h-10 w-10 rounded-full bg-primary-100 dark:bg-primary-900/20 flex items-center justify-center">
-                                <UserIcon className="h-5 w-5 text-primary-600 dark:text-primary-400" />
+                              <div className="h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
+                                <UserIcon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                               </div>
                             </div>
                             <div className="ml-4">
@@ -202,7 +202,7 @@ const AccountsContent = () => {
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                           <div className="flex space-x-2">
                             <button
-                              className="text-primary-600 hover:text-primary-900 p-1 rounded"
+                              className="text-blue-600 hover:text-blue-900 p-1 rounded"
                               title="Modifier"
                             >
                               <PencilIcon className="h-4 w-4" />

@@ -55,14 +55,14 @@ const InstructorCard: React.FC<InstructorCardProps> = ({ instructor }) => {
 
         <div className="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700">
           <div className="text-center">
-            <div className="flex items-center justify-center gap-1 text-primary-600">
+            <div className="flex items-center justify-center gap-1 text-blue-600">
               <AcademicCapIcon className="w-4 h-4" />
               <span className="font-semibold">{instructor.formations_count}</span>
             </div>
             <p className="text-xs text-neutral-500 dark:text-neutral-400">Formations</p>
           </div>
           <div className="text-center">
-            <div className="flex items-center justify-center gap-1 text-primary-600">
+            <div className="flex items-center justify-center gap-1 text-blue-600">
               <UsersIcon className="w-4 h-4" />
               <span className="font-semibold">{instructor.total_students}</span>
             </div>

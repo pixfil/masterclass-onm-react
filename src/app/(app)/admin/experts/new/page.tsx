@@ -153,7 +153,7 @@ const NewExpertPage = () => {
                           value={formData.first_name}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                       </div>
                       
@@ -167,7 +167,7 @@ const NewExpertPage = () => {
                           value={formData.last_name}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                       </div>
                       
@@ -181,7 +181,7 @@ const NewExpertPage = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           required
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                       </div>
                       
@@ -194,7 +194,7 @@ const NewExpertPage = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                       </div>
                       
@@ -208,7 +208,7 @@ const NewExpertPage = () => {
                           value={formData.profile_photo}
                           onChange={handleInputChange}
                           placeholder="https://..."
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                       </div>
                       
@@ -221,7 +221,7 @@ const NewExpertPage = () => {
                           value={formData.bio}
                           onChange={handleInputChange}
                           rows={4}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                           placeholder="Présentez l'expert et son parcours..."
                         />
                       </div>
@@ -248,7 +248,7 @@ const NewExpertPage = () => {
                           value={formData.years_experience}
                           onChange={handleInputChange}
                           min="0"
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                       </div>
                       
@@ -262,7 +262,7 @@ const NewExpertPage = () => {
                           value={formData.practice_location}
                           onChange={handleInputChange}
                           placeholder="Ville, Région"
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                       </div>
                       
@@ -276,7 +276,7 @@ const NewExpertPage = () => {
                           value={formData.website}
                           onChange={handleInputChange}
                           placeholder="https://..."
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                       </div>
                       
@@ -290,7 +290,7 @@ const NewExpertPage = () => {
                           value={formData.linkedin}
                           onChange={handleInputChange}
                           placeholder="https://linkedin.com/in/..."
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                       </div>
                       
@@ -303,7 +303,7 @@ const NewExpertPage = () => {
                           name="joined_date"
                           value={formData.joined_date}
                           onChange={handleInputChange}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                         />
                       </div>
                     </div>
@@ -324,12 +324,12 @@ const NewExpertPage = () => {
                         value={newSpecialty}
                         onChange={(e) => setNewSpecialty(e.target.value)}
                         placeholder="Ajouter une spécialité..."
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                        className="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                       />
                       <button
                         type="button"
                         onClick={handleAddSpecialty}
-                        className="px-3 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700"
+                        className="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
                       >
                         <PlusIcon className="h-4 w-4" />
                       </button>
@@ -369,12 +369,12 @@ const NewExpertPage = () => {
                         value={newCredential}
                         onChange={(e) => setNewCredential(e.target.value)}
                         placeholder="Ajouter un diplôme..."
-                        className="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                        className="flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                       />
                       <button
                         type="button"
                         onClick={handleAddCredential}
-                        className="px-3 py-2 bg-primary-600 text-white rounded-md hover:bg-primary-700"
+                        className="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
                       >
                         <PlusIcon className="h-4 w-4" />
                       </button>
@@ -414,7 +414,7 @@ const NewExpertPage = () => {
                         name="is_active"
                         checked={formData.is_active}
                         onChange={handleInputChange}
-                        className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                       />
                       <label className="ml-2 text-sm text-gray-700 dark:text-gray-300">
                         Expert actif
@@ -427,7 +427,7 @@ const NewExpertPage = () => {
                         name="is_instructor"
                         checked={formData.is_instructor}
                         onChange={handleInputChange}
-                        className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                       />
                       <label className="ml-2 text-sm text-gray-700 dark:text-gray-300">
                         Instructeur de formations
@@ -440,7 +440,7 @@ const NewExpertPage = () => {
                         name="is_verified"
                         checked={formData.is_verified}
                         onChange={handleInputChange}
-                        className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                        className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                       />
                       <label className="ml-2 text-sm text-gray-700 dark:text-gray-300">
                         Expert vérifié
@@ -460,7 +460,7 @@ const NewExpertPage = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50"
+                    className="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
                   >
                     {loading ? 'Création...' : 'Créer l\'expert'}
                   </button>

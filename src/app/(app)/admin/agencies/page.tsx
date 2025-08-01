@@ -111,8 +111,8 @@ const AgenciesContent = () => {
               <div key={agency.id} className="bg-white rounded-xl shadow-sm p-6 dark:bg-neutral-800 hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center">
-                    <div className="h-12 w-12 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center mr-3">
-                      <BuildingStorefrontIcon className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                    <div className="h-12 w-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mr-3">
+                      <BuildingStorefrontIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
@@ -164,7 +164,7 @@ const AgenciesContent = () => {
                   
                   <div className="flex space-x-2">
                     <button
-                      className="text-primary-600 hover:text-primary-900 p-1 rounded"
+                      className="text-blue-600 hover:text-blue-900 p-1 rounded"
                       title="Modifier"
                     >
                       <PencilIcon className="h-4 w-4" />

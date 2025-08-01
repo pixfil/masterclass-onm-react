@@ -26,13 +26,17 @@ import {
   ShoppingBagIcon,
   UserCircleIcon,
   FaceSmileIcon,
-  PresentationChartLineIcon
+  PresentationChartLineIcon,
+  FolderIcon,
+  MicrophoneIcon,
+  UserPlusIcon,
+  TrophyIcon
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 interface AdminLayoutProps {
   children: React.ReactNode
-  currentPage: 'dashboard' | 'properties' | 'experts' | 'clients' | 'contacts' | 'newsletter' | 'accounts' | 'email-templates' | 'email-logs' | 'notifications' | 'analytics' | 'subscription' | 'settings' | 'formations' | 'orders' | 'satisfaction' | 'evaluations'
+  currentPage: 'dashboard' | 'properties' | 'experts' | 'clients' | 'contacts' | 'newsletter' | 'accounts' | 'email-templates' | 'email-logs' | 'notifications' | 'analytics' | 'subscription' | 'settings' | 'formations' | 'orders' | 'satisfaction' | 'evaluations' | 'resources' | 'podcasts' | 'referrals' | 'badges'
 }
 
 export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
@@ -89,6 +93,30 @@ export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
       href: '/admin/evaluations',
       icon: PresentationChartLineIcon,
       current: currentPage === 'evaluations'
+    },
+    {
+      name: 'Ressources',
+      href: '/admin/resources',
+      icon: FolderIcon,
+      current: currentPage === 'resources'
+    },
+    {
+      name: 'Podcasts',
+      href: '/admin/podcasts',
+      icon: MicrophoneIcon,
+      current: currentPage === 'podcasts'
+    },
+    {
+      name: 'Parrainages',
+      href: '/admin/referrals',
+      icon: UserPlusIcon,
+      current: currentPage === 'referrals'
+    },
+    {
+      name: 'Badges',
+      href: '/admin/badges',
+      icon: TrophyIcon,
+      current: currentPage === 'badges'
     },
     {
       name: 'Messages',
@@ -172,15 +200,15 @@ export const AdminLayout = ({ children, currentPage }: AdminLayoutProps) => {
                     href={item.href}
                     className={`group flex items-center px-3 py-2.5 text-sm font-medium rounded-xl transition-all duration-200 ${
                       item.current
-                        ? 'bg-gradient-to-r from-indigo-50 to-cyan-50 text-indigo-700 border border-indigo-200 dark:from-indigo-900/20 dark:to-cyan-900/20 dark:text-indigo-400 dark:border-indigo-800'
-                        : 'text-neutral-700 hover:bg-gradient-to-r hover:from-indigo-50/50 hover:to-cyan-50/50 hover:text-indigo-600 dark:text-neutral-300 dark:hover:bg-neutral-700/50'
+                        ? 'bg-gradient-to-r from-indigo-50 to-cyan-50 text-blue-700 border border-indigo-200 dark:from-indigo-900/20 dark:to-cyan-900/20 dark:text-blue-400 dark:border-indigo-800'
+                        : 'text-neutral-700 hover:bg-gradient-to-r hover:from-indigo-50/50 hover:to-cyan-50/50 hover:text-blue-600 dark:text-neutral-300 dark:hover:bg-neutral-700/50'
                     }`}
                   >
                     <Icon
                       className={`mr-3 h-5 w-5 transition-colors ${
                         item.current
-                          ? 'text-indigo-600'
-                          : 'text-neutral-400 group-hover:text-indigo-500'
+                          ? 'text-blue-600'
+                          : 'text-neutral-400 group-hover:text-blue-500'
                       }`}
                     />
                     {item.name}

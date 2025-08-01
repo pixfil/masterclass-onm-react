@@ -86,7 +86,7 @@ const TestimonialsSection = () => {
                 "{testimonial.comment}"
               </p>
 
-              <p className="text-sm text-primary-600 font-medium">
+              <p className="text-sm text-blue-600 font-medium">
                 Formation : {testimonial.formation}
               </p>
             </div>
@@ -94,19 +94,19 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-6 p-6 bg-primary-50 dark:bg-primary-900/20 rounded-2xl">
+          <div className="inline-flex items-center gap-6 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl">
             <div>
-              <div className="text-3xl font-bold text-primary-600">4.9/5</div>
+              <div className="text-3xl font-bold text-blue-600">4.9/5</div>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">Note moyenne</p>
             </div>
-            <div className="w-px h-12 bg-primary-200 dark:bg-primary-800" />
+            <div className="w-px h-12 bg-blue-200 dark:bg-blue-800" />
             <div>
-              <div className="text-3xl font-bold text-primary-600">98%</div>
+              <div className="text-3xl font-bold text-blue-600">98%</div>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">Satisfaction</p>
             </div>
-            <div className="w-px h-12 bg-primary-200 dark:bg-primary-800" />
+            <div className="w-px h-12 bg-blue-200 dark:bg-blue-800" />
             <div>
-              <div className="text-3xl font-bold text-primary-600">2500+</div>
+              <div className="text-3xl font-bold text-blue-600">2500+</div>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">Praticiens formés</p>
             </div>
           </div>

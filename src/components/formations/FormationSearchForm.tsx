@@ -48,7 +48,7 @@ const FormationSearchForm = () => {
               placeholder="Rechercher une formation..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-transparent focus:outline-none focus:border-primary-500 transition-colors"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-transparent focus:outline-none focus:border-blue-500 transition-colors"
             />
           </div>
 
@@ -58,7 +58,7 @@ const FormationSearchForm = () => {
             <select
               value={selectedCity}
               onChange={(e) => setSelectedCity(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-transparent focus:outline-none focus:border-primary-500 transition-colors appearance-none cursor-pointer"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-transparent focus:outline-none focus:border-blue-500 transition-colors appearance-none cursor-pointer"
             >
               <option value="">Toutes les villes</option>
               {cities.map(city => (
@@ -73,7 +73,7 @@ const FormationSearchForm = () => {
             <select
               value={selectedLevel}
               onChange={(e) => setSelectedLevel(e.target.value)}
-              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-transparent focus:outline-none focus:border-primary-500 transition-colors appearance-none cursor-pointer"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-transparent focus:outline-none focus:border-blue-500 transition-colors appearance-none cursor-pointer"
             >
               <option value="">Tous les niveaux</option>
               {levels.map(level => (
@@ -90,7 +90,7 @@ const FormationSearchForm = () => {
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
               min={new Date().toISOString().slice(0, 7)}
-              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-transparent focus:outline-none focus:border-primary-500 transition-colors"
+              className="w-full pl-12 pr-4 py-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-transparent focus:outline-none focus:border-blue-500 transition-colors"
             />
           </div>
         </div>

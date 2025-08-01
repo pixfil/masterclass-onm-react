@@ -196,7 +196,7 @@ const OrderDetailPage = () => {
           <AdminLayout currentPage="orders">
             <div className="flex justify-center items-center min-h-[400px]">
               <div className="text-center">
-                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
                 <p className="mt-2 text-sm text-gray-500">Chargement de la commande...</p>
               </div>
             </div>
@@ -216,7 +216,7 @@ const OrderDetailPage = () => {
               <p className="text-lg font-medium text-gray-900 dark:text-white">Commande non trouvée</p>
               <Link
                 href="/admin/orders"
-                className="mt-4 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700"
+                className="mt-4 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
               >
                 Retour aux commandes
               </Link>
@@ -306,7 +306,7 @@ const OrderDetailPage = () => {
                               <select
                                 value={order.status}
                                 onChange={(e) => handleStatusUpdate(e.target.value)}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                               >
                                 <option value="pending">En attente</option>
                                 <option value="confirmed">Confirmé</option>
@@ -337,7 +337,7 @@ const OrderDetailPage = () => {
                               <select
                                 value={order.payment_status}
                                 onChange={(e) => handlePaymentStatusUpdate(e.target.value)}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                               >
                                 <option value="pending">En attente</option>
                                 <option value="paid">Payé</option>
@@ -362,8 +362,8 @@ const OrderDetailPage = () => {
                         {order.items?.map((item, index) => (
                           <div key={index} className="flex items-start space-x-4 p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
                             <div className="flex-shrink-0 flex items-center space-x-3">
-                              <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
-                                <AcademicCapIcon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
+                                <AcademicCapIcon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                               </div>
                               {getFormationColorBadge(item.session?.formation?.title || '')}
                             </div>
@@ -510,7 +510,7 @@ const OrderDetailPage = () => {
                       <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                         <div className="flex justify-between">
                           <span className="text-lg font-semibold">Total TTC</span>
-                          <span className="text-2xl font-bold text-primary-600">{formatPrice(order.total_amount)}</span>
+                          <span className="text-2xl font-bold text-blue-600">{formatPrice(order.total_amount)}</span>
                         </div>
                       </div>
                       

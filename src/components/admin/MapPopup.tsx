@@ -12,7 +12,7 @@ const DynamicMapbox = dynamic(
     ssr: false,
     loading: () => (
       <div className="w-full h-full bg-neutral-100 dark:bg-neutral-700 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
       </div>
     )
   }
@@ -89,7 +89,7 @@ export const MapPopup = ({
                       </div>
                       <button
                         type="button"
-                        className="rounded-md bg-white text-neutral-400 hover:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-400"
+                        className="rounded-md bg-white text-neutral-400 hover:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-400"
                         onClick={onClose}
                       >
                         <span className="sr-only">Fermer</span>
@@ -127,7 +127,7 @@ export const MapPopup = ({
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full z-20 pointer-events-none">
                           <div className="relative">
                             {/* Pin principal de secours */}
-                            <div className="w-6 h-6 bg-primary-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center animate-pulse">
+                            <div className="w-6 h-6 bg-blue-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center animate-pulse">
                               <div className="w-2 h-2 bg-white rounded-full"></div>
                             </div>
                             {/* Ombre du pin */}

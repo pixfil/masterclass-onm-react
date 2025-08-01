@@ -42,8 +42,8 @@ export const UbiflowToggle = ({
         onClick={handleToggle}
         disabled={disabled || loading}
         className={`${
-          enabled ? 'bg-primary-600' : 'bg-neutral-200 dark:bg-neutral-600'
-        } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
+          enabled ? 'bg-blue-600' : 'bg-neutral-200 dark:bg-neutral-600'
+        } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
           disabled || loading ? 'opacity-50 cursor-not-allowed' : ''
         }`}
         title={showTooltip ? "Mettre en ligne via Ubiflow" : undefined}

@@ -86,28 +86,28 @@ export default function CercleExcellencePage() {
       name: "Dr. Philippe Martin",
       title: "Président du CEPROF",
       speciality: "Expert ONM International",
-      image: "/api/placeholder/200/200",
+      image: "/images/formation-default.svg",
       quote: "L'excellence n'est pas un acte, mais une habitude"
     },
     {
       name: "Dr. Marie Lefebvre",
       title: "Vice-Présidente",
       speciality: "Spécialiste Pédiatrique",
-      image: "/api/placeholder/200/200",
+      image: "/images/formation-default.svg",
       quote: "Innover pour mieux soigner"
     },
     {
       name: "Dr. Jean Dubois",
       title: "Directeur Scientifique",
       speciality: "Recherche & Développement",
-      image: "/api/placeholder/200/200",
+      image: "/images/formation-default.svg",
       quote: "La science au service du patient"
     },
     {
       name: "Dr. Sophie Bernard",
       title: "Responsable Formation",
       speciality: "Formatrice Senior ONM",
-      image: "/api/placeholder/200/200",
+      image: "/images/formation-default.svg",
       quote: "Transmettre pour progresser"
     }
   ]

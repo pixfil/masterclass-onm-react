@@ -131,14 +131,14 @@ export const OrderQuickActionsModal: React.FC<OrderQuickActionsModalProps> = ({
                       </div>
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600 dark:text-gray-400">Email</span>
-                        <a href={`mailto:${order.user?.email}`} className="text-sm text-primary-600 hover:text-primary-700">
+                        <a href={`mailto:${order.user?.email}`} className="text-sm text-blue-600 hover:text-blue-700">
                           {order.user?.email}
                         </a>
                       </div>
                       {order.user?.phone && (
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-gray-600 dark:text-gray-400">Téléphone</span>
-                          <a href={`tel:${order.user.phone}`} className="text-sm text-primary-600 hover:text-primary-700">
+                          <a href={`tel:${order.user.phone}`} className="text-sm text-blue-600 hover:text-blue-700">
                             {order.user.phone}
                           </a>
                         </div>
@@ -214,7 +214,7 @@ export const OrderQuickActionsModal: React.FC<OrderQuickActionsModalProps> = ({
                       <div className="pt-2 border-t border-gray-200 dark:border-neutral-600">
                         <div className="flex items-center justify-between">
                           <span className="font-medium text-gray-900 dark:text-white">Total TTC</span>
-                          <span className="text-lg font-bold text-primary-600">
+                          <span className="text-lg font-bold text-blue-600">
                             {formatPrice(order.total_amount)}
                           </span>
                         </div>
@@ -231,7 +231,7 @@ export const OrderQuickActionsModal: React.FC<OrderQuickActionsModalProps> = ({
                       <select
                         value={order.status}
                         onChange={(e) => onStatusChange(order.id, e.target.value as OrderStatus)}
-                        className={`w-full px-3 py-2 rounded-lg text-sm font-medium ${getStatusColor(order.status)} border-0 focus:ring-2 focus:ring-primary-500`}
+                        className={`w-full px-3 py-2 rounded-lg text-sm font-medium ${getStatusColor(order.status)} border-0 focus:ring-2 focus:ring-blue-500`}
                       >
                         <option value="pending">En attente</option>
                         <option value="confirmed">Confirmée</option>
@@ -249,7 +249,7 @@ export const OrderQuickActionsModal: React.FC<OrderQuickActionsModalProps> = ({
                       <select
                         value={order.payment_status}
                         onChange={(e) => onPaymentStatusChange(order.id, e.target.value as PaymentStatus)}
-                        className={`w-full px-3 py-2 rounded-lg text-sm font-medium ${getPaymentStatusColor(order.payment_status)} border-0 focus:ring-2 focus:ring-primary-500`}
+                        className={`w-full px-3 py-2 rounded-lg text-sm font-medium ${getPaymentStatusColor(order.payment_status)} border-0 focus:ring-2 focus:ring-blue-500`}
                       >
                         <option value="pending">En attente</option>
                         <option value="paid">Payé</option>
@@ -296,7 +296,7 @@ export const OrderQuickActionsModal: React.FC<OrderQuickActionsModalProps> = ({
                     </Button>
                     <Button
                       href={`/admin/orders/${order.id}`}
-                      className="bg-primary-600 text-white hover:bg-primary-700"
+                      className="bg-blue-600 text-white hover:bg-blue-700"
                     >
                       Voir les détails complets
                     </Button>

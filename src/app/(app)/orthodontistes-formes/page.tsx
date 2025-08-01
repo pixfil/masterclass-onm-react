@@ -15,6 +15,8 @@ import ButtonPrimary from '@/shared/ButtonPrimary'
 import Input from '@/shared/Input'
 import Select from '@/shared/Select'
 import { getAllClients } from '@/lib/supabase/clients'
+import ModernHeader from '@/components/Header/ModernHeader'
+import Link from 'next/link'
 
 interface TrainedOrthodontist {
   id: string
@@ -166,25 +168,34 @@ const OrthodontistesFormesPage = () => {
 
   return (
     <div className="nc-OrthodontistesFormesPage">
+      <ModernHeader />
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-indigo-900 to-cyan-900">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-900/40 to-cyan-900/20" />
+      <section className="relative py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-900/40 to-cyan-900/20" />
         
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 text-indigo-200 border border-indigo-500/30 backdrop-blur-sm mb-6">
+            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-200 border border-blue-500/30 backdrop-blur-sm mb-6">
               <CheckBadgeIcon className="w-4 h-4 mr-2" />
               Réseau de praticiens certifiés
             </span>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Orthodontistes formés à <span className="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">l'ONM</span>
+              Orthodontistes formés à <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">l'ONM</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
               Trouvez un praticien certifié près de chez vous pour bénéficier 
               de l'approche neuro-musculaire en orthodontie
             </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/formations">
+                <ButtonPrimary className="w-full sm:w-auto">
+                  Découvrir nos formations
+                </ButtonPrimary>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -420,7 +431,7 @@ const OrthodontistesFormesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-20 bg-gradient-to-r from-indigo-600 to-cyan-600">
+      <section className="py-16 lg:py-20 bg-gradient-to-r from-blue-600 to-cyan-600">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">

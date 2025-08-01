@@ -84,8 +84,8 @@ const styles = {
       '[--btn-icon:var(--color-neutral-400)] data-active:[--btn-icon:var(--color-neutral-300)] data-hover:[--btn-icon:var(--color-neutral-300)]',
     ],
     indigo: [
-      'text-white [--btn-hover-overlay:var(--color-white)]/10 [--btn-bg:var(--color-blue-500)] [--btn-border:var(--color-blue-600)]/90',
-      '[--btn-icon:var(--color-blue-300)] data-active:[--btn-icon:var(--color-blue-200)] data-hover:[--btn-icon:var(--color-blue-200)]',
+      'text-white [--btn-hover-overlay:var(--color-white)]/10 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 border-blue-600/90',
+      '[--btn-icon:var(--color-blue-200)] data-active:[--btn-icon:var(--color-blue-100)] data-hover:[--btn-icon:var(--color-blue-100)]',
     ],
     cyan: [
       'text-cyan-950 [--btn-bg:var(--color-cyan-300)] [--btn-border:var(--color-cyan-400)]/80 [--btn-hover-overlay:var(--color-white)]/25',
@@ -124,12 +124,12 @@ const styles = {
       '[--btn-icon:var(--color-white)]/60 data-active:[--btn-icon:var(--color-white)]/80 data-hover:[--btn-icon:var(--color-white)]/80',
     ],
     sky: [
-      'text-white [--btn-hover-overlay:var(--color-white)]/10 [--btn-bg:var(--color-sky-500)] [--btn-border:var(--color-sky-600)]/80',
-      '[--btn-icon:var(--color-white)]/60 data-active:[--btn-icon:var(--color-white)]/80 data-hover:[--btn-icon:var(--color-white)]/80',
+      'text-white [--btn-hover-overlay:var(--color-white)]/10 bg-gradient-to-r from-sky-400 to-cyan-300 hover:from-sky-500 hover:to-cyan-400 border-sky-500/90',
+      '[--btn-icon:var(--color-sky-200)] data-active:[--btn-icon:var(--color-sky-100)] data-hover:[--btn-icon:var(--color-sky-100)]',
     ],
     blue: [
-      'text-white [--btn-hover-overlay:var(--color-white)]/10 [--btn-bg:var(--color-blue-600)] [--btn-border:var(--color-blue-700)]/90',
-      '[--btn-icon:var(--color-blue-400)] data-active:[--btn-icon:var(--color-blue-300)] data-hover:[--btn-icon:var(--color-blue-300)]',
+      'text-white [--btn-hover-overlay:var(--color-white)]/10 bg-gradient-to-r from-blue-400 to-cyan-400 hover:from-blue-500 hover:to-cyan-500 border-blue-500/90',
+      '[--btn-icon:var(--color-blue-200)] data-active:[--btn-icon:var(--color-blue-100)] data-hover:[--btn-icon:var(--color-blue-100)]',
     ],
     violet: [
       'text-white [--btn-hover-overlay:var(--color-white)]/10 [--btn-bg:var(--color-blue-500)] [--btn-border:var(--color-blue-600)]/90',
@@ -152,8 +152,8 @@ const styles = {
       '[--btn-icon:var(--color-rose-300)] data-active:[--btn-icon:var(--color-rose-200)] data-hover:[--btn-icon:var(--color-rose-200)]',
     ],
     primary: [
-      'text-white [--btn-hover-overlay:var(--color-white)]/10 [--btn-bg:var(--color-primary-500)] [--btn-border:var(--color-primary-600)]/90',
-      '[--btn-icon:var(--color-primary-300)] data-active:[--btn-icon:var(--color-primary-200)] data-hover:[--btn-icon:var(--color-primary-200)]',
+      'text-white [--btn-hover-overlay:var(--color-white)]/10 bg-gradient-to-r from-blue-400 to-cyan-400 hover:from-blue-500 hover:to-cyan-500 border-blue-500/90',
+      '[--btn-icon:var(--color-blue-200)] data-active:[--btn-icon:var(--color-blue-100)] data-hover:[--btn-icon:var(--color-blue-100)]',
     ],
   },
 

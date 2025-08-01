@@ -139,7 +139,7 @@ const SettingsContent = () => {
       <div className="space-y-6">
         <div>
           <Heading as="h1" className="flex items-center gap-3">
-            <CogIcon className="h-8 w-8 text-primary-600" />
+            <CogIcon className="h-8 w-8 text-blue-600" />
             Paramètres
           </Heading>
           <p className="mt-2 text-neutral-600 dark:text-neutral-400">
@@ -159,7 +159,7 @@ const SettingsContent = () => {
                   className={`
                     flex items-center gap-2 py-2 px-1 border-b-2 font-medium text-sm transition-colors
                     ${activeTab === tab.id
-                      ? 'border-primary-500 text-primary-600 dark:text-primary-400'
+                      ? 'border-blue-500 text-blue-600 dark:text-blue-400'
                       : 'border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300 dark:text-neutral-400 dark:hover:text-neutral-300'
                     }
                   `}
@@ -222,7 +222,7 @@ const SettingsContent = () => {
                     value={settings.aiProvider}
                     onChange={(e) => handleInputChange('aiProvider', e.target.value)}
                     disabled={!hasFeature('ai')}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 disabled:opacity-50"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 disabled:opacity-50"
                   >
                     <option value="openai">OpenAI (Nécessite crédits API séparés)</option>
                     <option value="anthropic">Anthropic Claude (Recommandé - Plus économique)</option>
@@ -246,7 +246,7 @@ const SettingsContent = () => {
                         />
                       </div>
                       <p className="mt-1 text-sm text-neutral-500">
-                        Obtenez votre clé sur <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">platform.openai.com</a>
+                        Obtenez votre clé sur <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">platform.openai.com</a>
                       </p>
                     </div>
                     
@@ -257,7 +257,7 @@ const SettingsContent = () => {
                       <select
                         value={settings.openaiModel}
                         onChange={(e) => handleInputChange('openaiModel', e.target.value)}
-                        className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600"
+                        className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600"
                       >
                         <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Recommandé - Rapide et économique)</option>
                         <option value="gpt-4">GPT-4 (Plus intelligent mais plus lent)</option>
@@ -283,7 +283,7 @@ const SettingsContent = () => {
                       />
                     </div>
                     <p className="mt-1 text-sm text-neutral-500">
-                      Obtenez votre clé sur <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">console.anthropic.com</a>
+                      Obtenez votre clé sur <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">console.anthropic.com</a>
                     </p>
                   </div>
                 )}
@@ -309,7 +309,7 @@ const SettingsContent = () => {
                   <select
                     value={settings.emailProvider}
                     onChange={(e) => handleInputChange('emailProvider', e.target.value)}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600"
                   >
                     <option value="smtp">SMTP Classique</option>
                     <option value="brevo">Brevo API</option>
@@ -370,7 +370,7 @@ const SettingsContent = () => {
                         id="smtpSecure"
                         checked={settings.smtpSecure}
                         onChange={(e) => handleInputChange('smtpSecure', e.target.checked)}
-                        className="h-4 w-4 text-primary-600 border-neutral-300 rounded focus:ring-primary-500"
+                        className="h-4 w-4 text-blue-600 border-neutral-300 rounded focus:ring-blue-500"
                       />
                       <label htmlFor="smtpSecure" className="ml-2 text-sm text-neutral-700 dark:text-neutral-300">
                         Utiliser SSL/TLS
@@ -395,7 +395,7 @@ const SettingsContent = () => {
                       />
                     </div>
                     <p className="mt-1 text-sm text-neutral-500">
-                      Obtenez votre clé sur <a href="https://app.brevo.com/settings/keys/api" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">app.brevo.com</a>
+                      Obtenez votre clé sur <a href="https://app.brevo.com/settings/keys/api" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">app.brevo.com</a>
                     </p>
                   </div>
                 )}
@@ -512,7 +512,7 @@ const SettingsContent = () => {
                     <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
                       Email automatique envoyé lors de l'inscription
                     </p>
-                    <button className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400">
+                    <button className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400">
                       Modifier →
                     </button>
                   </div>
@@ -527,7 +527,7 @@ const SettingsContent = () => {
                     <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
                       Confirmation automatique des demandes de visite
                     </p>
-                    <button className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400">
+                    <button className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400">
                       Modifier →
                     </button>
                   </div>
@@ -542,7 +542,7 @@ const SettingsContent = () => {
                     <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">
                       Email avec rapport d'estimation personnalisé
                     </p>
-                    <button className="text-sm text-primary-600 hover:text-primary-700 dark:text-primary-400">
+                    <button className="text-sm text-blue-600 hover:text-blue-700 dark:text-blue-400">
                       Configurer →
                     </button>
                   </div>
@@ -586,9 +586,9 @@ const SettingsContent = () => {
                     </div>
                     <button
                       onClick={() => handleInputChange('analyticsEnabled', !settings.analyticsEnabled)}
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                         settings.analyticsEnabled 
-                          ? 'bg-primary-600' 
+                          ? 'bg-blue-600' 
                           : 'bg-neutral-200 dark:bg-neutral-600'
                       }`}
                     >
@@ -614,9 +614,9 @@ const SettingsContent = () => {
                           </div>
                           <button
                             onClick={() => handleInputChange('trackPropertyViews', !settings.trackPropertyViews)}
-                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
+                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                               settings.trackPropertyViews 
-                                ? 'bg-primary-600' 
+                                ? 'bg-blue-600' 
                                 : 'bg-neutral-200 dark:bg-neutral-600'
                             }`}
                           >
@@ -639,9 +639,9 @@ const SettingsContent = () => {
                           </div>
                           <button
                             onClick={() => handleInputChange('trackUserBehavior', !settings.trackUserBehavior)}
-                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
+                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                               settings.trackUserBehavior 
-                                ? 'bg-primary-600' 
+                                ? 'bg-blue-600' 
                                 : 'bg-neutral-200 dark:bg-neutral-600'
                             }`}
                           >
@@ -664,9 +664,9 @@ const SettingsContent = () => {
                           </div>
                           <button
                             onClick={() => handleInputChange('trackConversions', !settings.trackConversions)}
-                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
+                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                               settings.trackConversions 
-                                ? 'bg-primary-600' 
+                                ? 'bg-blue-600' 
                                 : 'bg-neutral-200 dark:bg-neutral-600'
                             }`}
                           >
@@ -727,7 +727,7 @@ const SettingsContent = () => {
             <div className="space-y-6">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <ShieldCheckIcon className="h-6 w-6 text-primary-600" />
+                  <ShieldCheckIcon className="h-6 w-6 text-blue-600" />
                   <h3 className="text-lg font-medium">Configuration Stripe - Super Admin</h3>
                 </div>
                 <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-6">
@@ -764,9 +764,9 @@ const SettingsContent = () => {
                     </div>
                     <button
                       onClick={() => handleInputChange('paywallEnabled', !settings.paywallEnabled)}
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                         settings.paywallEnabled 
-                          ? 'bg-primary-600' 
+                          ? 'bg-blue-600' 
                           : 'bg-neutral-200 dark:bg-neutral-600'
                       }`}
                     >
@@ -789,7 +789,7 @@ const SettingsContent = () => {
                     </div>
                     <button
                       onClick={() => handleInputChange('globalFreeAccess', !settings.globalFreeAccess)}
-                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
+                      className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                         settings.globalFreeAccess 
                           ? 'bg-green-600' 
                           : 'bg-neutral-200 dark:bg-neutral-600'
@@ -890,7 +890,7 @@ const SettingsContent = () => {
                     Instructions de configuration
                   </h4>
                   <ol className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2 list-decimal list-inside">
-                    <li>Créez un compte Stripe sur <a href="https://stripe.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">stripe.com</a></li>
+                    <li>Créez un compte Stripe sur <a href="https://stripe.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">stripe.com</a></li>
                     <li>Récupérez vos clés API dans le tableau de bord Stripe</li>
                     <li>Configurez un webhook pointant vers: <code className="bg-neutral-200 dark:bg-neutral-800 px-1 rounded">/api/stripe/webhook</code></li>
                     <li>Ajoutez les événements: checkout.session.completed, invoice.payment_succeeded, customer.subscription.updated</li>

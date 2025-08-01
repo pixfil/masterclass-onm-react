@@ -150,7 +150,7 @@ const EmailTemplatesContent = () => {
     }
     
     const IconComponent = iconMap[type] || DocumentTextIcon
-    return <IconComponent className="h-5 w-5 text-primary-600 dark:text-primary-400" />
+    return <IconComponent className="h-5 w-5 text-blue-600 dark:text-blue-400" />
   }
 
   const filteredTemplates = templates.filter(template => 
@@ -183,7 +183,7 @@ const EmailTemplatesContent = () => {
               onClick={() => setFilter('')}
               className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                 filter === '' 
-                  ? 'bg-primary-600 text-white' 
+                  ? 'bg-blue-600 text-white' 
                   : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
               }`}
             >
@@ -193,7 +193,7 @@ const EmailTemplatesContent = () => {
               onClick={() => setFilter('order_confirmation_client')}
               className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                 filter === 'order_confirmation_client' 
-                  ? 'bg-primary-600 text-white' 
+                  ? 'bg-blue-600 text-white' 
                   : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
               }`}
             >
@@ -203,7 +203,7 @@ const EmailTemplatesContent = () => {
               onClick={() => setFilter('formation_reminder')}
               className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                 filter === 'formation_reminder' 
-                  ? 'bg-primary-600 text-white' 
+                  ? 'bg-blue-600 text-white' 
                   : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
               }`}
             >
@@ -213,7 +213,7 @@ const EmailTemplatesContent = () => {
               onClick={() => setFilter('satisfaction_survey')}
               className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                 filter === 'satisfaction_survey' 
-                  ? 'bg-primary-600 text-white' 
+                  ? 'bg-blue-600 text-white' 
                   : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
               }`}
             >
@@ -237,7 +237,7 @@ const EmailTemplatesContent = () => {
               <div key={template.id} className="bg-white rounded-xl shadow-sm p-6 dark:bg-neutral-800 hover:shadow-md transition-shadow">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center">
-                    <div className="h-10 w-10 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center mr-3">
+                    <div className="h-10 w-10 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mr-3">
                       {getTypeIcon(template.type)}
                     </div>
                     <div>
@@ -307,7 +307,7 @@ const EmailTemplatesContent = () => {
                     </button>
                     <Link
                       href={`/admin/email-templates/edit/${template.id}`}
-                      className="text-primary-600 hover:text-primary-900 p-1 rounded"
+                      className="text-blue-600 hover:text-blue-900 p-1 rounded"
                       title="Modifier"
                     >
                       <PencilIcon className="h-4 w-4" />

@@ -175,7 +175,7 @@ const ExpertsAdminPage = () => {
                   
                   <Link
                     href="/admin/experts/new"
-                    className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700"
+                    className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
                   >
                     <PlusIcon className="-ml-1 mr-2 h-5 w-5" />
                     Nouvel expert
@@ -274,7 +274,7 @@ const ExpertsAdminPage = () => {
                     <input
                       type="text"
                       placeholder="Rechercher par nom, email..."
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white dark:bg-gray-700 dark:border-gray-600 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white dark:bg-gray-700 dark:border-gray-600 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       onChange={(e) => handleSearch(e.target.value)}
                     />
                   </div>
@@ -291,7 +291,7 @@ const ExpertsAdminPage = () => {
                           Statut
                         </label>
                         <select
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                           onChange={(e) => handleFilterChange({ is_active: e.target.value === 'true' ? true : e.target.value === 'false' ? false : undefined })}
                         >
                           <option value="">Tous</option>
@@ -305,7 +305,7 @@ const ExpertsAdminPage = () => {
                           Instructeurs
                         </label>
                         <select
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                           onChange={(e) => handleFilterChange({ is_instructor: e.target.value === 'true' ? true : e.target.value === 'false' ? false : undefined })}
                         >
                           <option value="">Tous</option>
@@ -319,7 +319,7 @@ const ExpertsAdminPage = () => {
                           Vérification
                         </label>
                         <select
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                           onChange={(e) => handleFilterChange({ is_verified: e.target.value === 'true' ? true : e.target.value === 'false' ? false : undefined })}
                         >
                           <option value="">Tous</option>
@@ -333,7 +333,7 @@ const ExpertsAdminPage = () => {
                           Tri
                         </label>
                         <select
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                           onChange={(e) => setSearchParams(prev => ({ ...prev, sort_by: e.target.value as any }))}
                         >
                           <option value="created_at">Date création</option>
@@ -351,7 +351,7 @@ const ExpertsAdminPage = () => {
                 <div className="px-4 py-5 sm:p-6">
                   {loading ? (
                     <div className="text-center py-12">
-                      <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+                      <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
                       <p className="mt-2 text-sm text-gray-500">Chargement...</p>
                     </div>
                   ) : experts.length === 0 ? (
@@ -361,7 +361,7 @@ const ExpertsAdminPage = () => {
                       <p className="text-sm text-gray-500 mb-4">Commencez par ajouter votre premier expert CEPROF</p>
                       <Link
                         href="/admin/experts/new"
-                        className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700"
+                        className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
                       >
                         <PlusIcon className="-ml-1 mr-2 h-4 w-4" />
                         Ajouter un expert
@@ -470,7 +470,7 @@ const ExpertsAdminPage = () => {
                                 <div className="flex items-center space-x-2">
                                   <Link
                                     href={`/admin/experts/edit/${expert.id}`}
-                                    className="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300"
+                                    className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300"
                                   >
                                     <PencilIcon className="h-5 w-5" />
                                   </Link>

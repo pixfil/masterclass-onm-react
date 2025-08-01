@@ -140,6 +140,14 @@ export interface Formation {
   image_url?: string
   sessions?: FormationSession[]
   program?: any // Programme détaillé avec objectifs, curriculum, etc.
+  // Nouveaux champs pour les informations pratiques
+  venue_name?: string
+  venue_address?: string
+  venue_details?: string
+  start_time?: string
+  end_time?: string
+  schedule_details?: string
+  included_services?: string[]
 }
 
 // =============================================================================

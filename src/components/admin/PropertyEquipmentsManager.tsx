@@ -121,7 +121,7 @@ export const PropertyEquipmentsManager = ({
 
       {loading && (
         <div className="text-center py-4">
-          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 mx-auto"></div>
         </div>
       )}
 
@@ -138,7 +138,7 @@ export const PropertyEquipmentsManager = ({
                   key={type.id}
                   className={`flex items-center p-3 border rounded-lg cursor-pointer transition-colors ${
                     selectedEquipments.includes(type.id)
-                      ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20'
+                      ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20'
                       : 'border-neutral-200 hover:border-neutral-300 dark:border-neutral-700'
                   }`}
                 >
@@ -146,7 +146,7 @@ export const PropertyEquipmentsManager = ({
                     type="checkbox"
                     checked={selectedEquipments.includes(type.id)}
                     onChange={() => toggleEquipment(type.id)}
-                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded mr-3"
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded mr-3"
                   />
                   <div className="flex-1">
                     <div className="font-medium text-sm text-neutral-900 dark:text-white">
@@ -180,7 +180,7 @@ export const PropertyEquipmentsManager = ({
             {currentEquipments.map((equipment) => (
               <span
                 key={equipment.id}
-                className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/20 dark:text-primary-400"
+                className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400"
               >
                 {equipment.nom_equipement}
                 {equipment.quantite > 1 && ` (${equipment.quantite})`}

@@ -273,7 +273,7 @@ export const PropertyHighlightsManager = ({
 
       {loading && (
         <div className="text-center py-4">
-          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-primary-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600 mx-auto"></div>
         </div>
       )}
 
@@ -297,7 +297,7 @@ export const PropertyHighlightsManager = ({
                     value={highlight.description}
                     onChange={(e) => updateLocalHighlight(index, 'description', e.target.value)}
                     rows={2}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
                     placeholder="Description détaillée de cet avantage..."
                   />
                 </div>

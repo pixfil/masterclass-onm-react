@@ -43,7 +43,7 @@ const FormationCardFeatured: React.FC<FormationCardFeaturedProps> = ({
 
   return (
     <div className={`nc-FormationCardFeatured group relative ${featured ? 'lg:scale-105' : ''} ${className}`}>
-      <div className={`relative bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${featured ? 'ring-2 ring-primary-500' : ''}`}>
+      <div className={`relative bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${featured ? 'ring-2 ring-blue-500' : ''}`}>
         {featured && (
           <div className="absolute top-4 right-4 z-10">
             <Badge name="Recommandé" color="red" />
@@ -99,7 +99,7 @@ const FormationCardFeatured: React.FC<FormationCardFeaturedProps> = ({
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-neutral-500 dark:text-neutral-400">À partir de</p>
-                <p className="text-2xl font-bold text-primary-600">{formation.price}€ TTC</p>
+                <p className="text-2xl font-bold text-blue-600">{formation.price}€ TTC</p>
               </div>
               
               <div className="text-right">

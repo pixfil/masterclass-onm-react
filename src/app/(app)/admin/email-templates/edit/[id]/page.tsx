@@ -171,7 +171,7 @@ const EmailTemplateEditorContent = () => {
     return (
       <AdminLayout currentPage="email-templates">
         <div className="flex items-center justify-center h-64">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
         </div>
       </AdminLayout>
     )
@@ -209,7 +209,7 @@ const EmailTemplateEditorContent = () => {
             <Button 
               onClick={handleSave}
               disabled={saving || !template.name || !template.subject || !template.content}
-              className="bg-primary-600 text-white hover:bg-primary-700"
+              className="bg-blue-600 text-white hover:bg-blue-700"
             >
               {saving ? 'Sauvegarde...' : (isNew ? 'Créer' : 'Sauvegarder')}
             </Button>
@@ -249,7 +249,7 @@ const EmailTemplateEditorContent = () => {
                     type="text"
                     value={template.name || ''}
                     onChange={(e) => setTemplate(prev => ({ ...prev, name: e.target.value }))}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
                     placeholder="Ex: Confirmation de commande"
                   />
                 </div>
@@ -261,7 +261,7 @@ const EmailTemplateEditorContent = () => {
                   <select
                     value={template.type || ''}
                     onChange={(e) => setTemplate(prev => ({ ...prev, type: e.target.value as EmailTemplateType }))}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
                   >
                     {Object.entries(EMAIL_TEMPLATE_TYPES_LABELS).map(([value, label]) => (
                       <option key={value} value={value}>{label}</option>
@@ -278,7 +278,7 @@ const EmailTemplateEditorContent = () => {
                   type="text"
                   value={template.description || ''}
                   onChange={(e) => setTemplate(prev => ({ ...prev, description: e.target.value }))}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
                   placeholder="Description du modèle"
                 />
               </div>
@@ -291,7 +291,7 @@ const EmailTemplateEditorContent = () => {
                   type="text"
                   value={template.subject || ''}
                   onChange={(e) => setTemplate(prev => ({ ...prev, subject: e.target.value }))}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
                   placeholder="Ex: Confirmation de votre inscription - {{formation.title}}"
                 />
               </div>
@@ -310,7 +310,7 @@ const EmailTemplateEditorContent = () => {
                   value={template.content || ''}
                   onChange={(e) => setTemplate(prev => ({ ...prev, content: e.target.value }))}
                   rows={20}
-                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white font-mono text-sm"
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white font-mono text-sm"
                   placeholder="Contenu HTML de l'email..."
                 />
               </div>
@@ -328,7 +328,7 @@ const EmailTemplateEditorContent = () => {
                       id="is_active"
                       checked={template.is_active || false}
                       onChange={(e) => setTemplate(prev => ({ ...prev, is_active: e.target.checked }))}
-                      className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded"
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
                     />
                     <label htmlFor="is_active" className="ml-2 block text-sm text-neutral-700 dark:text-neutral-300">
                       Modèle actif
@@ -341,7 +341,7 @@ const EmailTemplateEditorContent = () => {
                       id="auto_send"
                       checked={template.auto_send || false}
                       onChange={(e) => setTemplate(prev => ({ ...prev, auto_send: e.target.checked }))}
-                      className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded"
+                      className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
                     />
                     <label htmlFor="auto_send" className="ml-2 block text-sm text-neutral-700 dark:text-neutral-300">
                       Envoi automatique
@@ -357,7 +357,7 @@ const EmailTemplateEditorContent = () => {
                     type="number"
                     value={template.send_delay || 0}
                     onChange={(e) => setTemplate(prev => ({ ...prev, send_delay: parseInt(e.target.value) || 0 }))}
-                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                    className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
                     min="0"
                     placeholder="0"
                   />
@@ -388,7 +388,7 @@ const EmailTemplateEditorContent = () => {
                       <button
                         key={variable.id}
                         onClick={() => insertVariable(variable.name)}
-                        className="block w-full text-left px-2 py-1 text-xs bg-neutral-100 hover:bg-primary-100 rounded border border-transparent hover:border-primary-200 dark:bg-neutral-700 dark:hover:bg-primary-900/20 dark:text-neutral-300"
+                        className="block w-full text-left px-2 py-1 text-xs bg-neutral-100 hover:bg-blue-100 rounded border border-transparent hover:border-blue-200 dark:bg-neutral-700 dark:hover:bg-blue-900/20 dark:text-neutral-300"
                         title={variable.description}
                       >
                         {`{{${variable.name}}}`}

@@ -63,7 +63,7 @@ export const InvoiceDownloadButton: React.FC<InvoiceDownloadButtonProps> = ({
       <button
         onClick={handleDownloadInvoice}
         disabled={isGenerating}
-        className={`p-2 text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300 rounded hover:bg-primary-50 dark:hover:bg-primary-900/20 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+        className={`p-2 text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 rounded hover:bg-blue-50 dark:hover:bg-blue-900/20 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
         title="Télécharger la facture"
       >
         <DocumentArrowDownIcon className={`h-5 w-5 ${isGenerating ? 'animate-pulse' : ''}`} />
@@ -75,7 +75,7 @@ export const InvoiceDownloadButton: React.FC<InvoiceDownloadButtonProps> = ({
     <button
       onClick={handleDownloadInvoice}
       disabled={isGenerating}
-      className={`inline-flex items-center px-3 py-1.5 border border-primary-300 text-sm font-medium rounded-md text-primary-700 bg-white hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-primary-400 dark:border-primary-600 dark:hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+      className={`inline-flex items-center px-3 py-1.5 border border-blue-300 text-sm font-medium rounded-md text-blue-700 bg-white hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-blue-400 dark:border-blue-600 dark:hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
     >
       <DocumentArrowDownIcon className={`h-4 w-4 mr-1.5 ${isGenerating ? 'animate-pulse' : ''}`} />
       {isGenerating ? 'Génération...' : 'Facture'}

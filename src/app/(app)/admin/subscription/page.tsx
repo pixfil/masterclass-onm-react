@@ -158,11 +158,11 @@ const SubscriptionContent = () => {
     
     return (
       <div className={`relative bg-white dark:bg-neutral-800 rounded-xl shadow-sm p-6 ${
-        isPro ? 'ring-2 ring-primary-600 transform scale-105' : ''
+        isPro ? 'ring-2 ring-blue-600 transform scale-105' : ''
       }`}>
         {isPro && (
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span className="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+            <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
               Recommandé
             </span>
           </div>

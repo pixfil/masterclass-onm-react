@@ -213,7 +213,7 @@ const NotificationsContent = () => {
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
-              className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="">Tous les types</option>
               <option value="property_published">Propriétés publiées</option>
@@ -229,7 +229,7 @@ const NotificationsContent = () => {
                 onClick={() => setShowRead(!showRead)}
                 className={`flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   showRead 
-                    ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/20 dark:text-primary-400' 
+                    ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400' 
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
                 }`}
               >
@@ -302,7 +302,7 @@ const NotificationsContent = () => {
                             {notification.title}
                           </h3>
                           {!notification.is_read && (
-                            <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                           )}
                         </div>
                         

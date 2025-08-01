@@ -39,11 +39,68 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
     },
     {
       id: '3',
-      href: '/ceprof',
-      name: 'CEPROF',
+      name: 'Ressources',
+      type: 'dropdown',
+      children: [
+        {
+          id: '3-1',
+          name: 'Centre de Ressources',
+          href: '/ressources',
+        },
+        {
+          id: '3-2',
+          name: 'Protocoles cliniques',
+          href: '/ressources?type=protocol',
+        },
+        {
+          id: '3-3',
+          name: 'Guides pratiques',
+          href: '/ressources?type=guide',
+        },
+        {
+          id: '3-4',
+          name: 'Bibliographie',
+          href: '/ressources?type=bibliography',
+        },
+        {
+          id: '3-5',
+          name: 'Mes documents',
+          href: '/mes-documents',
+        },
+      ],
     },
     {
       id: '4',
+      name: 'Expertise',
+      type: 'dropdown',
+      children: [
+        {
+          id: '4-1',
+          name: 'Nos experts CEPROF',
+          href: '/ceprof',
+        },
+        {
+          id: '4-2',
+          name: 'Podcasts & Interviews',
+          href: '/podcasts',
+          isNew: true,
+        },
+        {
+          id: '4-3',
+          name: 'Articles & Cas cliniques',
+          href: '/articles',
+          isNew: true,
+        },
+        {
+          id: '4-4',
+          name: 'Lexique ONM',
+          href: '/lexique',
+          isNew: true,
+        },
+      ],
+    },
+    {
+      id: '5',
       href: '/contact',
       name: 'Contact',
     },
@@ -154,6 +211,59 @@ export async function getNavMegaMenu(): Promise<TNavigationItem> {
             id: 'mega-4-3',
             name: 'Mes formations',
             href: '/mes-formations',
+          },
+          {
+            id: 'mega-4-4',
+            name: 'Mon parcours ONM',
+            href: '/mon-parcours',
+            isNew: true,
+          },
+          {
+            id: 'mega-4-5',
+            name: 'Mes badges',
+            href: '/mes-badges',
+            isNew: true,
+          },
+          {
+            id: 'mega-4-6',
+            name: 'Parrainer un praticien',
+            href: '/parrainage',
+            isNew: true,
+          },
+        ],
+      },
+      {
+        id: 'mega-5',
+        name: 'Ressources',
+        children: [
+          {
+            id: 'mega-5-1',
+            name: 'Centre de Ressources',
+            href: '/ressources',
+          },
+          {
+            id: 'mega-5-2',
+            name: 'Podcasts & Interviews',
+            href: '/podcasts',
+            isNew: true,
+          },
+          {
+            id: 'mega-5-3',
+            name: 'Articles & Recherche',
+            href: '/articles',
+            isNew: true,
+          },
+          {
+            id: 'mega-5-4',
+            name: 'Lexique ONM',
+            href: '/lexique',
+            isNew: true,
+          },
+          {
+            id: 'mega-5-5',
+            name: 'Timeline Interactive',
+            href: '/timeline',
+            isNew: true,
           },
         ],
       },

@@ -236,7 +236,7 @@ export const ImageGalleryManager = ({ propertyId, onImagesChange }: ImageGallery
         onDragLeave={handleFileDragLeave}
         className={`relative border-2 border-dashed rounded-lg p-8 transition-all ${
           isDraggingFile 
-            ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20' 
+            ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' 
             : 'border-neutral-300 bg-neutral-50 dark:border-neutral-600 dark:bg-neutral-800'
         }`}
       >
@@ -251,7 +251,7 @@ export const ImageGalleryManager = ({ propertyId, onImagesChange }: ImageGallery
         
         <div className="text-center">
           <CloudArrowUpIcon className={`mx-auto h-12 w-12 ${
-            isDraggingFile ? 'text-primary-500' : 'text-neutral-400'
+            isDraggingFile ? 'text-blue-500' : 'text-neutral-400'
           }`} />
           <p className="mt-2 text-sm font-medium text-neutral-900 dark:text-white">
             {isDraggingFile ? 'Déposez vos images ici' : 'Glissez-déposez vos images ici'}
@@ -284,7 +284,7 @@ export const ImageGalleryManager = ({ propertyId, onImagesChange }: ImageGallery
       {/* Ajout par URL */}
       <div className="bg-neutral-50 rounded-lg p-4 dark:bg-neutral-800">
         <div className="flex items-center space-x-2 mb-4">
-          <PlusIcon className="h-5 w-5 text-primary-600" />
+          <PlusIcon className="h-5 w-5 text-blue-600" />
           <h4 className="font-medium text-neutral-900 dark:text-white">Ajouter par URL</h4>
         </div>
         
@@ -318,7 +318,7 @@ export const ImageGalleryManager = ({ propertyId, onImagesChange }: ImageGallery
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <PhotoIcon className="h-5 w-5 text-primary-600" />
+              <PhotoIcon className="h-5 w-5 text-blue-600" />
               <h4 className="font-medium text-neutral-900 dark:text-white">
                 Galerie ({images.length} image{images.length > 1 ? 's' : ''})
               </h4>

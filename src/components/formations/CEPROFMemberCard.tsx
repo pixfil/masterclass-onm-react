@@ -63,7 +63,7 @@ const CEPROFMemberCard: React.FC<CEPROFMemberCardProps> = ({ member }) => {
           </p>
           <div className="space-y-1">
             {member.contributions.slice(0, 2).map((contrib, index) => (
-              <p key={index} className="text-xs text-primary-600 dark:text-primary-400">
+              <p key={index} className="text-xs text-blue-600 dark:text-blue-400">
                 • {contrib}
               </p>
             ))}

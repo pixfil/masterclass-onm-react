@@ -73,6 +73,14 @@ interface FormationFormData {
   testimonials: string
   faq: string
   program: FormationProgram
+  // Nouveaux champs pour les informations
+  venue_name: string
+  venue_address: string
+  venue_details: string
+  start_time: string
+  end_time: string
+  schedule_details: string
+  included_services: string[]
 }
 
 const defaultFormData: FormationFormData = {
@@ -126,7 +134,15 @@ const defaultFormData: FormationFormData = {
     curriculum: [],
     prerequisites: [],
     includes: []
-  }
+  },
+  // Nouveaux champs pour les informations
+  venue_name: '',
+  venue_address: '',
+  venue_details: '',
+  start_time: '9h00',
+  end_time: '17h30',
+  schedule_details: '',
+  included_services: []
 }
 
 export const FormationForm: React.FC<FormationFormProps> = ({ 
@@ -222,7 +238,15 @@ export const FormationForm: React.FC<FormationFormProps> = ({
           curriculum: [],
           prerequisites: [],
           includes: []
-        }
+        },
+        // Nouveaux champs pour les informations
+        venue_name: formation.venue_name || '',
+        venue_address: formation.venue_address || '',
+        venue_details: formation.venue_details || '',
+        start_time: formation.start_time || '9h00',
+        end_time: formation.end_time || '17h30',
+        schedule_details: formation.schedule_details || '',
+        included_services: formation.included_services || []
       })
     }
   }, [formation])
@@ -531,7 +555,7 @@ export const FormationForm: React.FC<FormationFormProps> = ({
             <select
               value={formData.category_id}
               onChange={(e) => handleInputChange('category_id', e.target.value)}
-              className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+              className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
               required
             >
               <option value="">Sélectionner une catégorie</option>
@@ -550,7 +574,7 @@ export const FormationForm: React.FC<FormationFormProps> = ({
             <select
               value={formData.difficulty_level}
               onChange={(e) => handleInputChange('difficulty_level', e.target.value as DifficultyLevel)}
-              className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+              className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
             >
               <option value="beginner">Débutant</option>
               <option value="intermediate">Intermédiaire</option>
@@ -578,7 +602,7 @@ export const FormationForm: React.FC<FormationFormProps> = ({
             <select
               value={formData.format}
               onChange={(e) => handleInputChange('format', e.target.value as 'online' | 'in_person' | 'hybrid')}
-              className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500"
+              className="w-full rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 px-3 py-2 text-neutral-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
             >
               <option value="in_person">Présentiel</option>
               <option value="online">En ligne</option>
@@ -620,7 +644,7 @@ export const FormationForm: React.FC<FormationFormProps> = ({
             <div className="border-2 border-dashed border-neutral-300 dark:border-neutral-600 rounded-lg p-6 text-center">
               <PhotoIcon className="h-12 w-12 text-neutral-400 mx-auto mb-4" />
               <label className="cursor-pointer">
-                <span className="text-indigo-600 hover:text-indigo-500">
+                <span className="text-blue-600 hover:text-blue-500">
                   {uploadingImage ? 'Téléchargement...' : 'Cliquer pour télécharger'}
                 </span>
                 <input
@@ -704,6 +728,131 @@ export const FormationForm: React.FC<FormationFormProps> = ({
           onChange={(program) => handleInputChange('program', program)}
           durationDays={formData.duration_days}
         />
+      </div>
+
+      {/* Section 4: Informations pratiques */}
+      <div className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6">
+        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-6">
+          Informations pratiques
+        </h3>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Lieu */}
+          <div>
+            <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Nom du lieu
+            </label>
+            <Input
+              type="text"
+              value={formData.venue_name}
+              onChange={(e) => handleInputChange('venue_name', e.target.value)}
+              placeholder="Ex: Centre de formation ONM Paris"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Adresse complète
+            </label>
+            <Input
+              type="text"
+              value={formData.venue_address}
+              onChange={(e) => handleInputChange('venue_address', e.target.value)}
+              placeholder="Ex: 123 Rue de la Formation, 75001 Paris"
+            />
+          </div>
+
+          <div className="lg:col-span-2">
+            <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Détails du lieu
+            </label>
+            <Textarea
+              value={formData.venue_details}
+              onChange={(e) => handleInputChange('venue_details', e.target.value)}
+              placeholder="Informations complémentaires sur le lieu (accès, parking, etc.)"
+              rows={3}
+            />
+          </div>
+
+          {/* Horaires */}
+          <div>
+            <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Heure de début
+            </label>
+            <Input
+              type="time"
+              value={formData.start_time}
+              onChange={(e) => handleInputChange('start_time', e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Heure de fin
+            </label>
+            <Input
+              type="time"
+              value={formData.end_time}
+              onChange={(e) => handleInputChange('end_time', e.target.value)}
+            />
+          </div>
+
+          <div className="lg:col-span-2">
+            <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Détails des horaires
+            </label>
+            <Textarea
+              value={formData.schedule_details}
+              onChange={(e) => handleInputChange('schedule_details', e.target.value)}
+              placeholder="Informations complémentaires sur les horaires (pauses, déjeuner, etc.)"
+              rows={3}
+            />
+          </div>
+
+          {/* Services inclus */}
+          <div className="lg:col-span-2">
+            <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2">
+              Services inclus
+            </label>
+            <div className="space-y-2">
+              {formData.included_services.map((service, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <Input
+                    type="text"
+                    value={service}
+                    onChange={(e) => {
+                      const newServices = [...formData.included_services]
+                      newServices[index] = e.target.value
+                      handleInputChange('included_services', newServices)
+                    }}
+                    placeholder="Ex: Petit-déjeuner inclus"
+                    className="flex-1"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const newServices = formData.included_services.filter((_, i) => i !== index)
+                      handleInputChange('included_services', newServices)
+                    }}
+                    className="p-2 text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300"
+                  >
+                    <TrashIcon className="w-4 h-4" />
+                  </button>
+                </div>
+              ))}
+              <button
+                type="button"
+                onClick={() => {
+                  handleInputChange('included_services', [...formData.included_services, ''])
+                }}
+                className="flex items-center space-x-2 px-3 py-2 text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+              >
+                <PlusIcon className="w-4 h-4" />
+                <span>Ajouter un service</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Action Buttons */}

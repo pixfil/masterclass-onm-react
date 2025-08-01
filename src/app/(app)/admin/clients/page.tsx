@@ -210,7 +210,7 @@ const ClientsContent = () => {
                 onClick={() => setFilterType('all')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   filterType === 'all'
-                    ? 'bg-primary-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
                 }`}
               >
@@ -220,7 +220,7 @@ const ClientsContent = () => {
                 onClick={() => setFilterType('orthodontists')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
                   filterType === 'orthodontists'
-                    ? 'bg-primary-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
                 }`}
               >
@@ -231,7 +231,7 @@ const ClientsContent = () => {
                 onClick={() => setFilterType('regular')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   filterType === 'regular'
-                    ? 'bg-primary-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
                 }`}
               >
@@ -241,7 +241,7 @@ const ClientsContent = () => {
                 onClick={() => setFilterType('upcoming')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2 ${
                   filterType === 'upcoming'
-                    ? 'bg-primary-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
                 }`}
               >
@@ -256,7 +256,7 @@ const ClientsContent = () => {
         <div className="bg-white rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800">
           {loading ? (
             <div className="p-12 text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
               <p className="mt-4 text-neutral-600 dark:text-neutral-400">Chargement des clients...</p>
             </div>
           ) : (
@@ -300,8 +300,8 @@ const ClientsContent = () => {
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
                             <div className="flex-shrink-0 h-10 w-10">
-                              <div className="h-10 w-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
-                                <UserIcon className="h-5 w-5 text-primary-600 dark:text-primary-400" />
+                              <div className="h-10 w-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+                                <UserIcon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                               </div>
                             </div>
                             <div className="ml-4">
@@ -419,7 +419,7 @@ const ClientsContent = () => {
                           <div className="flex space-x-2">
                             <Link
                               href={`/admin/clients/edit/${client.id}`}
-                              className="text-primary-600 hover:text-primary-900 p-1 rounded"
+                              className="text-blue-600 hover:text-blue-900 p-1 rounded"
                               title="Modifier"
                             >
                               <PencilIcon className="h-4 w-4" />

@@ -140,7 +140,7 @@ export const ClientForm = ({ client, isEdit = false }: ClientFormProps) => {
       {/* Informations personnelles */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <UserIcon className="h-5 w-5 text-primary-600" />
+          <UserIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">
             Informations personnelles
           </Heading>
@@ -196,7 +196,7 @@ export const ClientForm = ({ client, isEdit = false }: ClientFormProps) => {
       {/* Adresse */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <MapPinIcon className="h-5 w-5 text-primary-600" />
+          <MapPinIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">
             Adresse
           </Heading>
@@ -238,7 +238,7 @@ export const ClientForm = ({ client, isEdit = false }: ClientFormProps) => {
       {/* Préférences */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <CogIcon className="h-5 w-5 text-primary-600" />
+          <CogIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">
             Préférences immobilières
           </Heading>
@@ -258,7 +258,7 @@ export const ClientForm = ({ client, isEdit = false }: ClientFormProps) => {
                   type="checkbox"
                   checked={selectedPreferences.includes(preference)}
                   onChange={() => handlePreferenceToggle(preference)}
-                  className="rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:bg-neutral-700 dark:border-neutral-600"
+                  className="rounded border-neutral-300 text-blue-600 focus:ring-blue-500 dark:bg-neutral-700 dark:border-neutral-600"
                 />
                 <span className="text-sm text-neutral-700 dark:text-neutral-300">
                   {preference}
@@ -272,7 +272,7 @@ export const ClientForm = ({ client, isEdit = false }: ClientFormProps) => {
       {/* Paramètres et statuts */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <NewspaperIcon className="h-5 w-5 text-primary-600" />
+          <NewspaperIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">
             Paramètres du compte
           </Heading>
@@ -284,7 +284,7 @@ export const ClientForm = ({ client, isEdit = false }: ClientFormProps) => {
               type="checkbox"
               checked={formData.newsletter_consent}
               onChange={(e) => handleInputChange('newsletter_consent', e.target.checked)}
-              className="rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:bg-neutral-700 dark:border-neutral-600"
+              className="rounded border-neutral-300 text-blue-600 focus:ring-blue-500 dark:bg-neutral-700 dark:border-neutral-600"
             />
             <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
               Consentement newsletter
@@ -297,7 +297,7 @@ export const ClientForm = ({ client, isEdit = false }: ClientFormProps) => {
               type="checkbox"
               checked={formData.is_active}
               onChange={(e) => handleInputChange('is_active', e.target.checked)}
-              className="rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:bg-neutral-700 dark:border-neutral-600"
+              className="rounded border-neutral-300 text-blue-600 focus:ring-blue-500 dark:bg-neutral-700 dark:border-neutral-600"
             />
             <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
               Compte actif

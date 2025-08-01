@@ -105,7 +105,7 @@ export default function AgentDetailPage() {
       <div className="mb-8">
         <Link 
           href="/agents" 
-          className="inline-flex items-center text-primary-600 hover:text-primary-700 transition-colors"
+          className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors"
         >
           <ArrowLeftIcon className="h-4 w-4 mr-2" />
           Retour à l'équipe
@@ -116,7 +116,7 @@ export default function AgentDetailPage() {
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800">
           {/* Header */}
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 px-8 py-12">
+          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-12">
             <div className="flex flex-col md:flex-row items-center gap-8">
               {/* Photo */}
               <div className="relative w-32 h-32 flex-shrink-0">
@@ -129,7 +129,7 @@ export default function AgentDetailPage() {
                   />
                 ) : (
                   <div className="w-full h-full bg-white rounded-full flex items-center justify-center border-4 border-white">
-                    <span className="text-3xl font-bold text-primary-600">
+                    <span className="text-3xl font-bold text-blue-600">
                       {agent.prenom?.[0]}{agent.nom?.[0]}
                     </span>
                   </div>
@@ -150,10 +150,10 @@ export default function AgentDetailPage() {
                   )}
                 </h1>
                 {agent.titre && (
-                  <p className="text-xl text-primary-100 mb-4">{agent.titre}</p>
+                  <p className="text-xl text-blue-100 mb-4">{agent.titre}</p>
                 )}
                 {agent.specialites && (
-                  <p className="text-primary-200 mb-6">{agent.specialites}</p>
+                  <p className="text-blue-200 mb-6">{agent.specialites}</p>
                 )}
 
                 {/* Contact rapide */}
@@ -161,7 +161,7 @@ export default function AgentDetailPage() {
                   {agent.email && (
                     <a
                       href={`mailto:${agent.email}`}
-                      className="inline-flex items-center px-4 py-2 bg-white text-primary-600 rounded-lg hover:bg-primary-50 transition-colors"
+                      className="inline-flex items-center px-4 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
                     >
                       <EnvelopeIcon className="h-4 w-4 mr-2" />
                       Contacter
@@ -170,7 +170,7 @@ export default function AgentDetailPage() {
                   {agent.telephone && (
                     <a
                       href={`tel:${agent.telephone}`}
-                      className="inline-flex items-center px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-400 transition-colors"
+                      className="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-400 transition-colors"
                     >
                       <PhoneIcon className="h-4 w-4 mr-2" />
                       Appeler
@@ -192,12 +192,12 @@ export default function AgentDetailPage() {
                 <div className="space-y-4">
                   {agent.email && (
                     <div className="flex items-center">
-                      <EnvelopeIcon className="h-5 w-5 text-primary-600 mr-4" />
+                      <EnvelopeIcon className="h-5 w-5 text-blue-600 mr-4" />
                       <div>
                         <p className="font-medium text-neutral-900 dark:text-white">Email</p>
                         <a 
                           href={`mailto:${agent.email}`}
-                          className="text-primary-600 hover:text-primary-700"
+                          className="text-blue-600 hover:text-blue-700"
                         >
                           {agent.email}
                         </a>
@@ -207,12 +207,12 @@ export default function AgentDetailPage() {
 
                   {agent.telephone && (
                     <div className="flex items-center">
-                      <PhoneIcon className="h-5 w-5 text-primary-600 mr-4" />
+                      <PhoneIcon className="h-5 w-5 text-blue-600 mr-4" />
                       <div>
                         <p className="font-medium text-neutral-900 dark:text-white">Téléphone</p>
                         <a 
                           href={`tel:${agent.telephone}`}
-                          className="text-primary-600 hover:text-primary-700"
+                          className="text-blue-600 hover:text-blue-700"
                         >
                           {agent.telephone}
                         </a>
@@ -222,7 +222,7 @@ export default function AgentDetailPage() {
 
                   {agent.secteur_geographical && (
                     <div className="flex items-center">
-                      <MapPinIcon className="h-5 w-5 text-primary-600 mr-4" />
+                      <MapPinIcon className="h-5 w-5 text-blue-600 mr-4" />
                       <div>
                         <p className="font-medium text-neutral-900 dark:text-white">Secteur</p>
                         <p className="text-neutral-600 dark:text-neutral-400">{agent.secteur_geographical}</p>
@@ -232,7 +232,7 @@ export default function AgentDetailPage() {
 
                   {agent.created_at && (
                     <div className="flex items-center">
-                      <CalendarIcon className="h-5 w-5 text-primary-600 mr-4" />
+                      <CalendarIcon className="h-5 w-5 text-blue-600 mr-4" />
                       <div>
                         <p className="font-medium text-neutral-900 dark:text-white">Membre depuis</p>
                         <p className="text-neutral-600 dark:text-neutral-400">
@@ -276,7 +276,7 @@ export default function AgentDetailPage() {
                     </span>
                   )}
                   {agent.certifie && (
-                    <span className="inline-flex items-center px-3 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">
+                    <span className="inline-flex items-center px-3 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
                       <CheckBadgeIcon className="h-4 w-4 mr-2" />
                       Certifié
                     </span>

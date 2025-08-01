@@ -46,13 +46,13 @@ export function PropertyLabelsManager({ labels, onChange }: PropertyLabelsManage
         {labels.map((label) => (
           <span
             key={label}
-            className="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium rounded-full bg-primary-100 text-primary-800 dark:bg-primary-800 dark:text-primary-100"
+            className="inline-flex items-center gap-1 px-3 py-1 text-sm font-medium rounded-full bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100"
           >
             {label}
             <button
               type="button"
               onClick={() => handleRemoveLabel(label)}
-              className="ml-1 hover:text-primary-600 dark:hover:text-primary-200"
+              className="ml-1 hover:text-blue-600 dark:hover:text-blue-200"
             >
               <XMarkIcon className="h-4 w-4" />
             </button>
@@ -66,7 +66,7 @@ export function PropertyLabelsManager({ labels, onChange }: PropertyLabelsManage
           <select
             value={selectedLabel}
             onChange={(e) => setSelectedLabel(e.target.value)}
-            className="flex-1 px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+            className="flex-1 px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
           >
             <option value="">Sélectionner un label</option>
             {availableLabels.map(label => (
@@ -77,7 +77,7 @@ export function PropertyLabelsManager({ labels, onChange }: PropertyLabelsManage
             type="button"
             onClick={handleAddLabel}
             disabled={!selectedLabel}
-            className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Ajouter
           </button>
@@ -97,7 +97,7 @@ export function PropertyLabelsManager({ labels, onChange }: PropertyLabelsManage
           <button
             type="button"
             onClick={() => setIsAdding(true)}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary-600 bg-primary-50 rounded-lg hover:bg-primary-100 dark:bg-primary-900/20 dark:text-primary-400 dark:hover:bg-primary-900/30"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 dark:bg-blue-900/20 dark:text-blue-400 dark:hover:bg-blue-900/30"
           >
             <PlusIcon className="h-4 w-4" />
             Ajouter un label

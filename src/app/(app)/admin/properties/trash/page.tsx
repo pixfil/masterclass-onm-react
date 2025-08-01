@@ -159,7 +159,7 @@ const TrashContent = () => {
             <p className="mt-2 text-neutral-600 dark:text-neutral-400">
               {deletedProperties.length} propriété{deletedProperties.length > 1 ? 's' : ''} supprimée{deletedProperties.length > 1 ? 's' : ''}
               {selectedIds.length > 0 && (
-                <span className="ml-2 text-primary-600 font-medium">
+                <span className="ml-2 text-blue-600 font-medium">
                   • {selectedIds.length} sélectionnée{selectedIds.length > 1 ? 's' : ''}
                 </span>
               )}
@@ -230,7 +230,7 @@ const TrashContent = () => {
                       type="checkbox"
                       checked={selectedIds.length === deletedProperties.length && deletedProperties.length > 0}
                       onChange={handleSelectAll}
-                      className="rounded border-neutral-300 text-primary-600 focus:ring-primary-500"
+                      className="rounded border-neutral-300 text-blue-600 focus:ring-blue-500"
                     />
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-300 uppercase tracking-wider">
@@ -258,7 +258,7 @@ const TrashContent = () => {
                         type="checkbox"
                         checked={selectedIds.includes(property.id)}
                         onChange={() => handleSelectItem(property.id)}
-                        className="rounded border-neutral-300 text-primary-600 focus:ring-primary-500"
+                        className="rounded border-neutral-300 text-blue-600 focus:ring-blue-500"
                       />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">

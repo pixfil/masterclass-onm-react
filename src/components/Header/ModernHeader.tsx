@@ -122,34 +122,23 @@ const ModernHeader: React.FC<ModernHeaderProps> = ({ transparentMode = false }) 
             short_description,
             slug,
             price,
-            status,
-            formation_sessions(
-              id,
-              start_date,
-              location
-            )
+            status
           `)
           .eq('status', 'published')
           .limit(4)
           .order('created_at', { ascending: false })
 
         if (data) {
-          const formationMenuItems: FormationMegaMenu[] = data.map(formation => {
-            const nextSession = formation.formation_sessions
-              ?.sort((a: any, b: any) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())
-              ?.find((session: any) => new Date(session.start_date) > new Date())
-            
-            return {
-              id: formation.id,
-              title: formation.title,
-              description: formation.short_description || 'Formation d\'excellence en ONM',
-              href: `/formations/${formation.slug}`,
-              date: nextSession?.start_date || 'À venir',
-              location: nextSession?.location || 'En ligne',
-              price: formation.price || 0,
-              status: nextSession ? 'upcoming' : 'available'
-            }
-          })
+          const formationMenuItems: FormationMegaMenu[] = data.map(formation => ({
+            id: formation.id,
+            title: formation.title,
+            description: formation.short_description || 'Formation d\'excellence en ONM',
+            href: `/formations/${formation.slug}`,
+            date: 'À venir',
+            location: 'En ligne',
+            price: formation.price || 0,
+            status: 'available'
+          }))
           setFormations(formationMenuItems)
         }
       } catch (error) {
@@ -227,6 +216,12 @@ const ModernHeader: React.FC<ModernHeaderProps> = ({ transparentMode = false }) 
             icon: PhotoIcon
           },
           {
+            title: 'Articles & Cas cliniques',
+            description: 'Espace public - Articles et recherche ONM',
+            href: '/articles',
+            icon: PhotoIcon
+          },
+          {
             title: 'Orthodontistes formés à l\'ONM',
             description: 'Trouvez un praticien certifié près de chez vous',
             href: '/orthodontistes-formes',
@@ -275,6 +270,12 @@ const ModernHeader: React.FC<ModernHeaderProps> = ({ transparentMode = false }) 
             description: 'Échanges et partages d\'expérience',
             href: '/ceprof/communaute',
             icon: UserGroupIcon
+          },
+          {
+            title: 'Podcasts & Interviews',
+            description: '3 questions à un expert ONM',
+            href: '/podcasts',
+            icon: ComputerDesktopIcon
           }
         ],
         featured: {
@@ -290,16 +291,16 @@ const ModernHeader: React.FC<ModernHeaderProps> = ({ transparentMode = false }) 
       megaMenu: {
         sections: [
           {
-            title: 'Diagnostic ONM Pro',
-            description: 'Logiciel d\'analyse neuro-musculaire avancée',
-            href: '/outils/diagnostic-onm',
-            icon: ComputerDesktopIcon
+            title: 'Centre de ressources',
+            description: 'PDF, protocoles, guides et ressources avancées',
+            href: '/ressources',
+            icon: AcademicCapIcon
           },
           {
-            title: 'App Mobile ONM',
-            description: 'Suivi patient et protocoles ONM',
-            href: '/outils/app-mobile',
-            icon: ComputerDesktopIcon
+            title: 'Lexique ONM',
+            description: 'Wiki interne - Définitions et concepts ONM',
+            href: '/lexique',
+            icon: InformationCircleIcon
           },
           {
             title: 'Plateforme E-Learning',

@@ -57,7 +57,7 @@ const FormationCard: React.FC<FormationCardProps> = ({ session, className = '' }
 
       <div className="p-6 space-y-4">
         <div>
-          <h3 className="text-xl font-semibold line-clamp-2 group-hover:text-primary-600 transition-colors">
+          <h3 className="text-xl font-semibold line-clamp-2 group-hover:text-blue-600 transition-colors">
             {formation.title}
           </h3>
           {formation.instructor && (
@@ -94,7 +94,7 @@ const FormationCard: React.FC<FormationCardProps> = ({ session, className = '' }
           </div>
           <div className="w-full bg-neutral-200 dark:bg-neutral-700 rounded-full h-2">
             <div 
-              className="bg-primary-500 h-2 rounded-full transition-all duration-300"
+              className="bg-gradient-to-r from-blue-400 to-cyan-400 h-2 rounded-full transition-all duration-300"
               style={{ width: `${spotsPercentage}%` }}
             />
           </div>
@@ -105,7 +105,7 @@ const FormationCard: React.FC<FormationCardProps> = ({ session, className = '' }
 
         <div className="flex items-center justify-between pt-4 border-t border-neutral-200 dark:border-neutral-700">
           <div>
-            <span className="text-2xl font-bold text-primary-600">
+            <span className="text-2xl font-bold text-blue-600">
               {session.price_override || formation.price}€
             </span>
             <span className="text-sm text-neutral-500 dark:text-neutral-400"> TTC</span>

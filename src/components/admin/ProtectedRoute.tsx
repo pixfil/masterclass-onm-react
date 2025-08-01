@@ -31,7 +31,7 @@ export const ProtectedRoute = ({ children, requireAdmin = false }: ProtectedRout
     return (
       <div className="min-h-screen bg-neutral-50 flex items-center justify-center dark:bg-neutral-900">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
           <p className="mt-4 text-neutral-600 dark:text-neutral-400">Chargement...</p>
         </div>
       </div>

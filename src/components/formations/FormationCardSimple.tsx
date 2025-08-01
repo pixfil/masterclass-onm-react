@@ -62,7 +62,7 @@ const FormationCardSimple: React.FC<FormationCardSimpleProps> = ({ formation, cl
 
       <div className="p-6 space-y-4">
         <div>
-          <h3 className="text-xl font-semibold line-clamp-2 group-hover:text-primary-600 transition-colors">
+          <h3 className="text-xl font-semibold line-clamp-2 group-hover:text-blue-600 transition-colors">
             {formation.title}
           </h3>
           {formation.short_description && (

@@ -384,7 +384,7 @@ const EvaluationsContent = () => {
               href="/evaluation-form"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
+              className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               <EyeIcon className="h-4 w-4 mr-2" />
               Voir le quiz
@@ -468,7 +468,7 @@ const EvaluationsContent = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Rechercher par nom ou formation..."
-                className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               />
             </div>
             <div className="flex gap-2">
@@ -476,7 +476,7 @@ const EvaluationsContent = () => {
                 onClick={() => setFilter('all')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   filter === 'all'
-                    ? 'bg-primary-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
                 }`}
               >
@@ -486,7 +486,7 @@ const EvaluationsContent = () => {
                 onClick={() => setFilter('passed')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   filter === 'passed'
-                    ? 'bg-primary-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
                 }`}
               >
@@ -496,7 +496,7 @@ const EvaluationsContent = () => {
                 onClick={() => setFilter('failed')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   filter === 'failed'
-                    ? 'bg-primary-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
                 }`}
               >
@@ -506,7 +506,7 @@ const EvaluationsContent = () => {
                 onClick={() => setFilter('recent')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   filter === 'recent'
-                    ? 'bg-primary-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600'
                 }`}
               >

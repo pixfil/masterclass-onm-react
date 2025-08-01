@@ -208,7 +208,7 @@ const EmailLogsContent = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="">Tous les statuts</option>
               <option value="sent">Envoyés</option>
@@ -227,7 +227,7 @@ const EmailLogsContent = () => {
         <div className="bg-white rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800">
           {loading ? (
             <div className="p-12 text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
               <p className="mt-4 text-neutral-600 dark:text-neutral-400">Chargement des logs...</p>
             </div>
           ) : (
@@ -320,11 +320,11 @@ const EmailLogsContent = () => {
                             <button
                               onClick={() => handleRetry(log.id)}
                               disabled={retryLoading === log.id}
-                              className="text-primary-600 hover:text-primary-900 p-1 rounded disabled:opacity-50"
+                              className="text-blue-600 hover:text-blue-900 p-1 rounded disabled:opacity-50"
                               title="Renvoyer"
                             >
                               {retryLoading === log.id ? (
-                                <div className="animate-spin h-4 w-4 border-2 border-primary-600 border-t-transparent rounded-full"></div>
+                                <div className="animate-spin h-4 w-4 border-2 border-blue-600 border-t-transparent rounded-full"></div>
                               ) : (
                                 <ArrowPathIcon className="h-4 w-4" />
                               )}

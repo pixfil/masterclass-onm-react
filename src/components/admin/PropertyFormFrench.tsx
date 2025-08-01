@@ -283,7 +283,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
       {/* 1. Informations générales */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <InformationCircleIcon className="h-5 w-5 text-primary-600" />
+          <InformationCircleIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">Informations générales</Heading>
         </div>
         
@@ -305,7 +305,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
             <select
               value={formData.property_type}
               onChange={(e) => handleInputChange('property_type', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               required
             >
               <option value="appartement">Appartement</option>
@@ -324,7 +324,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
             <select
               value={formData.transaction_type}
               onChange={(e) => handleInputChange('transaction_type', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               required
             >
               <option value="vente">Vente</option>
@@ -339,7 +339,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
             <select
               value={formData.status}
               onChange={(e) => handleInputChange('status', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="disponible">Disponible</option>
               <option value="sous_offre">Sous offre</option>
@@ -354,7 +354,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
             <select
               value={formData.agent_id}
               onChange={(e) => handleInputChange('agent_id', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="">Sélectionner un agent</option>
               {agents.map((agent) => (
@@ -375,7 +375,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
               value={formData.description}
               onChange={(e) => handleInputChange('description', e.target.value)}
               rows={16}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               placeholder="Description détaillée du bien..."
             />
             <AIDescriptionButton
@@ -406,7 +406,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
       {/* 2. Prix et références */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <CurrencyEuroIcon className="h-5 w-5 text-primary-600" />
+          <CurrencyEuroIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">Prix et références</Heading>
         </div>
         
@@ -440,7 +440,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
             <select
               value={formData.honoraires_charge}
               onChange={(e) => handleInputChange('honoraires_charge', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="acquéreur">Acquéreur</option>
               <option value="vendeur">Vendeur</option>
@@ -474,7 +474,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
       {/* 3. Localisation */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <MapIcon className="h-5 w-5 text-primary-600" />
+          <MapIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">Localisation</Heading>
         </div>
         
@@ -544,7 +544,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
                 type="checkbox"
                 checked={formData.ascenseur}
                 onChange={(e) => handleInputChange('ascenseur', e.target.checked)}
-                className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
               />
               <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                 Ascenseur
@@ -567,7 +567,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
       {/* 4. Surfaces et configuration */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <HomeIcon className="h-5 w-5 text-primary-600" />
+          <HomeIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">Surfaces et configuration</Heading>
         </div>
         
@@ -659,7 +659,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
       {/* 5. Chauffage et énergie */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <FireIcon className="h-5 w-5 text-primary-600" />
+          <FireIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">Chauffage et énergie</Heading>
         </div>
         
@@ -671,7 +671,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
             <select
               value={formData.chauffage_type}
               onChange={(e) => handleInputChange('chauffage_type', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="">Sélectionner</option>
               <option value="individuel">Individuel</option>
@@ -686,7 +686,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
             <select
               value={formData.chauffage_energie}
               onChange={(e) => handleInputChange('chauffage_energie', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="">Sélectionner</option>
               <option value="gaz">Gaz</option>
@@ -769,7 +769,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
       {/* 6. Charges et copropriété */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <DocumentTextIcon className="h-5 w-5 text-primary-600" />
+          <DocumentTextIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">Charges et copropriété</Heading>
         </div>
         
@@ -801,7 +801,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
       {/* 7. Points forts */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <SparklesIcon className="h-5 w-5 text-primary-600" />
+          <SparklesIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">Points forts de la propriété</Heading>
         </div>
         
@@ -814,7 +814,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
       {/* 8. Équipements détaillés */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <CogIcon className="h-5 w-5 text-primary-600" />
+          <CogIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">Équipements et services</Heading>
         </div>
         
@@ -826,7 +826,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
       {/* 9. Galerie d'images */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <PhotoIcon className="h-5 w-5 text-primary-600" />
+          <PhotoIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">Galerie d'images</Heading>
         </div>
         
@@ -844,7 +844,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
       {/* Options de la propriété */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <DocumentTextIcon className="h-5 w-5 text-primary-600" />
+          <DocumentTextIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">Options et publication</Heading>
         </div>
 
@@ -861,7 +861,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
               type="checkbox"
               checked={formData.hide_address}
               onChange={(e) => handleInputChange('hide_address', e.target.checked)}
-              className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded"
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
             />
             <div>
               <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
@@ -889,8 +889,8 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
               type="button"
               onClick={() => handleInputChange('ubiflow_active', !formData.ubiflow_active)}
               className={`${
-                formData.ubiflow_active ? 'bg-primary-600' : 'bg-neutral-200 dark:bg-neutral-600'
-              } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2`}
+                formData.ubiflow_active ? 'bg-blue-600' : 'bg-neutral-200 dark:bg-neutral-600'
+              } relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
             >
               <span className="sr-only">Activer Ubiflow</span>
               <span
@@ -928,7 +928,7 @@ export const PropertyFormFrench = ({ property, isEdit = false }: PropertyFormPro
             type="checkbox"
             checked={formData.published}
             onChange={(e) => handleInputChange('published', e.target.checked)}
-            className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded"
+            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
           />
           <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
             Publier immédiatement

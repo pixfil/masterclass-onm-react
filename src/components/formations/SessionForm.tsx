@@ -172,7 +172,7 @@ export const SessionForm = ({ session, formationId, onSave, onCancel }: SessionF
               type="datetime-local"
               value={formData.start_date}
               onChange={(e) => setFormData(prev => ({ ...prev, start_date: e.target.value }))}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               required
             />
           </div>
@@ -186,7 +186,7 @@ export const SessionForm = ({ session, formationId, onSave, onCancel }: SessionF
               type="datetime-local"
               value={formData.end_date}
               onChange={(e) => setFormData(prev => ({ ...prev, end_date: e.target.value }))}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               required
               min={formData.start_date}
             />
@@ -212,7 +212,7 @@ export const SessionForm = ({ session, formationId, onSave, onCancel }: SessionF
                 type="text"
                 value={formData.venue_name}
                 onChange={(e) => setFormData(prev => ({ ...prev, venue_name: e.target.value }))}
-                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
                 placeholder="Ex: Centre de Formation ONM"
                 required
               />
@@ -227,7 +227,7 @@ export const SessionForm = ({ session, formationId, onSave, onCancel }: SessionF
                 type="number"
                 value={formData.total_spots}
                 onChange={(e) => setFormData(prev => ({ ...prev, total_spots: parseInt(e.target.value) || 0 }))}
-                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
                 min="1"
                 required
               />
@@ -259,7 +259,7 @@ export const SessionForm = ({ session, formationId, onSave, onCancel }: SessionF
               ...prev, 
               price_override: e.target.value ? parseFloat(e.target.value) : undefined 
             }))}
-            className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+            className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             placeholder="Laisser vide pour utiliser le prix de la formation"
             step="0.01"
             min="0"
@@ -278,7 +278,7 @@ export const SessionForm = ({ session, formationId, onSave, onCancel }: SessionF
             value={formData.practical_info}
             onChange={(e) => setFormData(prev => ({ ...prev, practical_info: e.target.value }))}
             rows={4}
-            className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+            className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             placeholder="Horaires, parking, consignes particulières..."
           />
         </div>
@@ -295,7 +295,7 @@ export const SessionForm = ({ session, formationId, onSave, onCancel }: SessionF
                   type="text"
                   value={material}
                   onChange={(e) => updateMaterial(index, e.target.value)}
-                  className="flex-1 px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+                  className="flex-1 px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
                   placeholder="Ex: Manuel de formation, outils spécialisés..."
                 />
                 <button
@@ -310,7 +310,7 @@ export const SessionForm = ({ session, formationId, onSave, onCancel }: SessionF
             <button
               type="button"
               onClick={addMaterial}
-              className="text-primary-600 hover:text-primary-700 text-sm font-medium"
+              className="text-blue-600 hover:text-blue-700 text-sm font-medium"
             >
               + Ajouter du matériel
             </button>
@@ -331,7 +331,7 @@ export const SessionForm = ({ session, formationId, onSave, onCancel }: SessionF
           <Button
             type="submit"
             disabled={loading}
-            className="px-6 py-2 bg-primary-600 text-white hover:bg-primary-700 disabled:opacity-50"
+            className="px-6 py-2 bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50"
           >
             {loading ? 'Sauvegarde...' : (session ? 'Mettre à jour' : 'Créer la session')}
           </Button>

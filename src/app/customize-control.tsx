@@ -92,7 +92,7 @@ const CustomizeControl = () => {
           {({ open }) => (
             <>
               <PopoverButton
-                className={`rounded-xl border border-neutral-200 bg-white p-2.5 shadow-xl hover:bg-neutral-100 focus:outline-hidden dark:border-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 ${
+                className={`rounded-xl border border-neutral-200 bg-white p-2.5 shadow-xl hover:bg-neutral-100 focus:outline-hidden dark:border-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 ${
                   open ? 'ring-primary-500 focus:ring-2' : ''
                 }`}
               >
@@ -112,7 +112,7 @@ const CustomizeControl = () => {
                 </div>
                 <div className="rounded-b-2xl bg-gray-50 p-5 dark:bg-white/5">
                   <a
-                    className="flex w-full items-center justify-center rounded-xl! bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700"
+                    className="flex w-full items-center justify-center rounded-xl! bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
                     href={'https://themeforest.net/item/chisfis-online-booking-nextjs-template/43399526'}
                     target="_blank"
                     rel="noopener noreferrer"

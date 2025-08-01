@@ -169,12 +169,12 @@ export const AddressAutocomplete = ({
             onBlur={handleBlur}
             onFocus={() => value.length >= 3 && setShowSuggestions(true)}
             placeholder={placeholder}
-            className="w-full px-3 py-2 pr-10 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+            className="w-full px-3 py-2 pr-10 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
           />
         </div>
         <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none mt-6">
           {isLoading ? (
-            <div className="animate-spin rounded-full h-4 w-4 border-2 border-primary-600 border-t-transparent" />
+            <div className="animate-spin rounded-full h-4 w-4 border-2 border-blue-600 border-t-transparent" />
           ) : (
             <MapPinIcon className="h-4 w-4 text-neutral-400" />
           )}
@@ -193,7 +193,7 @@ export const AddressAutocomplete = ({
               onClick={() => handleSuggestionClick(suggestion)}
               className={`w-full text-left px-4 py-3 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-700 border-b border-neutral-100 dark:border-neutral-700 last:border-b-0 ${
                 index === selectedIndex
-                  ? 'bg-primary-50 dark:bg-primary-900/20'
+                  ? 'bg-blue-50 dark:bg-blue-900/20'
                   : ''
               }`}
             >

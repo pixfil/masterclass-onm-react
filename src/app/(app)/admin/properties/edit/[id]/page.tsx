@@ -48,7 +48,7 @@ const EditPropertyContent = () => {
       <AdminLayout currentPage="properties">
         <div className="flex items-center justify-center min-h-96">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
             <p className="mt-4 text-neutral-600 dark:text-neutral-400">Chargement de la propriété...</p>
           </div>
         </div>
@@ -63,7 +63,7 @@ const EditPropertyContent = () => {
           <div className="text-red-600 text-lg mb-4">{error || 'Propriété non trouvée'}</div>
           <Link
             href="/admin/properties"
-            className="text-primary-600 hover:text-primary-700"
+            className="text-blue-600 hover:text-blue-700"
           >
             Retour à la liste des propriétés
           </Link>

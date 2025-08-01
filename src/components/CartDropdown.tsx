@@ -53,13 +53,13 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isScrolled = true }) => {
               <div className="overflow-hidden rounded-2xl shadow-xl backdrop-blur-sm">
                 <div className="relative bg-white/95 dark:bg-neutral-800/95 backdrop-blur-sm">
                   {/* Header */}
-                  <div className="px-6 py-5 border-b border-neutral-200/50 dark:border-neutral-700/50 bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20">
+                  <div className="px-6 py-5 border-b border-neutral-200/50 dark:border-neutral-700/50 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 bg-primary-500 rounded-full">
+                      <div className="p-2 bg-blue-500 rounded-full">
                         <ShoppingCartIcon className="w-5 h-5 text-white" />
                       </div>
                       <h3 className="text-lg font-bold text-neutral-900 dark:text-white">Mon panier</h3>
-                      <span className="ml-auto px-3 py-1 bg-primary-500 text-white text-sm font-semibold rounded-full">{itemsCount}</span>
+                      <span className="ml-auto px-3 py-1 bg-blue-500 text-white text-sm font-semibold rounded-full">{itemsCount}</span>
                     </div>
                   </div>
 
@@ -92,14 +92,14 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isScrolled = true }) => {
                                   {item.session?.formation?.title}
                                 </h4>
                                 <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 flex items-center gap-1">
-                                  <span className="w-2 h-2 bg-primary-500 rounded-full"></span>
+                                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                                   {item.session?.city} • {new Date(item.session?.start_date || '').toLocaleDateString('fr-FR')}
                                 </p>
                                 <div className="flex items-center justify-between mt-3">
                                   <div className="flex items-center gap-1 bg-neutral-100 dark:bg-neutral-700 rounded-full p-1">
                                     <button
                                       onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-                                      className="w-7 h-7 rounded-full bg-white dark:bg-neutral-600 flex items-center justify-center hover:bg-primary-50 dark:hover:bg-primary-900/20 text-neutral-600 dark:text-neutral-300 hover:text-primary-600 transition-all duration-200 shadow-sm"
+                                      className="w-7 h-7 rounded-full bg-white dark:bg-neutral-600 flex items-center justify-center hover:bg-blue-50 dark:hover:bg-blue-900/20 text-neutral-600 dark:text-neutral-300 hover:text-blue-600 transition-all duration-200 shadow-sm"
                                       disabled={item.quantity <= 1}
                                     >
                                       −
@@ -107,7 +107,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isScrolled = true }) => {
                                     <span className="text-sm font-semibold w-8 text-center text-neutral-900 dark:text-white">{item.quantity}</span>
                                     <button
                                       onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-                                      className="w-7 h-7 rounded-full bg-white dark:bg-neutral-600 flex items-center justify-center hover:bg-primary-50 dark:hover:bg-primary-900/20 text-neutral-600 dark:text-neutral-300 hover:text-primary-600 transition-all duration-200 shadow-sm"
+                                      className="w-7 h-7 rounded-full bg-white dark:bg-neutral-600 flex items-center justify-center hover:bg-blue-50 dark:hover:bg-blue-900/20 text-neutral-600 dark:text-neutral-300 hover:text-blue-600 transition-all duration-200 shadow-sm"
                                       disabled={item.quantity >= (item.session?.available_spots || 0)}
                                     >
                                       +
@@ -123,7 +123,7 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isScrolled = true }) => {
                               </div>
                             </div>
                             <div className="mt-3 text-right">
-                              <span className="text-lg font-bold text-primary-600 dark:text-primary-400">
+                              <span className="text-lg font-bold text-blue-600 dark:text-blue-400">
                                 {formatPrice(item.price_at_time * item.quantity)}
                               </span>
                             </div>
@@ -150,18 +150,18 @@ const CartDropdown: React.FC<CartDropdownProps> = ({ isScrolled = true }) => {
                     <div className="px-6 py-5 border-t border-neutral-200/50 dark:border-neutral-700/50 bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-800/50 dark:to-neutral-700/50">
                       <div className="flex justify-between items-center mb-5 p-3 bg-white dark:bg-neutral-800 rounded-xl shadow-sm">
                         <span className="text-lg font-semibold text-neutral-700 dark:text-neutral-300">Total TTC</span>
-                        <span className="text-2xl font-bold text-primary-600 dark:text-primary-400">
+                        <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                           {formatPrice(total)}
                         </span>
                       </div>
                       <div className="space-y-3">
                         <Link href="/panier" className="block">
-                          <button className="w-full bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
+                          <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
                             Voir le panier complet
                           </button>
                         </Link>
                         <Link href="/formations" className="block">
-                          <button className="w-full bg-white dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium py-3 px-6 rounded-xl border border-neutral-200 dark:border-neutral-600 hover:border-primary-300 dark:hover:border-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-all duration-200">
+                          <button className="w-full bg-white dark:bg-neutral-700 text-neutral-700 dark:text-neutral-300 font-medium py-3 px-6 rounded-xl border border-neutral-200 dark:border-neutral-600 hover:border-blue-300 dark:hover:border-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200">
                             Continuer les achats
                           </button>
                         </Link>

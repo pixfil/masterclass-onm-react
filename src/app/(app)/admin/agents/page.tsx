@@ -104,7 +104,7 @@ const AgentsContent = () => {
         <div className="bg-white rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800">
           {loading ? (
             <div className="p-12 text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
               <p className="mt-4 text-neutral-600 dark:text-neutral-400">Chargement des agents...</p>
             </div>
           ) : (
@@ -192,7 +192,7 @@ const AgentsContent = () => {
                             {agent.specialites?.map((spec, index) => (
                               <span
                                 key={index}
-                                className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-800 dark:bg-primary-900/20 dark:text-primary-400"
+                                className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400"
                               >
                                 {spec}
                               </span>
@@ -212,7 +212,7 @@ const AgentsContent = () => {
                           <div className="flex space-x-2">
                             <Link
                               href={`/admin/agents/edit/${agent.id}`}
-                              className="text-primary-600 hover:text-primary-900 p-1 rounded"
+                              className="text-blue-600 hover:text-blue-900 p-1 rounded"
                               title="Modifier"
                             >
                               <PencilIcon className="h-4 w-4" />

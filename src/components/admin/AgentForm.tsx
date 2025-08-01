@@ -143,7 +143,7 @@ export const AgentForm = ({ agent, isEdit = false }: AgentFormProps) => {
       {/* Informations personnelles */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <UserIcon className="h-5 w-5 text-primary-600" />
+          <UserIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">
             Informations personnelles
           </Heading>
@@ -243,7 +243,7 @@ export const AgentForm = ({ agent, isEdit = false }: AgentFormProps) => {
             value={formData.description_agent}
             onChange={(e) => handleInputChange('description_agent', e.target.value)}
             rows={4}
-            className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+            className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             placeholder="Décrivez l'expérience et les compétences de l'agent..."
           />
         </div>
@@ -252,7 +252,7 @@ export const AgentForm = ({ agent, isEdit = false }: AgentFormProps) => {
       {/* Expérience et compétences */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <AcademicCapIcon className="h-5 w-5 text-primary-600" />
+          <AcademicCapIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">
             Expérience et compétences
           </Heading>
@@ -291,7 +291,7 @@ export const AgentForm = ({ agent, isEdit = false }: AgentFormProps) => {
                   type="checkbox"
                   checked={selectedSpecialites.includes(specialite)}
                   onChange={() => handleSpecialiteToggle(specialite)}
-                  className="rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:bg-neutral-700 dark:border-neutral-600"
+                  className="rounded border-neutral-300 text-blue-600 focus:ring-blue-500 dark:bg-neutral-700 dark:border-neutral-600"
                 />
                 <span className="text-sm text-neutral-700 dark:text-neutral-300">
                   {specialite}
@@ -305,7 +305,7 @@ export const AgentForm = ({ agent, isEdit = false }: AgentFormProps) => {
       {/* Performances et statuts */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2 pb-2 border-b border-neutral-200 dark:border-neutral-700">
-          <StarIcon className="h-5 w-5 text-primary-600" />
+          <StarIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg font-semibold text-neutral-900 dark:text-white">
             Performances et statuts
           </Heading>
@@ -329,7 +329,7 @@ export const AgentForm = ({ agent, isEdit = false }: AgentFormProps) => {
             <select
               value={formData.temps_reponse_moyen}
               onChange={(e) => handleInputChange('temps_reponse_moyen', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="dans l'heure">Dans l'heure</option>
               <option value="dans les 2 heures">Dans les 2 heures</option>
@@ -345,7 +345,7 @@ export const AgentForm = ({ agent, isEdit = false }: AgentFormProps) => {
               type="checkbox"
               checked={formData.est_super_agent}
               onChange={(e) => handleInputChange('est_super_agent', e.target.checked)}
-              className="rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:bg-neutral-700 dark:border-neutral-600"
+              className="rounded border-neutral-300 text-blue-600 focus:ring-blue-500 dark:bg-neutral-700 dark:border-neutral-600"
             />
             <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
               Super Agent
@@ -358,7 +358,7 @@ export const AgentForm = ({ agent, isEdit = false }: AgentFormProps) => {
               type="checkbox"
               checked={formData.est_verifie}
               onChange={(e) => handleInputChange('est_verifie', e.target.checked)}
-              className="rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:bg-neutral-700 dark:border-neutral-600"
+              className="rounded border-neutral-300 text-blue-600 focus:ring-blue-500 dark:bg-neutral-700 dark:border-neutral-600"
             />
             <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
               Agent vérifié
@@ -371,7 +371,7 @@ export const AgentForm = ({ agent, isEdit = false }: AgentFormProps) => {
               type="checkbox"
               checked={formData.est_actif}
               onChange={(e) => handleInputChange('est_actif', e.target.checked)}
-              className="rounded border-neutral-300 text-primary-600 focus:ring-primary-500 dark:bg-neutral-700 dark:border-neutral-600"
+              className="rounded border-neutral-300 text-blue-600 focus:ring-blue-500 dark:bg-neutral-700 dark:border-neutral-600"
             />
             <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
               Agent actif

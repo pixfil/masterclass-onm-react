@@ -198,9 +198,9 @@ const PropertiesContent = () => {
                     setHideSoldRented(newValue)
                     localStorage.setItem('admin-hide-sold-rented', newValue.toString())
                   }}
-                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
+                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                     hideSoldRented 
-                      ? 'bg-primary-600' 
+                      ? 'bg-blue-600' 
                       : 'bg-neutral-200 dark:bg-neutral-600'
                   }`}
                 >
@@ -228,9 +228,9 @@ const PropertiesContent = () => {
                     setShowFeaturedOnly(newValue)
                     localStorage.setItem('admin-show-featured-only', newValue.toString())
                   }}
-                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 ${
+                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                     showFeaturedOnly 
-                      ? 'bg-primary-600' 
+                      ? 'bg-blue-600' 
                       : 'bg-neutral-200 dark:bg-neutral-600'
                   }`}
                 >
@@ -266,7 +266,7 @@ const PropertiesContent = () => {
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="">Tous les statuts</option>
               <option value="disponible">Disponible</option>
@@ -277,7 +277,7 @@ const PropertiesContent = () => {
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
-              className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="">Tous les types</option>
               <option value="maison">Maison</option>
@@ -291,7 +291,7 @@ const PropertiesContent = () => {
             <select
               value={transactionFilter}
               onChange={(e) => setTransactionFilter(e.target.value)}
-              className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="">Vente & Location</option>
               <option value="vente">Vente</option>
@@ -304,7 +304,7 @@ const PropertiesContent = () => {
         <div className="bg-white rounded-xl shadow-sm overflow-hidden dark:bg-neutral-800">
           {loading ? (
             <div className="p-12 text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
               <p className="mt-4 text-neutral-600 dark:text-neutral-400">Chargement des propriétés...</p>
             </div>
           ) : (
@@ -314,17 +314,17 @@ const PropertiesContent = () => {
                   <p className="text-sm text-neutral-600 dark:text-neutral-400">
                     {filteredAndSortedProperties.length} propriété(s) trouvée(s)
                     {sortField && (
-                      <span className="ml-2 text-primary-600 font-medium">
+                      <span className="ml-2 text-blue-600 font-medium">
                         • Trié par {sortField === 'price' ? 'prix' : 'date'} ({sortDirection === 'asc' ? 'croissant' : 'décroissant'})
                       </span>
                     )}
                     {hideSoldRented && (
-                      <span className="ml-2 text-primary-600 font-medium">
+                      <span className="ml-2 text-blue-600 font-medium">
                         • Biens vendus/loués masqués
                       </span>
                     )}
                     {showFeaturedOnly && (
-                      <span className="ml-2 text-primary-600 font-medium">
+                      <span className="ml-2 text-blue-600 font-medium">
                         • Biens en vedette uniquement
                       </span>
                     )}
@@ -420,7 +420,7 @@ const PropertiesContent = () => {
                           <div className="max-w-xs">
                             <Link 
                               href={`/admin/properties/edit/${property.id}`}
-                              className="text-sm font-medium text-neutral-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors cursor-pointer"
+                              className="text-sm font-medium text-neutral-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer"
                             >
                               {property.title && property.title.length > 32 ? (
                                 <>
@@ -482,7 +482,7 @@ const PropertiesContent = () => {
                           {property.latitude && property.longitude ? (
                             <button
                               onClick={() => handleShowMap(property)}
-                              className="text-primary-600 hover:text-primary-900 p-1 rounded inline-flex items-center justify-center cursor-pointer transition-colors"
+                              className="text-blue-600 hover:text-blue-900 p-1 rounded inline-flex items-center justify-center cursor-pointer transition-colors"
                               title="Voir sur la carte"
                             >
                               <MapIcon className="h-4 w-4" />
@@ -530,14 +530,14 @@ const PropertiesContent = () => {
                               href={`/real-estate-listings/${property.slug || property.handle || property.id}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-primary-600 hover:text-primary-900 p-1 rounded"
+                              className="text-blue-600 hover:text-blue-900 p-1 rounded"
                               title="Voir le site public"
                             >
                               <EyeIcon className="h-4 w-4" />
                             </a>
                             <Link
                               href={`/admin/properties/edit/${property.id}`}
-                              className="text-primary-600 hover:text-primary-900 p-1 rounded"
+                              className="text-blue-600 hover:text-blue-900 p-1 rounded"
                               title="Modifier"
                             >
                               <PencilIcon className="h-4 w-4" />

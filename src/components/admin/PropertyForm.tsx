@@ -160,7 +160,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
       {/* Informations générales */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2">
-          <InformationCircleIcon className="h-5 w-5 text-primary-600" />
+          <InformationCircleIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg">Informations générales</Heading>
         </div>
         
@@ -182,7 +182,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
             <select
               value={formData.property_type}
               onChange={(e) => handleInputChange('property_type', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               required
             >
               <option value="appartement">Appartement</option>
@@ -201,7 +201,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
             <select
               value={formData.transaction_type}
               onChange={(e) => handleInputChange('transaction_type', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
               required
             >
               <option value="vente">Vente</option>
@@ -225,7 +225,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
             <select
               value={formData.status}
               onChange={(e) => handleInputChange('status', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="disponible">Disponible</option>
               <option value="sous_offre">Sous offre</option>
@@ -240,7 +240,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
             <select
               value={formData.agent_id}
               onChange={(e) => handleInputChange('agent_id', e.target.value)}
-              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+              className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             >
               <option value="">Sélectionner un agent</option>
               {agents.map((agent) => (
@@ -260,7 +260,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
             value={formData.description}
             onChange={(e) => handleInputChange('description', e.target.value)}
             rows={4}
-            className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
+            className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-neutral-700 dark:border-neutral-600 dark:text-white"
             placeholder="Description détaillée du bien..."
           />
         </div>
@@ -269,7 +269,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
       {/* Localisation */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2">
-          <MapIcon className="h-5 w-5 text-primary-600" />
+          <MapIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg">Localisation</Heading>
         </div>
         
@@ -411,7 +411,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
                   type="checkbox"
                   checked={formData[key as keyof typeof formData] as boolean}
                   onChange={(e) => handleInputChange(key, e.target.checked)}
-                  className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
                 />
                 <span className="text-sm text-neutral-700 dark:text-neutral-300">{label}</span>
               </label>
@@ -451,7 +451,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
       {/* Points forts */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2">
-          <SparklesIcon className="h-5 w-5 text-primary-600" />
+          <SparklesIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg">Points forts de la propriété</Heading>
         </div>
         
@@ -463,7 +463,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
       {/* Équipements détaillés */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2">
-          <CogIcon className="h-5 w-5 text-primary-600" />
+          <CogIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg">Équipements et services</Heading>
         </div>
         
@@ -475,7 +475,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
       {/* Galerie d'images */}
       <div className="space-y-6">
         <div className="flex items-center space-x-2">
-          <PhotoIcon className="h-5 w-5 text-primary-600" />
+          <PhotoIcon className="h-5 w-5 text-blue-600" />
           <Heading as="h3" className="text-lg">Galerie d&apos;images</Heading>
         </div>
         
@@ -498,7 +498,7 @@ export const PropertyForm = ({ property, isEdit = false }: PropertyFormProps) =>
             type="checkbox"
             checked={formData.published}
             onChange={(e) => handleInputChange('published', e.target.checked)}
-            className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-neutral-300 rounded"
+            className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
           />
           <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
             Publier immédiatement

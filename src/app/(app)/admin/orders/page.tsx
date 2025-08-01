@@ -267,7 +267,7 @@ const OrdersAdminPage = () => {
                   
                   <button
                     onClick={loadOrders}
-                    className="inline-flex items-center px-3 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700"
+                    className="inline-flex items-center px-3 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700"
                   >
                     <ArrowPathIcon className="-ml-1 mr-2 h-4 w-4" />
                     Actualiser
@@ -372,7 +372,7 @@ const OrdersAdminPage = () => {
                     <input
                       type="text"
                       placeholder="Rechercher par numéro de commande, client, email..."
-                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white dark:bg-gray-700 dark:border-gray-600 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                      className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white dark:bg-gray-700 dark:border-gray-600 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                       onChange={(e) => handleSearch(e.target.value)}
                     />
                   </div>
@@ -390,7 +390,7 @@ const OrdersAdminPage = () => {
                           Formation
                         </label>
                         <select
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                           value={selectedFormation}
                           onChange={(e) => {
                             setSelectedFormation(e.target.value)
@@ -411,7 +411,7 @@ const OrdersAdminPage = () => {
                           Statut commande
                         </label>
                         <select
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                           onChange={(e) => handleFilterChange({ status: e.target.value as any })}
                         >
                           <option value="all">Tous les statuts</option>
@@ -428,7 +428,7 @@ const OrdersAdminPage = () => {
                           Statut paiement
                         </label>
                         <select
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                           onChange={(e) => handleFilterChange({ payment_status: e.target.value as any })}
                         >
                           <option value="all">Tous les paiements</option>
@@ -445,7 +445,7 @@ const OrdersAdminPage = () => {
                         </label>
                         <input
                           type="date"
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                           onChange={(e) => handleFilterChange({ date_from: e.target.value })}
                         />
                       </div>
@@ -456,7 +456,7 @@ const OrdersAdminPage = () => {
                         </label>
                         <input
                           type="date"
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                           onChange={(e) => handleFilterChange({ date_to: e.target.value })}
                         />
                       </div>
@@ -470,7 +470,7 @@ const OrdersAdminPage = () => {
                 <div className="px-4 py-5 sm:p-6">
                   {loading ? (
                     <div className="text-center py-12">
-                      <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary-600"></div>
+                      <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
                       <p className="mt-2 text-sm text-gray-500">Chargement...</p>
                     </div>
                   ) : orders.length === 0 ? (
@@ -598,7 +598,7 @@ const OrdersAdminPage = () => {
                                       setSelectedOrder(order)
                                       setShowQuickActions(true)
                                     }}
-                                    className="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300 p-1 rounded hover:bg-primary-50 dark:hover:bg-primary-900/20"
+                                    className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300 p-1 rounded hover:bg-blue-50 dark:hover:bg-blue-900/20"
                                     title="Actions rapides"
                                   >
                                     <CogIcon className="h-5 w-5" />

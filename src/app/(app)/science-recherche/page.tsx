@@ -4,10 +4,12 @@ import Image from 'next/image'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import { BeakerIcon, AcademicCapIcon, MagnifyingGlassIcon, LightBulbIcon, DocumentTextIcon, ChartBarIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import ModernHeader from '@/components/Header/ModernHeader'
 
 export default function ScienceRecherchePage() {
   return (
     <div className="nc-ScienceRecherchePage">
+      <ModernHeader />
       {/* Hero Section */}
       <section className="relative py-20 lg:py-28 bg-gradient-to-br from-slate-900 via-indigo-900 to-cyan-900">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-900/40 to-cyan-900/20" />
@@ -27,6 +29,14 @@ export default function ScienceRecherchePage() {
               L'orthodontie neuro-musculaire : Une approche systémique révolutionnaire 
               basée sur des décennies de recherche scientifique
             </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/formations">
+                <ButtonPrimary className="w-full sm:w-auto">
+                  Découvrir nos formations
+                </ButtonPrimary>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

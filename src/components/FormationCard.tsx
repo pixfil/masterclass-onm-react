@@ -24,7 +24,7 @@ const FormationCard: FC<FormationCardProps> = ({ className = '', formation }) =>
     city: "Paris",
     price: 2500,
     href: "/formations",
-    image: "/api/placeholder/400/300"
+    image: "/images/formation-default.svg"
   }
 
   const data = formation || defaultFormation
